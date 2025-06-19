@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Antonyms</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .menu-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .menu-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0);
+            top: 0;
+            right: 0;
+        }
+        .controls.active .round-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .round-button:nth-child(2) {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53); /* Dark Mode */
+            transition-delay: 0.1s;
+            top: 56px;
+            right: 0;
+        }
+        .round-button:nth-child(3) {
+            background: linear-gradient(135deg, #1e90ff, #00b4d8); /* Font + */
+            transition-delay: 0.2s;
+            top: 112px;
+            right: 0;
+        }
+        .round-button:nth-child(4) {
+            background: linear-gradient(135deg, #2ecc71, #27ae60); /* Font - */
+            transition-delay: 0.3s;
+            top: 168px;
+            right: 0;
+        }
+        .round-button:nth-child(5) {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Print */
+            transition-delay: 0.4s;
+            top: 224px;
+            right: 0;
+        }
+        .round-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .round-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .round-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .menu-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .menu-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .round-button span, .menu-button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="menu-button" onclick="toggleMenu()" title="Toggle Menu"><span>☢️</span></button>
+        <button class="round-button" onclick="toggleDarkMode()" title="Toggle Dark Mode"><span>🌙</span></button>
+        <button class="round-button" onclick="increaseFontSize()" title="Increase Font Size"><span>+</span></button>
+        <button class="round-button" onclick="decreaseFontSize()" title="Decrease Font Size"><span>-</span></button>
+        <button class="round-button" onclick="printPage()" title="Print Page"><span>🖨️</span></button>
+    </div>
+    <!--copy paste🤣🤣🤣😂-->
+<p style="text-align:center"><span style="font-size:18px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#e74c3c"><strong>Antonyms</strong></span></span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>1. Abandon </strong>(छोड़ देना) - continue, persue, remain, carry on</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>2. Above </strong>(ऊपर) - below, down, under</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>3. Abolish </strong>(समाप्त करना) - retain, create</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>4. Ability </strong>(योग्यता) - incompetence, disability, incapacity </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>5. Absolve </strong>(दोषमुक्त करना) - punish, chastise, penalize</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>6. Absurd </strong>(असंगत) - rational, sensible, reasonablea</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>7. Abundance </strong>(प्रचुरता) - lack, dearth, shortage</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>8. Accumulate </strong>(जमा करना) - distribute, scatter, spread</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>9. Acquit </strong>(बरी करना) - charge, blame, involve, convict</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>10. Adapt </strong>(अनुकूल बनना) - differ, misfit, disagree, unsuitable, preserve</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>11. Admiration </strong>(प्रशंसा) - hate, condemnation, disgust </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>12. Ample </strong>(प्रचुर) - limited, insufficient, scanty </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>13. Amuse </strong>(मन बहलाना) - annoy, tire, bore, depress</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>14. Attract</strong> (आकर्षित करना) - reject, repulse, repel, rebuff, refuse </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>15. Awareness </strong>(जागरूकता) - ignorance, innocence, foolishness </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>16. Awake </strong>(चौकन्ना) - asleep, unaware, ignorant</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>17. Backward</strong> (पिछड़ा) - forward, advance, onward, prompt</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>18. Beautiful </strong>(सुंदर) - loathsome, horrible, ugly </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>19. Before </strong>(से पहले) - after, subsequently, succeeding </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>20. Beg </strong>(भीख में माँगना) - claim, command, enforce </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>21. Belief </strong>(धारणा) - disbelief, doubt, distrust </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>22. Bitter </strong>(कड़वा) - mellow, sugary, sweet </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>23. Blame </strong>(दोष) - extol, praise, compliment, applaud </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>24. Bliss</strong> (आनंद) - sorrow, woe, distress&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>25. Bold </strong>(साहसिक) - fearful, timid, afraid </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>26. Breed </strong>(नस्ल/जनना) - kill, murder, destroy</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>27. Brief</strong> (संक्षिप्त करना) - verbose, long, detailed, lengthy, long-winded </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>28. Bright</strong> (उज्जवल) - cloudy, dull, dark, stupid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>29. Busy </strong>(व्यस्त) - inactive, lazy, idle </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>30. Calamity</strong> (विपत्ति/दु:ख) - fortune, peace, happiness, joy, godsend, blessing </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>31. Calm </strong>(शांत) - excite, perturb, disturb, anxiety, violence, unrest, excite </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>32. Cancel </strong>(रद्द करना) - confirm, establish, endorse, ratify, contract, perpetuate</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>33. Careless</strong> (लापरवाह) - thoughtful, attentive, cautious, careful, meticulous, judicious </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>34. Charm</strong> (आकर्षण) - repulse, repel, deter</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>35. Cheap</strong> (सस्ता)- expensive, costly, admirable, high-class</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>36. Cheerful </strong>(हंसमुख) - torpid, lifeless, sluggish, sad, cheerless</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>37. Correct</strong> (सही) - incorrect, wrong, improper</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>38. Cold</strong> (सर्दी) - fiery, tepid, warm, scalding, hot </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>39. Company</strong> (संगठन) - alone, single, isolated</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>40. Compliment </strong>(प्रशंसा) - criticism, insult</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>41. Dainty</strong> (स्वादिष्ट) - inedible, unpalatable, unpleasant, bland, insipid </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>42. Defeat</strong> (हार) - win, prevail, vanquish, pass, victory, success</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>43. Delight</strong> (सुख) - grief, sorrow, displeasure</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>44. Deny</strong> (अस्वीकार करना) - verify, confirm, comply, endorse, accept</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>45. Desire</strong> (इच्छा) - unwanted, unwilled, undesirable, unwelcome, unwished </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>46. Diligent</strong>(मेहनती) - idle, slack, slothful, lazy </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>47. Dishonest</strong> (बेईमान) - just, fair, trustworthy, reliable, faithful, honest, trusty </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>48. Disgust</strong> (असंतोष) - relish, attract, please </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>49. Disclose </strong>(भेद खोलना) - veil, conceal, hide</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>50. Entice </strong>(फुसलाना) - rebuff, repel, repulse</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>51. Error</strong>(त्रुटि) - truth, right, fact, certainty, surety, correctness, accurate </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>52. Establish </strong>(स्थापित करना) - destroy, demolish</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>53. Expand </strong>(विस्तार करना) - reduce, contract, condense </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>54. Extraordinary</strong> (असाधारण) - normal, common, usual, ordinary</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>55. False </strong>(असत्य) - veritable, accurate, reliable, true</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>56. Famous</strong> (प्रसिद्ध) - obscure, unknown, anonymous </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>57. Feeble </strong>(कमज़ोर) - strong, robust, brawny, brave, forceful</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>58. Fertile</strong> (उपजाऊ) - barren, arid, infertile, sterile</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>59. Flexible</strong> (लचीला) - rigid, stiff, unbending </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>60. Foe</strong> (दुश्मन) - ally, colleague, associate, comrade</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>61. Fool</strong> (मूर्ख) - sane, wise, discreet, rational, sensible, clever </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>62. Gloomy</strong> (उदास) - merry, jolly, bright, happy, cheerful, optimistic </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>63. Happiness</strong> (खुशी) - sorrow, sadness, grief, distress</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>64. Hard</strong> (कठिन) - soft, flexible, pliable</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>65. Hatred</strong> (नफरत) - liking, love, affection</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>66. Horrible</strong> (भयंकर) - charming, pleasant, agreeable </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>67. Innocent</strong> (मासूम) - guilty, criminal, culpable</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>68. Jolly </strong>(विनोदी) - unhappy, sad, gloomy, dismal </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>69. Kind</strong> (कोमल/दयालु) - hard, harsh, cruel </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>70. Kill</strong> (हत्या करना) - create, produce, originate, breed </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>71. Miserable</strong> (दुखी) - happy, cheerful, blissful </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>72. Modern</strong> (आधुनिक) - old, primitive, ancient </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>73. Narrow</strong> (संकरा) - wide, broad, extensive</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>74. Neat</strong> (स्वच्छ) - untidy, disorderly, unkempt </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>75. Nervous</strong> (बेचैन) - bold, fearless, valiant </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>76. Noisy</strong> (शोर) - peaceful, quiet, placid </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>77. Obstinate</strong> (ज़िद्दी) - docile, compliant, yielding </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>78. Odd</strong> (विचित्र) - ordinary, normal, usual, regular, conventional</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>79. Oppose</strong> (विरोध) - accept, approve, favour, join, encourage, support </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>80. Organize</strong> (संयोजित करना) - disarrange, disrupt, disintegrate </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>81. Ordinary</strong> (साधारण) - rare, uncommon, queer, unusual </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>82. Order</strong> (आदेश/अनुशासन/व्यवस्था/क्रम) - disorder, confusion, disagreement, keeping, mismanagement, imbalance</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>83. Pacify</strong> (शांत करना) - provoke, annoy, irritate </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>84. Painful</strong> (कष्टदायक) - soothing, pleasant, agreeable</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>85. Pathetic</strong> (दयनीय) - funny, comic, farcical </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>86. Peculiar </strong>(अजीब) - natural, normal, ordinary, usual </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>87. Permanent </strong>(सुहावना/स्थायी) - temporary, fleeting, transient </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>88. Pleasant</strong> (रूचिकर) - hateful, offensive, gloomy, boring, unenjoyable, unlikeable</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>89. Please</strong> (खुश करना) - annoy, repulse, bore, anger, frustrate, disappoint, offend, depress </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>90. Plenty</strong> (बहुत सारे) - lack, scanty, dearth, deficiency </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>91. Polite</strong> (विनम्र) - rude, uncivilized, insolent, impolite, unkind, unmannerly</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>92. Praise</strong> (प्रशंसा) - blame, censure, criticism, neglect </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>93. Precious</strong> (कीमती) - cheap, useless, common, worthless, valueless, impaired </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>94. Preserve</strong> (रक्षा करना/बनाये रखना) - destroy, demolish, abandon, waste, injure, lose, ruin </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>95. Pretty</strong> (सुंदर) - ugly, homely, offensive, disgusting, unattractive, repulsive</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>96. Prevent</strong> (रूकावट डालना/रोकना) - help, support, promote, open, continue, free, approve</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>97. Pride</strong> (गौरव) - shame, humble, modesty, humility</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>98. Profuse</strong> (प्रचुर) - scanty, limited, insufficient, meager</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>99. Quarantine</strong> (अलग करना) - befriend, socialize</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>100. Quaint</strong> (विचित्र) - familiar, usual</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>101. Raid</strong> (छापा) - retreat, release</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>102. Rebellious</strong> (विद्रोही) - submissive, compliant, governable, manageable, obedient</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>103. Rectify </strong>(सुधारना) - destroy, injure, ruin, damage, break, hurt</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>104. Realistic</strong> (वास्तविकता) - unrealistic, idealistic, impractical, irrational, unreasonable</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>105. Ready</strong> (पूरी तैयारी से) - incomplete, unprepared, reluctant, incapable, bare, unripe</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>106. Ratify</strong> (पुष्टि करना) - deny, reject, disapprove, revoke, disallow, disagree</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>107. Ravage</strong> (नाश करना) - reconstruct, renovate, protect, improve, repair</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>108. Remnant</strong> (अवशेष) - entire, whole, all</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>109. Remonstrate</strong> (विरोध करना) - agree, accept, approve, help, support</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>110. Remorse</strong> (पश्चाताप) - ruthlessness, obduracy</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>111. Rescind</strong> (रद्द कर देना) - allow, permit, approve, agree, enforce, enact, support</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>112. Resentment</strong> (नाराज़गी) - cheer, comfort, love, pleasure, sympathy</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>113. Real</strong> (वास्तविक/यथार्थ) - unreal, imaginary, imitation, false, untrue, fake</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>114. Reverence</strong> (सम्मान) - disrespect, hate, dishonour, scorn</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>115. Rustic</strong> (असभ्य/देहाती) - cultured, city boy</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>116. Ruthless</strong> (निष्ठुर) - compassionate, merciful, gentle</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>117. Sacred</strong> (धार्मिक/पवित्र) - secular, cursed, profane</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>118. Savage </strong>(जंगली) - tame, gentle, civilized</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>119. Slavery</strong> (गुलामी) - freedom, liberty, emancipation</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>120. Support</strong> (किसी के पक्ष में बोलना) - neglect, abandon, contradict, undermine, oppose</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>121. Stranger</strong> (अजनबी) - acquaintance, national, local, friend</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>122. Silence</strong> (चुप्पी/शांति) - noise, speech, communication, talk, agitation</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>123. Succinct</strong> (लघु/संक्षिप्त) - lengthy, polite, wordy, long-winded</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>124. Sympathy</strong> (सहानुभूति/दया-भाव) - antipathy, discord, indifference, hostility</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>125. Systematic</strong> (व्यवस्थित) - chaotic, disorder, disorganised</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>126. Sarcastic</strong> (निन्दापूर्ण) - courteous, gracious, respectful, sweet, kind, mild</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>127. Saucy</strong> (सजीव) - modest, humble, respectful, demure</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>128. Shrewd</strong> (चालाक) - stupid, unwise, ingenuous</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>129. Scanty</strong> (थोड़ा) - abundant, ample, plentiful</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>130. Servile</strong> (चापलूस/दासभाव) - aggressive, dominant, bossy, assertive</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>131. Shabby</strong> (दरिद्र) - prosperous, thriving, rich, felicitous</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>132. Slander</strong> (बदनामी) - applaud, admire, praise, commend</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>133. Sneer</strong> (व्यंग्यात्मक मुस्कान/तिरस्कार करना) - flatter, praise, respect, laud, commend</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>134. Solicit</strong> (मांगना/विनती करना) - answer, offer, give</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>135. Subterfuge</strong> (छल) - frankness, openness</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>136. Sensible</strong> (समझदार) - foolish, silly, senseless, unwise, idiotic, unintelligent, ignorant </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>137. Spurious</strong> (नकली) - genuine, authentic, real, valid, true</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>138. Sporadic</strong> (कहीं कहीं) - incessant, frequent, regular, constant, continuous</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>139. Spry</strong> (फुर्तीला) - lethargic, sluggish, lazy, slothful, inactive</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>140. Squalid</strong> (मैला) - tidy, attractive, clean, pleasant</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>141. Successful</strong> (सफल) - untoward, unsuccessful</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>142. Sterile </strong>(बंजर) - fertile, fecund</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>143. Stupor </strong>(सुन्नपन) - sensibility, consciousness, wakefulness, liveliness, </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>144. Subsequent </strong>(बाद का) - preceding, previous, prior, former, earlier</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>145. Substantial</strong> (पर्याप्त) - little, minor, small, slight, tiny</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>146. Subvert</strong> (पलट देना) - create, build, straighten, construct, improve</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>147. Taboo</strong> (पाबंदी) - acceptance, permitted, encouragement </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>148. Taciturn</strong> (मौन) - talkative, extrovert, loquacious</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>149. Tedious</strong> (कठिन) - easy, interesting, exciting, entertaining, eventful, pleasant</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>150. Temperate</strong> (नरम/संयमी) - extreme, intemperate, immoderate, violent</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>151. Tenant</strong> (किरायेदार) - owner, freeholder</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>152. Tenacious</strong> (दृढ़) - loose, weak, irresolute</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>153. Timid</strong> (डरपोक) - bold, brave, courageous, confident, fearless, strong</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>154. Tranquil </strong>(शांत) - violent, loud, noisy, fierce</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>155. Transient</strong> (अस्थायी) - lasting, enduring, permanent, perpetual, lengthy, long-lived</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>156. Trenchant</strong> (तीव्र) - calm, gentle, mild, weak, dull</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>157. Treacherous</strong> (नमक हराम) - forthright, reliable</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>158. Trivial </strong>(तुच्छ) - significant, important, major, uncommon, necessary, substantial</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>159. Tumultuous</strong> (अशांतिप्रिय) - peaceful, calm, mild, quiet, moderate</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>160. Tyro</strong> (नौसिखिया) - proficient, veteran, experienced, expert, professional</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>161. Tame</strong> (घरेलू/पालतू) - wild, untamed</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>162. Terse</strong> (संक्षिप्त) - verbose, long-winded, lengthy, wordy</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>163. Thick</strong> (मोटा/घना/ठोस) - thin, attenuated, weak, clear, soft</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>164. Triumph</strong> (विजय पाना/आनन्द मनाना) - defeat, failure, disaster, sadness, forfeit, loss, sorrow, unhappiness</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>165. Transparent </strong>(पादरर्शी) - opaque, vague, dark, unclear</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>166. Tremble</strong> (घबराना) steady, calm</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>167. Uncouth</strong> (अनोखा/भद्दा) - sophisticated, polished, refined, couth, beautiful</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>168. Utterly</strong> (बिल्कुल/सरासर) - inadequately, partly, incompletely, uncertain, partially</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>169. Ugly</strong> (कुरूप/भद्दा/बुरा) - beautiful, attractive, lovely, good</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>170. Vain</strong> (व्यर्थ/बेकार) - effective, productive, useful, important, fruitful</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>171. Valor</strong> (साहस/बहादुरी) - fear, cowardice, meekness, irresolution, timidity, weakness</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>172. Venerable</strong> (सम्मानित) - disrespected, disreputable, dishonorable</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>173. Veteran</strong> (अनुभवी/कुशल) - novice, tyro, unskilled, amateur, inexperienced</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>174. Vicious</strong> (शातिर/भ्रष्ट/दोषी) - noble, virtuous, innocent, moral, nice</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>175. Vigilant</strong> (जागरूक) careless, negligent, unaware, impulsive, heedless</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>176. Vivacious</strong> (ज़िंदादिल) - dispirited, unattractive, dull, unhappy, boring</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>177. Vilify</strong> (तिरस्कार करना) - cherish, commend, compliment, praise</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>178. Virtue</strong> (भलाई) - vice, dishonesty, immorality, unfairness</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>179. Vivid </strong>(ज्वलंत) - dull, dim, vague, boring</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>180. Waive</strong> (अस्वीकार करना) - accept, approve</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>181. Wan </strong>(फीका) - bright, blushing, fresh, flushed</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>182. Wane</strong> (पतन/अवनति) - enhance, rise, ascent, develop, expand</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>183. Wary</strong> (सावधान) - heedless, negligent, careless, incautious, foolish, reckless</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>184. Wed</strong> (मेल करना) - divorce, separate, disconnect, disjoin</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>185. Wield</strong> (संभालना/उपयोग करना) - ignore, avoid, fail, misuse, idle, cease</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>186. Wile</strong> (छल-कपट) - fairness, truth, naivety, openness</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>187. Winsome</strong> (मनोहर) - unpleasant, disagreeable, unattractive</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>188. Wilt</strong> (मुरझाना) - thrive, flourish, bloom, grow, build, increase</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>189. Yell</strong> (चिल्लाना/शोर) - whisper, muted, murmur</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>190. Yield</strong> (मान जाना) - resist, protest, reject</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>191. Yearn</strong> (उदास होना) - cheer, delight, rejoice </span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>192. Yoke</strong> (अधीन करना) - liberate, release</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>193. Zeal</strong> (उत्साह) - apathy, lethargy, dullness, inactivity, disinterest</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>194. Zest</strong> (उत्तेजकता) - apathy, lethargy, dullness, disinterest</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>195. Zigzag</strong> (टेढ़ी लकीर/वक्र) - straight, direct, smooth, even</span></span></p>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.controls').classList.toggle('active');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function increaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            document.body.style.fontSize = (currentSize + 2) + 'px';
+        }
+
+        function decreaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            if (currentSize > 10) {
+                document.body.style.fontSize = (currentSize - 2) + 'px';
+            }
+        }
+
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
