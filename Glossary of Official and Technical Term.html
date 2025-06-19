@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Glossary of Official and Technical Term</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .menu-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .menu-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0);
+            top: 0;
+            right: 0;
+        }
+        .controls.active .round-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .round-button:nth-child(2) {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53); /* Dark Mode */
+            transition-delay: 0.1s;
+            top: 56px;
+            right: 0;
+        }
+        .round-button:nth-child(3) {
+            background: linear-gradient(135deg, #1e90ff, #00b4d8); /* Font + */
+            transition-delay: 0.2s;
+            top: 112px;
+            right: 0;
+        }
+        .round-button:nth-child(4) {
+            background: linear-gradient(135deg, #2ecc71, #27ae60); /* Font - */
+            transition-delay: 0.3s;
+            top: 168px;
+            right: 0;
+        }
+        .round-button:nth-child(5) {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Print */
+            transition-delay: 0.4s;
+            top: 224px;
+            right: 0;
+        }
+        .round-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .round-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .round-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .menu-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .menu-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .round-button span, .menu-button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="menu-button" onclick="toggleMenu()" title="Toggle Menu"><span>☢️</span></button>
+        <button class="round-button" onclick="toggleDarkMode()" title="Toggle Dark Mode"><span>🌙</span></button>
+        <button class="round-button" onclick="increaseFontSize()" title="Increase Font Size"><span>+</span></button>
+        <button class="round-button" onclick="decreaseFontSize()" title="Decrease Font Size"><span>-</span></button>
+        <button class="round-button" onclick="printPage()" title="Print Page"><span>🖨️</span></button>
+    </div>
+    <!--copy paste🤣🤣🤣😂-->
+<p style="text-align:center"><span style="color:#ff3300"><span style="font-size:18px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Glossary of Official and Technical Term</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:#e67e22">❖ Introduction:</span></strong><br>
+● A ‘Glossary’ is an alphabetized list of specialized terms with their meanings. In a report, proposal or book, the glossary is generally located after the conclusion. A glossary is also known as a ‘Clavis’, which is from the Latin word for ‘Key’.</span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:#e67e22">❖&nbsp;The importance of glossary:</span><br>
+● </strong>Glossaries can be useful for helping students identify and acquire the vocabulary of the discipline. Having students intuitively understand words from their use in readings is often not the best solution since not all students have the skills required to learn vocabulary from limited exposure.</span></span></p>
+
+<table border="1" cellspacing="0" class="MsoTableGrid" style="border-collapse:collapse; border:1pt solid black; height:40%; white-space:unset; width:40%">
+	<tbody>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">1. </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Abandonment </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">त्याग, छोड़ना, परित्याग</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">2. </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Abatement </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">कमी, कटौती</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">3. </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Abdication </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">पदत्याग</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">4. </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Abnormal</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">असामान्य, असाधारण</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">5. </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Abnormal increase</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">असामान्य वृद्धि</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">6. </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Abridge</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">संक्षिप्त/कम करना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">7. </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Abridged report</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">संक्षिप्त रिपोर्ट</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">8. </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Absent debtor </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">फरार देनदार</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">9. </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Absentee statement </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अनुपस्थिति विवरण</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">10.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Absolute </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">पूर्ण, स्पष्ट</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">11.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Absolute acceptance</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">पूर्ण स्वीकृति</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">12.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Accuse </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अभियोग लगाना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">13.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Acquire</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अर्जित</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">14.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Action plan</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">कार्य योजना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">15.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Adjourn</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">स्थगित करना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">16.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Administrative</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">प्रशासनिक, प्रशासन</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">17.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Advancement</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">उन्नति, तरक्की</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">18.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Affidavit </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">शपथ-पत्र</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">19.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Alias</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">उपनाम, उर्फ</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">20.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Alliance </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">मैत्री, गठबंधन</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">21.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Allotment</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">आवंटन</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">22.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Annexure </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">सलंग्न</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">23.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Antecedents</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">पूर्ववृत्त</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">24.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Appendix</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">परिशिष्ट</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">25.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Arbitrary </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">मनमाना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">26.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Award </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अधिनिर्णय, पुरस्कार</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">27.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Backward class</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">पिछड़ा वर्ग</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">28.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Ballot </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">मतपत्र, मतदान</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">29.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Bankrupt </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">दिवालिया</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">30.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Beneficiary </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">लाभार्थी</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">31.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Bonafide&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">वास्तविक </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">32.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Boycott</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">बहिष्कार करना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">33.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Breach </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">भंग, विच्छेद</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">34.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Breach of agreement</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">करार भंग</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">35.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Bureaucracy</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">दफ्तरशाही</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">36.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Bye-law</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">उप-विधि</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">37.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Cabinet</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">मंत्रिमंडल</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">38.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Campaign</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अभियान</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">39.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Capital expenditure </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">पूँजीगत व्यय</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">40.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Carry forward</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">आगे ले जाना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">41.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Casual</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">आकस्मिक, अनियत</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">42.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Censure</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">निन्दा, परिनिन्दा</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">43.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Central excise </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">केन्द्रीय उत्पाद – शुल्क</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">44.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Certified copy</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">प्रमाणित प्रति</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">45.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Charge sheet</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">आरोप पत्र</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">46.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Circular</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">परिपत्र</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">47.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Civil</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">सिविल, दीवानी</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">48.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Civil rights</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">नागरिक अधिकार</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">49.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Claimant</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">दावेदार</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">50.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Co-accused </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">सह-अभियुक्त</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">51.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Consignment</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">प्रेषण, भेजा गया</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">52.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Constitution </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">संविधान, गठन</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">53.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Convey </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">सूचित</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">54.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Council </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">परिषद्</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">55.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Counter</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">पलट, विरोध करना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">56.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Cross examination </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">जिरह, प्रतिपरीक्षा</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">57.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Dearness allowance</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">महँगाई भत्ता</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">58.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Decentralization </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">विकेन्द्रीकरण</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">59.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Defamation </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">मानहानि</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">60.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Deliberately </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">जानबूझ कर</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">61.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Demarcation </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">सीमांकन</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">62.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Democratic</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">लोकतांत्रिक</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">63.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Disposal </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">खारिज, निपटान</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">64.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Enchantment </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">वृद्धि, बढ़ोतरी</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">65.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Ensure</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">सुनिश्चित करना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">66.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Entitle</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">हकदार होना, हकदार बनाना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">67.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Exchequer</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">सरकारी खजाना, राजकोष</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">68.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Extravagant </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अपव्ययी, फिजूलखर्ची</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">69.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Fabricate</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">गड़ना, निर्माण करना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">70.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Family welfare</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">परिवार कल्याण</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">71.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Financial </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">वित्तीय, वित्त संबंधी</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">72.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Fiscal </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">राजकोषीय</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">73.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Foreclose</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">कब्जा करना, रोकना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">74.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Foreign affairs</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">विदेशी मामले</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">75.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Forum</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">मंच</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">76.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Gadget</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">उपकरण, गैजेट</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">77.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Gazette</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">राजपत्र, बजट</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">78.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Gazette notification </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">राजपत्र अधिसूचना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">79.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Government official</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">सरकारी पदाधिकारी</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">80.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Guiding principles</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">मार्गदर्शी सिद्धान्त</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">81.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Hand-operated</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">हस्त-चालित</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">82.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Hard and fast rules</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">पक्के नियम</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">83.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">High and dry</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">असहाय, लाचार</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">84.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Honorary</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">मानद/समानदायक</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">85.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Honorarium</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">मानदेय</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">86.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Human right</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">मानवाधिकार</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">87.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Illegal construction&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अवैध निर्माण</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">88.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Ill treatment </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">बुरा बर्ताव</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">89.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Indirect tax</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अप्रत्यक्ष कर</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">90.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Inquiry officer</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">जाँच अधिकारी</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">91.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Job requirements</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">कार्य-अपेक्षाएँ</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">92.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Joining period</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">कार्यग्रहण अवधि</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">93.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Joint committee </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">संयुक्त समिति</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">94.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Judgment</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">निर्णय, मत</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">95.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Kith and kin</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">निकट संबंधी</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">96.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Labour dispute</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">श्रमविवाद</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">97.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Layout</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अभिन्यास</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">98.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Leave of absence</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">छुट्टी की अनुमति</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">99.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Legislative assembly</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">विधान सभा</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">100.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Letter of acceptance</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">स्वीकृति पत्र</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">101.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Loaning department</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">प्रदात्ता-विभाग</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">102.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Local body</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">स्थानीय निकाय</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">103.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Management development</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">प्रबंध विकास</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">104.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Marketing</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">विपणन</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">105.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Maturity</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">परिपक्वता</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">106.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Methodology</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">कार्यप्रणाली</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">107.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Misconduct</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">कदाचार, दुराचार</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">108.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Mutual agreement</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">पारस्परिक करार</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">109.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Nationalization</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">राष्ट्रीयकरण</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">110.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Natural justice</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">नैसर्गिक न्याय</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">111.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Non-acceptance</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अस्वीकृति</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">112.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Nuisance</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">बाधा, परेशानी</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">113.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Null and void</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">शून्य, अमान्य</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">114.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Oath</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">शपथ</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">115.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Occupancy</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">दखल</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">116.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Office manual</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">कार्यालय नियमावली</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">117.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Officially</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">आधिकारिक तौर पर</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">118.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Order of merit</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">योग्यताक्रम</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">119.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Par-excellence</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">सर्वोत्तम</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">120.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Pay and allowances</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">वेतन तथा भत्ता</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">121.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Prejudice</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">प्रतिकूल प्रभाव, पूर्वधारणा,&nbsp;पूर्वागृह</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">122.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Proclaim </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">जुलूस</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">123.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Procedure</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">प्रक्रिया, कार्यविधि</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">124.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Public auction</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">सार्वजनिक निलामी</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">125.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Quorum</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">कोरम, गणपूर्ति </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">126.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Raise in pay</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">वेतन वृद्धि</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">127.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Recklessness</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">लापरवाही</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">128.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Record room</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अभिलेख कक्ष</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">129.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Red-tapism</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">लाल फीताशाही</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">130.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Salaried class</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">वेतनभोगी वर्ग</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">131.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Sale deed</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">बैनामा, विक्रय विलेख</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">132.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Sanctioned project</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">स्वीकृत परियोजना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">133.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Scarcity area</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अभावग्रस्त क्षेत्र</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">134.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Schedule</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अनुसूची</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">135.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Self – government</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">स्वशासन</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">136.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Set aside</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">परे रखना, अलग रखना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">137.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Speedy action </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">शीघ्र कार्यवाही</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">138.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Status report</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">स्थिति रिपोर्ट</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">139.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Sub-judice</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">न्यायाधीन</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">140.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Sundry receipts</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">विविध प्राप्तियाँ</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">141.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Synchronise</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">साथ-साथ होना, साथ-साथ घटना</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">142.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Tax return</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">कर विवरणी</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">143.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Tribunal</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">अधिकरण</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">144.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Under consideration </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">विचाराधीन</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">145.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Utmost </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">सर्वाधिक, परम, अधिकतम</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">146.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Vital modification </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">महत्त्वपूर्ण बदलाव</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">147.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Vote on account</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">लेखा अनुदान</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">148.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Watch and ward</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">पहरा व निगरानी</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">149.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Ways and means</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">तरीके, उपाय</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:10%">
+			<p style="margin-left:38px; text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">150.&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:45%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Withdrawal</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:44%">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">वापसी, प्रत्याहरण</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.controls').classList.toggle('active');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function increaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            document.body.style.fontSize = (currentSize + 2) + 'px';
+        }
+
+        function decreaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            if (currentSize > 10) {
+                document.body.style.fontSize = (currentSize - 2) + 'px';
+            }
+        }
+
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
