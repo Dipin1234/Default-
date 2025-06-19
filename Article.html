@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Articles</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .menu-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .menu-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0);
+            top: 0;
+            right: 0;
+        }
+        .controls.active .round-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .round-button:nth-child(2) {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53); /* Dark Mode */
+            transition-delay: 0.1s;
+            top: 56px;
+            right: 0;
+        }
+        .round-button:nth-child(3) {
+            background: linear-gradient(135deg, #1e90ff, #00b4d8); /* Font + */
+            transition-delay: 0.2s;
+            top: 112px;
+            right: 0;
+        }
+        .round-button:nth-child(4) {
+            background: linear-gradient(135deg, #2ecc71, #27ae60); /* Font - */
+            transition-delay: 0.3s;
+            top: 168px;
+            right: 0;
+        }
+        .round-button:nth-child(5) {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Print */
+            transition-delay: 0.4s;
+            top: 224px;
+            right: 0;
+        }
+        .round-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .round-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .round-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .menu-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .menu-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .round-button span, .menu-button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="menu-button" onclick="toggleMenu()" title="Toggle Menu"><span>☢️</span></button>
+        <button class="round-button" onclick="toggleDarkMode()" title="Toggle Dark Mode"><span>🌙</span></button>
+        <button class="round-button" onclick="increaseFontSize()" title="Increase Font Size"><span>+</span></button>
+        <button class="round-button" onclick="decreaseFontSize()" title="Decrease Font Size"><span>-</span></button>
+        <button class="round-button" onclick="printPage()" title="Print Page"><span>🖨️</span></button>
+    </div>
+    <!--copy paste🤣🤣🤣😂-->
+     <h3 style="text-align:center"><span style="color:#ff0000"><span style="font-size:18px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Articles</strong></span></span></span></h3>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Definition:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">-&nbsp; Articles are words which define a noun as specific or unspecific. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">-&nbsp; &lsquo;A, An and The&rsquo; are called Articles.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">-&nbsp; Article को</span> <span style="color:black">हम word fixer भी</span> <span style="color:black">कह</span> <span style="color:black">सकते</span> <span style="color:black">है। Modern grammar के</span> <span style="color:black">अनुसार Articles एक</span> <span style="color:black">प्रकार</span> <span style="color:black">के Determiners है।</span> <span style="color:black">ये</span> <span style="color:black">किसी Noun के</span> <span style="color:black">पूर्व Antecedent के</span> <span style="color:black">रूप</span> <span style="color:black">में use होते</span> <span style="color:black">हैं।</span></span></span><br />
+<span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#2980b9"><strong>Kinds of Article: </strong></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(A) Indefinite Article :-</span></strong><span style="color:black"> A, An (one/any) इनका use अनिश्चित Singular Countable Noun के</span> <span style="color:black">साथ</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Susan sings a song.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; I have a car.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(B) Definite Article :-</span></strong><span style="color:black"> The का use उस noun के</span> <span style="color:black">पूर्व</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है, जो</span> <span style="color:black">निश्चित</span> <span style="color:black">है, विशेष</span> <span style="color:black">है</span> <span style="color:black">या</span> <span style="color:black">जिसकी</span> <span style="color:black">चर्चा</span> <span style="color:black">पूर्व</span> <span style="color:black">में</span> <span style="color:black">की</span> <span style="color:black">जा</span> <span style="color:black">चुकी</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; This is the house where she lives. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The boy in black shirt is my son. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">The use of Indefinite Articles &lsquo;A, An&rsquo;: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(1)</span></strong><span style="color:black">&nbsp; &lsquo;A&rsquo; is used before a word beginning with consonant sound. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a boy</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a child</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a student </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a book</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(2)</span></strong><span style="color:black">&nbsp;&lsquo;A&rsquo; is used before a word beginning with a vowel giving the sound of a consonant. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a one eyed man (वन) </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a university student (यूनिवर्सिटी)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a European (यूरोपियन) </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a unique book (यूनिक)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a uniform (यूनिफॉर्म)&nbsp;&nbsp;&nbsp; </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a universal problem (यूनिवर्सल)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(3)</span></strong><span style="color:black">&nbsp; &lsquo;An&rsquo; is used before a word beginning with a vowel sound. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an elephant </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an apple</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an ass&nbsp;&nbsp;&nbsp; </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an umbrella</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(4)</span></strong><span style="color:black">&nbsp;&lsquo;An&rsquo; is used before a word beginning with a mute &lsquo;h&rsquo;.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an hour&nbsp; </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an heir</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an honourable </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an honest man</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an honorary&nbsp; post </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an hourly visit</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(5)</span></strong><span style="color:black">&nbsp; &lsquo;An&rsquo; is used before a word beginning with a consonant pronounced with the sound of a vowel. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an L.L.B. student (एल. एल. बी.) </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an M.P. (एम. पी.)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an M.L.A. (एम. एल. ए.) </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an S.P (एस. पी)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an X-ray (एक्स - रे)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an F.I.R. (एफ. आई. आर.)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an NCC &nbsp;(एन. सी. सी.)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an LCD (एल. सी. डी.)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; an SHO (एस. एच. ओ)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(6)&nbsp;&nbsp;</span></strong><span style="color:black">यदि</span> <span style="color:black">किसी</span> <span style="color:black">भी Proper Noun का use Common Noun के</span> <span style="color:black">लिए</span> <span style="color:black">किया</span> <span style="color:black">जाए, तो</span> <span style="color:black">उससे</span> <span style="color:black">पूर्व</span> <span style="color:black">&lsquo;A/An&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Manish is a Sachin Tendulkar. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Amit is a Kautilya.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; A shylock is living in my neighbourhood.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He is a Vikramaditya known for his fairness.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(7)&nbsp;</span></strong><span style="color:black">Exclamatory (!) वाक्यों</span> <span style="color:black">में What के</span> <span style="color:black">बाद</span> <span style="color:black">में Singular Countable Noun के</span> <span style="color:black">पूर्व</span> <span style="color:black">&lsquo;A/An&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; What a pretty girl! </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; What a cricketer! </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; What a performance!</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; What a hot day!</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; What a naughty child!</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; How fine a day!</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; What an intelligent girl!</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; What an excellent idea!</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(8)</span></strong><span style="color:black">&nbsp;&#39;प्रति</span> <span style="color:black">माह&#39; या &#39;प्रति</span> <span style="color:black">वस्तु&rsquo; के</span> <span style="color:black">मत</span> <span style="color:black">के</span> <span style="color:black">सन्दर्भ</span> <span style="color:black">में</span> <span style="color:black">&lsquo;A/An&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Manali earns Rs. one thousand a month. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He earns fifty thousand rupees a year.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; We should brush our teeth two times a day.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(9) </span></strong><span style="color:black">&lsquo;A/An&rsquo; is used in certain expression of quantity with numbers and expressions of &lsquo;price/rate, speed, ratio&rsquo;. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(दर, नाप-तौल, गतिसूचक</span> <span style="color:black">शब्दों</span> <span style="color:black">के</span> <span style="color:black">पहले A/An का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Wheat sells two rupees a kilo.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; A dozen mangoes.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Half a dozen.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(10)</span></strong> <span style="color:black">जब Uncountable Noun का use Countable Noun की</span> <span style="color:black">तरह</span> <span style="color:black">होता</span> <span style="color:black">है, तब</span> <span style="color:black">उसके</span> <span style="color:black">पहले</span> <span style="color:black">&lsquo;A/An&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; She is an old love of mine. (प्रेमी/प्रेमिका) Countable </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; This is a lamb. (भेड़) Countable </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(11)</span></strong> <span style="color:black">जब</span> <span style="color:black">एक</span> <span style="color:black">से</span> <span style="color:black">अधिक Noun या Adjective एक</span> <span style="color:black">ही</span> <span style="color:black">व्यक्ति</span> <span style="color:black">या</span> <span style="color:black">वस्तु</span> <span style="color:black">का</span> <span style="color:black">बोध</span> <span style="color:black">कराएँ, तब</span> <span style="color:black">सिर्फ</span> <span style="color:black">एक Noun के</span> <span style="color:black">पहले</span> <span style="color:black">ही &lsquo;A/An&rsquo; का use होता</span> <span style="color:black">है, पर</span> <span style="color:black">यदि</span> <span style="color:black">अलग-अलग</span> <span style="color:black">व्यक्तियों</span> <span style="color:black">या</span> <span style="color:black">वस्तुओं</span> <span style="color:black">का</span> <span style="color:black">बोध</span> <span style="color:black">हो, तो</span> <span style="color:black">उनमें</span> <span style="color:black">से</span> <span style="color:black">प्रत्येक</span> <span style="color:black">के</span> <span style="color:black">पहले</span> <span style="color:black">&lsquo;A/An&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a red and blue pencil.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a red and a blue pencil.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a poet and thinker.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; a poet and a thinker.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(12)</span></strong><span style="color:black"> Many/Rather/Quite/Such के</span> <span style="color:black">बाद</span> <span style="color:black">यदि Singular Countable Noun हो, तो</span> <span style="color:black">इससे</span> <span style="color:black">पूर्व &lsquo;A/An&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Many a woman would welcome such a chance.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">It is rather a nuisance.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">It is rather a good step.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He is such a nice man that everybody likes him.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">It is quite an interesting story.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(13) </span></strong><span style="color:black">यदि Adjective से</span> <span style="color:black">पहले so, as, too, how, quite का use हुआ</span> <span style="color:black">हो, तो</span> <span style="color:black">उसके</span> <span style="color:black">बाद</span> <span style="color:black">&lsquo;A/An&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">How serious a crime had been committed was not realised by him.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">She is as intelligent a student as her brother is.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">She is too weak a student to pass.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">She is so weak a student that she can&rsquo;t pass.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(14) </span></strong><span style="color:black">कुछ</span> <span style="color:black">विशेष Phrases में &lsquo;A/An&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; In a fix, in a hurry, in a nutshell, make a noise, make a foot, keep a secret, as a rule, at a discount, at a stone&rsquo;s throw, have a good education, tell a lie, a matter of chance etc.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He has a good knowledge of Sanskrit.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Never tell a lie.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Twelve inches make a foot.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; You are always in a hurry.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(15) </span></strong><span style="color:black">कुछ</span> <span style="color:black">गिनती</span> <span style="color:black">बताने</span> <span style="color:black">वाले</span> <span style="color:black">शब्द</span> <span style="color:black">जैसे hundred, thousand, dozen, million, couple, quarter से</span> <span style="color:black">पूर्व</span> <span style="color:black">&lsquo;A&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Example:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; I have a hundred pens.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; She has to walk two and a quarter kilometers daily.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; I have purchased a dozen eggs.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He has a thousand rupees.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(16) </span></strong><span style="color:black">Profession से</span> <span style="color:black">पूर्व</span> <span style="color:black">&lsquo;A/An&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He is a manager/carpenter/cobbler/tailor/cook.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; She is a nurse/teacher/dentist/doctor.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Mr. Sharma is an engineer/architect.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(17) </span></strong><span style="color:black">Singular Noun के</span> <span style="color:black">लिए Nationalities को express करने</span> <span style="color:black">के</span> <span style="color:black">लिए</span> <span style="color:black">&lsquo;A/An&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; John is an Englishman. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Kate is a Catholic.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; I am an Indian.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He is a French.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(18) </span></strong><span style="color:black">यदि Noun से</span> <span style="color:black">पूर्व Adjective हो, तो Adjectives से</span> <span style="color:black">पूर्व</span> <span style="color:black">&lsquo;A/An&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Asoka was a great king.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He is a good dancer.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; It was a grand party last night.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; She is an intelligent girl.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(19)</span></strong> <span style="color:black">यदि Adjective से</span> <span style="color:black">पूर्व Adverb का use हुआ</span> <span style="color:black">हो, तो Adverb से</span> <span style="color:black">पूर्व</span> <span style="color:black">&lsquo;A/An&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He is an unbelievable generous man.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; It is a very interesting book. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He is a very good person.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He is a much hated character.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(20)</span></strong><span style="color:black"> &lsquo;A/An&rsquo; is used before the verbs that are used as nouns.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; For a ride</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Have a long talk</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Have a drink</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Have a bath</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; For a swim</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; For a talk</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; For a visit</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; For a walk</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; For a drive</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; For a rest</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Have a taste</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Have a pain</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; For a ride</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Have a drink </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Have a bath etc.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(21)</span></strong><span style="color:black"> &lsquo;A/An&rsquo; is used before the Determiners/ Adjectives &lsquo;Little&rsquo; and &lsquo;Few&rsquo; to give the sense of &lsquo;some&rsquo;.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">A little- some (Quantity)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">A few- some (Number)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Please give me a little sugar. (some)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; I met a few students in the university. (some)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">The use of Definite Article &lsquo;The&rsquo;</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">-&nbsp; The का use उस Noun से</span> <span style="color:black">पूर्व</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है, जो</span> <span style="color:black">निश्चित</span> <span style="color:black">है, विशेष</span> <span style="color:black">है</span> <span style="color:black">या</span> <span style="color:black">जिसकी</span> <span style="color:black">चर्चा</span> <span style="color:black">पूर्व</span> <span style="color:black">में</span> <span style="color:black">की</span> <span style="color:black">जा</span> <span style="color:black">चुकी</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(22)</span></strong><span style="color:black"> When we talk of a particular person or a thing as already mentioned, known or under discussion.&nbsp;&nbsp; </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(जब</span> <span style="color:black">किसी</span> <span style="color:black">पूर्व</span> <span style="color:black">निर्धारित</span> <span style="color:black">वस्तु</span> <span style="color:black">के</span> <span style="color:black">बारे</span> <span style="color:black">में</span> <span style="color:black">कहा</span> <span style="color:black">जाए, तो The का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Rohan found a purse. The purse contained a note. The note was made of silver. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Divya brought a silk saree. The saree is a very unique. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The book is not available in the market.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black"><strong>Let us study the lesson carefully.</strong> </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(Sentence में purse से</span> <span style="color:black">पूर्व</span> <span style="color:black">सर्वप्रथम &#39;a&#39; का use किया</span> <span style="color:black">गया</span> <span style="color:black">है, बाद</span> <span style="color:black">में &#39;the&#39; का use किया</span> <span style="color:black">गया</span> <span style="color:black">है, क्योंकि</span> <span style="color:black">यह purse पूर्व</span> <span style="color:black">निर्धारित, निश्चित</span> <span style="color:black">हो</span> <span style="color:black">गया</span> <span style="color:black">है।</span> <span style="color:black">इसी</span> <span style="color:black">तरह note से</span> <span style="color:black">पहले &#39;a&#39; का use किया</span> <span style="color:black">गया</span> <span style="color:black">है, बाद</span> <span style="color:black">में &#39;the&#39; का, क्योंकि</span> <span style="color:black">अब note पूर्व</span> <span style="color:black">निर्धारित, निश्चित</span> <span style="color:black">हो</span> <span style="color:black">चुका</span> <span style="color:black">है।</span> <span style="color:black">इसी</span> <span style="color:black">तरह Sentence में</span> <span style="color:black">पहले saree से</span> <span style="color:black">पूर्व &#39;a&#39; तथा</span> <span style="color:black">बाद</span> <span style="color:black">में the का use किया</span> <span style="color:black">गया</span> <span style="color:black">है।)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(23)</span></strong><span style="color:black"> &lsquo;The&rsquo; is used as an adverb with double comparatives.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The more she gets, the more she demands.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The more you work, the more you get. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The sooner, the better.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The higher you go, the colder it is.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The longer you stay up, the more tired you get.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(24)</span></strong><span style="color:black"> &lsquo;The&rsquo; is used before comparative degree in case of a choice.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">&bull; Karan is the stronger of the two boys. </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">&bull; This is the better of the two poems. </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">&bull; She is the weaker of the two sisters.</span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">&bull; Who is the more beautiful of the two sisters?</span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(25) &lsquo;</span></strong><span style="color:black">The&rsquo; is used before Proper Nouns (unique objects) when they refer to the names of historical&nbsp; buildings, mountain ranges, planets, canals, rivers, oceans, gulfs, groups of islands, holy books, ordinals, descriptive names of countries, states, newspapers, magazines, deserts, names of trains, hotels, shops, political parties etc. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(धार्मिक</span> <span style="color:black">समुदायों</span> <span style="color:black">के</span> <span style="color:black">नाम, साम्राज्यों</span> <span style="color:black">के</span> <span style="color:black">नाम, इतिहास</span> <span style="color:black">की</span> <span style="color:black">घटनाओं, वंशजों</span> <span style="color:black">के</span> <span style="color:black">नाम, राजनैतिक</span> <span style="color:black">दलों</span> <span style="color:black">के</span> <span style="color:black">नाम, ट्रेन, जहाज, अखबार</span> <span style="color:black">के</span> <span style="color:black">नाम, महत्वपूर्ण</span> <span style="color:black">भवनों</span> <span style="color:black">के</span> <span style="color:black">नाम, नदियों</span> <span style="color:black">के</span> <span style="color:black">नाम, नहरों</span> <span style="color:black">के</span> <span style="color:black">नाम, समुद्र</span> <span style="color:black">के</span> <span style="color:black">नाम</span> <span style="color:black">आदि</span> <span style="color:black">के</span> <span style="color:black">पूर्व &#39;The&#39; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।) </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Ganges, The Godawari, The Sutlej </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Pacific, The Red Sea, The Indian Ocean </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Hindus, The Muslims, the Sikhs </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Intercity express, The Rajdhani Express</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The BJP, The Congress, The Communist Party</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Bay of Bengal, The gulf of Mexico</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Taj Mahal, The Red Fort </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The French Revolution, The Quit India Movement </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Hindustan Times, The Indian Express </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Moon, The Sun, The Mars</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Ramayana, The Quran, The Bible</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Lakshadweep islands, The Philippines, </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Andes, The Alps</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Himalayas,&nbsp; The Raymonds</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Note: </span></strong><span style="color:black">But Valmiki&#39;s Ramayana, Banbhatt&#39;s Kadambiri जैसे</span> <span style="color:black">स्थिति</span> <span style="color:black">में, इनके</span> <span style="color:black">पूर्व &lsquo;The&rsquo; का use नहीं</span> <span style="color:black">होता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Note: </span></strong><span style="color:black">&lsquo;The&rsquo; is not used before <strong>Mount Abu </strong>and <strong>Mount Everest</strong> because they are not mountain ranges but peaks.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(26) </span></strong><span style="color:black">व्यक्ति</span> <span style="color:black">के</span> <span style="color:black">पद</span> <span style="color:black">के</span> <span style="color:black">पूर्व &lsquo;The&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Chairman will decide the matter. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The meeting was presided over by the Executive Director.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; This decision is taken by the Prime Minister. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(27)</span></strong><span style="color:black"> Group के</span> <span style="color:black">लिए</span> <span style="color:black">Nationality (राष्ट्रीयता) express करने</span> <span style="color:black">वाले</span> <span style="color:black">शब्दों</span> <span style="color:black">से</span> <span style="color:black">पूर्व</span> <span style="color:black">&lsquo;The&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">The English defeated the French. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">The Indian Cricket team has won the match.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">The Chinese are hard working.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(28)</span></strong><span style="color:black"> Ordinals से</span> <span style="color:black">पूर्व &lsquo;The&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है। First, second, third..... ordinals तथा one, two, three.... cardinals कहलाते</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The tenth chapter of this book is very difficult. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Priyansh is the first to arrive in the meeting. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(29) </span></strong><span style="color:black">Superlative Degree Adjective से</span> <span style="color:black">पूर्व</span> <span style="color:black">&lsquo;The&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Shakespeare was the greatest playwright.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Cricket is the most popular game.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Brown rice is the healthiest food in the world.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(30)</span></strong><span style="color:black"> Musical instruments and Invention (आविष्कार) के</span> <span style="color:black">नाम</span> <span style="color:black">के</span> <span style="color:black">पूर्व, &lsquo;The&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He can play the flute.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; She is fond of playing the harmonium.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The telephone was invented by Alexander Graham Bell.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The wireless was invented by Guglielmo Marconi.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The television was invented by XYZ.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He was listening to the radio.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(31)</span></strong><span style="color:black"> Cinema and Theatre से</span> <span style="color:black">पूर्व</span> <span style="color:black">&lsquo;The&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Sanjay went to the cinema yesterday.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Riya is going to the theatre with Mahesh.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(32)</span></strong><span style="color:black"> &lsquo;The&rsquo; का use Country के</span> <span style="color:black">नाम</span> <span style="color:black">से</span> <span style="color:black">पूर्व</span> <span style="color:black">नहीं</span> <span style="color:black">होता</span> <span style="color:black">है</span> <span style="color:black">लेकिन</span> <span style="color:black">यदि Country के</span> <span style="color:black">नाम</span> <span style="color:black">के</span> <span style="color:black">साथ Republic, Kingdom, States जुड़े</span> <span style="color:black">हुए</span> <span style="color:black">हों, तो</span> <span style="color:black">&lsquo;The&rsquo; का use इनसे</span> <span style="color:black">पूर्व</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(The Republic of Ireland, The United States, The United Kingdom)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Rakesh visited India and the United States. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; They went to Canada and the United Kingdom. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(33)</span></strong><span style="color:black"> East, West, North, South के</span> <span style="color:black">साथ</span> <span style="color:black">&lsquo;The&rsquo; का use होता</span> <span style="color:black">है</span> <span style="color:black">लेकिन</span> <span style="color:black">यदि</span> <span style="color:black">इनके</span> <span style="color:black">साथ</span> <span style="color:black">किसी Place का</span> <span style="color:black">नाम</span> <span style="color:black">जोड़ा</span> <span style="color:black">गया</span> <span style="color:black">हो, तो The का use नहीं</span> <span style="color:black">होगा।</span> <span style="color:black">इसी</span> <span style="color:black">तरह Northern, Southern, Eastern, Western से</span> <span style="color:black">पूर्व</span> <span style="color:black">&lsquo;The&rsquo; का use नहीं</span> <span style="color:black">होता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The sun rises in the east. &nbsp;</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Govardhan is going to North America.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Rajasthan is in Western India. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Sweden is in Northern Europe.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(34)</span></strong><span style="color:black"> &lsquo;The&rsquo; is used before Proper Noun for the sake of comparison.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The coal of Jharia is of good quality.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The prosperity of a country depends upon its citizens.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The beauty of Kashmir is praise worthy.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Surdas is the Milton of India.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Kalidas is the Shakespeare of India.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(35)&rsquo;</span></strong><span style="color:black">The&rsquo; is used before sports, cups and trophies.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">India won the Singer Cup last year.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">A number of teams are taking part in the World Cup.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(36)</span></strong><span style="color:black"> &lsquo;The&rsquo; is used before physical positions.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The top of the mountain.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The back of the house.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The center of the market.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The front of the house.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(37) &lsquo;</span></strong><span style="color:black">The&rsquo; is used before caste and communities.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Rajputs are brave people.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Marathas are hard working.&nbsp; </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(38)</span></strong><span style="color:black"> &lsquo;The&rsquo; is used before the organs of government.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Judiciary</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Legislature</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(39)</span></strong><span style="color:black"> &lsquo;The&rsquo; is used before the dynasties, empires, wars, revolutions, centuries.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Gupta dynasty.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The British empire.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Red revolution.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Middle ages.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Civil war.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Vedic ages.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The Sixth century.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(40)</span></strong><span style="color:black"> Parts of the body (शरीर</span> <span style="color:black">के</span> <span style="color:black">अंगों) के</span> <span style="color:black">पूर्व &lsquo;The&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Ankush was wounded in the arm. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Govind hit Johny on the head. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">No Article/Zero Article</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(41)</span></strong> <span style="color:black">यदि Superlative Degree &#39;most&#39; का</span> <span style="color:black">use &lsquo;very&rsquo; के</span> <span style="color:black">अर्थ</span> <span style="color:black">में</span> <span style="color:black">हो, तो</span> <span style="color:black">उससे</span> <span style="color:black">पहले The का use नहीं</span> <span style="color:black">होता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Nehal is a most beautiful girl. &nbsp; </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; This is a most useful novel.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(42) </span></strong><span style="color:black">Meals के</span> <span style="color:black">नाम (lunch, dinner, supper, breakfast)&nbsp; के</span> <span style="color:black">पूर्व Articles का use सामान्य</span> <span style="color:black">स्थिति</span> <span style="color:black">में</span> <span style="color:black">नहीं</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Khushboo couldn&#39;t have breakfast this morning. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Trisha was invited to dinner.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; I had lunch at 1 P.M. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">But यदि</span> <span style="color:black">Meals के</span> <span style="color:black">साथ</span> <span style="color:black">कोई Adjective लगा</span> <span style="color:black">हो</span> <span style="color:black">या</span> <span style="color:black">Meals Particular हो, तो Articles का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Vaishali arranged a nice dinner. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The dinner hosted by the queen was superb. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(43) </span></strong><span style="color:black">&lsquo;No article&rsquo; is used before languages &amp; colours.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; I can speak Hindi, but I can&#39;t speak English. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Ronaldo likes blue and white colour.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Chinese is a difficult language.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He knows Russian very well.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">लेकिन</span> <span style="color:black">यदि Colour का</span> <span style="color:black">नाम</span> <span style="color:black">एक Adjective की</span> <span style="color:black">तरह</span> <span style="color:black">किसी Countable Noun के</span> <span style="color:black">साथ use हुआ</span> <span style="color:black">है, तो Articles का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Babita has a blue saree. &nbsp; </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; I have a red pen.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(44)</span></strong><span style="color:black">Diseases (बीमारियाँ) के नाम से पूर्व generally कोई Article नहीं</span> <span style="color:black">लगता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Romeo is suffering from fever.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; He died of Covid-19. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Cancer is a dreaded disease.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; AIDS is spreading like wild fire.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Exception</span></strong>&nbsp; </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; the Measles</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; the Mumps </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; the Rickets</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; the Plague</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; the Flu</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(45) </span></strong><span style="color:black">Subjects (विषयों) के</span> <span style="color:black">नाम</span> <span style="color:black">के</span> <span style="color:black">पूर्व</span> <span style="color:black">generally Articles का use नहीं</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; I am student of Political Science. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Meenakshi is learning French. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; I secured 88% marks in English. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Ishika is good at Physics. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(46) </span></strong><span style="color:black">Kind of/Type of/Sort of/ Title of / Variety of / Rank of /Post of &nbsp;के</span> <span style="color:black">बाद</span> <span style="color:black">Articles का use नहीं</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; What kind of bird it was! </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; What kind of girl she is!</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(47) </span></strong><span style="color:black">जब</span> <span style="color:black">किसी Abstract Noun द्वारा feelings या emotions को</span> <span style="color:black">कथन</span> <span style="color:black">की</span> <span style="color:black">तरह express किया</span> <span style="color:black">जाए, तो Articles का use नहीं</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Honesty is the best policy. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Virtue is its own reward.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Truth is a noble quality.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Love is a natural feeling. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Life is a journey of experiences.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Death is inevitable.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(48) </span></strong><span style="color:black">जब Common Noun का use widest sense (विस्तृत</span> <span style="color:black">अर्थ) में</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है, तो</span> <span style="color:black">उससे</span> <span style="color:black">पूर्व Articles का use नहीं</span> <span style="color:black">होता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Birds fly. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Cows eat grass. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Lions are noble animal.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Kangaroos are found in Australia. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(49) </span></strong><span style="color:black">Games &amp; Sports के</span> <span style="color:black">नाम</span> <span style="color:black">के</span> <span style="color:black">पूर्व</span> <span style="color:black">Articles का use नहीं</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:&nbsp;&nbsp;&nbsp; </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Divya plays golf. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Cricket is a popular sport of India.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(50) </span></strong><span style="color:black">Seasons के</span> <span style="color:black">नाम</span> <span style="color:black">के</span> <span style="color:black">पूर्व</span> <span style="color:black">Articles का use नहीं</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Summer is a hot season.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; In spring we like to clean the house.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; David is planning to visit his parents in winter.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(51) </span></strong><span style="color:black">&lsquo;No article&rsquo; is used before &lsquo;Material Nouns&rsquo;.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Gold is a precious metal. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Silver is a useful metal.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; It was not build of bricks.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Lead is the heaviest of all metals.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Note: </span></strong><span style="color:black">यदि</span> <span style="color:black">किसी Particular Material की</span> <span style="color:black">बात</span> <span style="color:black">हो</span> <span style="color:black">रही</span> <span style="color:black">हो, तो</span> <span style="color:black">उससे</span> <span style="color:black">पूर्व</span> <span style="color:black">&lsquo;The&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The tea of Assam is very famous.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; The gold of the UAE is cheaper than the gold of India.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(52) </span></strong><span style="color:black">&lsquo;No article&rsquo; is used before names of relations like &lsquo;uncle, mother, father etc.&rsquo; before&nbsp; possessive adjectives. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull;&nbsp;<u>x</u>&nbsp;My father will go to Delhi tomorrow.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull;&nbsp;<u>x</u>&nbsp;Her aunt is expected any moment.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#2980b9"><strong>Some Important Examples:- </strong></span></span></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoTableGrid" style="border-collapse:collapse; border:1pt solid black; white-space:unset; width:75%">
+	<tbody>
+		<tr>
+			<td style="border-color:black; border-style:solid; border-width:1px; height:40px; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">S. No</span></strong></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; height:40px; text-align:center; width:147px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Incorrect sent.</span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; height:40px; text-align:center; width:153px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Correct sent.</span></strong></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:22px; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">1</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:22px; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Never tell lie.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:22px; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Never tell a lie.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">2</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Always speak truth.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Always speak the truth.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">3</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">It is quarter past five now.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">It is a quarter five now.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">4 </span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">You are in wrong.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">You are in the wrong.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">5</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I am in hurry</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I am in a hurry.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">6</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I read Indian Express daily.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I read the Indian Express daily.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">7</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">The English is spoken by English.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">English is spoken by the English.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">8</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Kavita is best girl in class.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Kavita is the best girl in the class.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">9</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">The man is mortal.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Man is mortal.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">10</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He is honest boy.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He is an honest boy.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">11</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">His brother is M.P.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">His brother is an M.P.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">12</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Here is a umbrella.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Here is an umbrella.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">13</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He has headache.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He has a headache.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">14</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">It is time to take the tea.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">It is time to take tea.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; text-align:center; vertical-align:middle; width:36px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">15</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:147px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">A red and white cow are grazing.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:middle; width:153px">
+			<p style="margin-left:1px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">A read and a white cow are grazing.</span></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.controls').classList.toggle('active');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function increaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            document.body.style.fontSize = (currentSize + 2) + 'px';
+        }
+
+        function decreaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            if (currentSize > 10) {
+                document.body.style.fontSize = (currentSize - 2) + 'px';
+            }
+        }
+
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
