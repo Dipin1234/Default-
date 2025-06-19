@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Reading Comprehension</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .menu-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .menu-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0);
+            top: 0;
+            right: 0;
+        }
+        .controls.active .round-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .round-button:nth-child(2) {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53); /* Dark Mode */
+            transition-delay: 0.1s;
+            top: 56px;
+            right: 0;
+        }
+        .round-button:nth-child(3) {
+            background: linear-gradient(135deg, #1e90ff, #00b4d8); /* Font + */
+            transition-delay: 0.2s;
+            top: 112px;
+            right: 0;
+        }
+        .round-button:nth-child(4) {
+            background: linear-gradient(135deg, #2ecc71, #27ae60); /* Font - */
+            transition-delay: 0.3s;
+            top: 168px;
+            right: 0;
+        }
+        .round-button:nth-child(5) {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Print */
+            transition-delay: 0.4s;
+            top: 224px;
+            right: 0;
+        }
+        .round-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .round-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .round-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .menu-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .menu-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .round-button span, .menu-button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="menu-button" onclick="toggleMenu()" title="Toggle Menu"><span>☢️</span></button>
+        <button class="round-button" onclick="toggleDarkMode()" title="Toggle Dark Mode"><span>🌙</span></button>
+        <button class="round-button" onclick="increaseFontSize()" title="Increase Font Size"><span>+</span></button>
+        <button class="round-button" onclick="decreaseFontSize()" title="Decrease Font Size"><span>-</span></button>
+        <button class="round-button" onclick="printPage()" title="Print Page"><span>🖨️</span></button>
+    </div>
+    <!--copy paste🤣🤣🤣😂-->
+<p style="margin-right:4px; text-align:center"><span style="color:#ff0000"><span style="font-size:20px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Reading Comprehension</strong></span></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Read the following passages and answer the questions that follow. </strong></span></span></p>
+
+<p><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 1</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">I used to have any my meals at a vegetarian restaurant. Here I met Mr. Albert West. We used to meet in this restaurant every evening and go out walking after dinner. Mr. West was a partner in a small printing concern. He read my letter in the press about the outbreak of the plague and, not finding me in the restaurant, felt uneasy.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">My co-workers and I had reduced our diet since the outbreak as I had long made it a rule to go on a light diet during epidemics. In these days I had therefore given up my evening dinner. Lunch also I would finish before the other guest arrived. I knew the proprietor of the restaurant very well, and I had informed him that, as I was engaged in nursing the plague patients, I wanted to avoid the contact of friends as much as possible.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Not finding me in the restaurant for a day or two, Mr. West knocked at my door early one morning just as I was getting ready to go out for a walk. As I opened the door Mr. West said: &lsquo;I did not find you in the restaurant and was really afraid lest something should have happened to you.&rsquo;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>1. What did the speaker and Mr. Albert West do every evening?</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) went walking and met at the restaurant for eating. &nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) &nbsp;after eating, met at the restaurant to go for walking. &nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) met in the restaurant and went out walking after dinner.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) had dinner and walked in the restaurant. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">- Speaker (I) and Mr. Albert West meet in restaurant every evening and go out walking after dinner.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>2. Why did the speaker not come to the restaurant?</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) He wanted to contact all his friends. &nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) He had decided to diet in order to lose weight.&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) He did not want to meet Mr. Albert and was avoiding him.&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) He was taking care of plague patients. &nbsp;&nbsp;&nbsp; <strong>[d]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Speaker was engaged in nursing the plague patients.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>3. As far as money is concerned, we get the impression that the writer&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) is incapable of saving anything. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) is never inclined to be extravagant. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) would like to be considered extravagant. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) doesn&#39;t often have any money to save. &nbsp; <strong>[d] </strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">We get the impression that the writer does not have any money to save it for later.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>4. Why did Mr. Albert West knock at the speaker&rsquo;s house? &nbsp;&nbsp;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) to go out walking with the speaker.&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) to make him a partner in the printing press.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) to avoid contact with friends. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) because he was worried that something had happened to the speaker. <strong>[d]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Not finding speaker in the restaurant for a day or two, West was really afraid lest something have happened to the speaker.</span></span></p>
+
+<p><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 2</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Jambhoji was much affected by this drought. Many nights he spent in wakefulness because of the suffering he saw around him. The dying cattle, the starving children; they haunted him day and night. And finally at the age of thirty four, he had a vision. He saw a man intoxicated with his own power destroying the world around him. And he decided to change it all. If life was to flourish again in this desolate land. Jambhoji saw that man would have to live in a different way and according to different tenets and beliefs. Jambhoji wanted the earth to be covered once again by an abundance of khejdi, ber, ker and sangri trees. To achieve this, he began to broadcast his message in the year 1485.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">His message included twenty nine basic tenets. Its two major commandments were a prohibition against the cutting down of any green tree or killing of any animal. Jambhoji&rsquo;s message of humanity and respect for all living things was eagerly accepted. His teaching prompted the inhabitants of hundreds of villages to reclothe the earth with its green cover.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>5. What haunted Jambhoji day and night?</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) The dying cattle</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) The starving children</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Both (a) and (b)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) None of these &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The dying cattle, the starving children are haunted him day and night.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>6. When did Jambhoji have a vision?</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) At the age of thirty</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) At the age of thirty four</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) At the age of forty</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) None of these &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Finally at the age of thirty four, he had a vision.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>7. How many basic tenets were included in his message?</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; (a) Twenty nine&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Twenty</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Twenty five&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) Twenty six &nbsp;&nbsp; <strong>[a]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">His message included twenty nine basic tenets.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>8. What were his commandments?</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Prohibiting the cutting down of any green tree.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Prohibiting the killing of any animal.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Both (a) and (b)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) None of these &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>&middot; </strong>Its two major commandments were a prohibition against the cutting down of any green tree or killing of any animal.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 3</strong></span></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The good book of the hour, then, I do not speak of the bad ones &ndash; is simply the useful or pleasant talk of some person whom you cannot otherwise converse with, printed for you. Very useful often, telling you what you need to know; very pleasant often, as a sensible friend&#39;s present talk would be. These bright accounts of travels; good-humoured and witty discussions of question; lively or pathetic story-telling in the form of novel; firm fact-telling, by the real agents concerned in the events of passing history, all these books of the hour, multiplying among us as education becomes more general, are a peculiar characteristic and possession of the present age. We ought to be entirely thankful for them, and entirely ashamed of ourselves if we make no good use of them. But we make the worst possible use, if we allow them to usurp the place of true books: for strictly speaking, they are not books at all, but merely letters or newspapers in good print.&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>9. How, according to the author, is the good book of the hour&nbsp;very useful? </strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Because it gives the information required by you. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Because it is in printed form. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Because it gives you pleasure. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) Because it is in the form of conversation.&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [a]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The good book of the hour is very useful often, telling you what you need to know.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>10. Which of the following statements is not TRUE?&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) The books of the hour are multiplying. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) They are peculiar characteristic of the present age. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) They are true scriptures of their writers. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) We must be thankful for them.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Books are not the true scriptures of the writers, so option (c) is the answer.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>11. How does the writer define the good book of the hour?&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) The good book of the hour is informative in nature. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) It is the useful or pleasant talk of someone in print. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) The good book of the hour is mere communication. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) The good book of the hour has no permanent value.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The good book of the hour is simply the useful or pleasant talk of some person whom you cannot otherwise converse with, printed for you.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>12. Which of the following conclusions based on the passage&nbsp;is not TRUE?</strong> </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) There are good books for all time. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) The good books of the hour are useful as well as&nbsp;pleasant. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) In the present age books of the hour are multiplying&nbsp;with the expansion of education.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) True books have been replaced by books of the hour.&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[d]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Conclusion based on the passage is not true:- True books have replaced the books of the hour.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 4</strong></span></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The martyrs who laid down their lives for the freedom of the country had a lofty vision of the future. They wanted the nation to be free from all slavery and bondage. They wanted an India in which all the communities would live in perfect harmony and in which there would be no high class and no low class of people, the curse of untouchability having been wiped out completely. Women would enjoy equal rights with men and contribute their fullest to the making of a great nation. Such a vision was in keeping with the ancient glory of the country renowned for its splendid achievements in literature, art and culture. We must now revitalise this ancient culture of ours with tolerance as it is masthead. If we forget or cease to take pride in our noble heritage, we shall have to face severe indictment in the court of history which is a ruthless judge and seldom spares the erring people. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>13. The martyrs who died for the freedom of India wanted&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) the country to be the strongest nation in the world. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) the country to rule over the other nations. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) the country to be free from slavery. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) the people to give up their antiquated customs.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong> </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The martyrs who laid down their lives for the freedom of the country, wanted the nation to be free from all slavery and bondage.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>14. The martyrs wanted that&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) there should be reservation in the jobs for the backward sections of the society. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) there should be perfect communal love and peace in&nbsp;the country. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) the old caste system should be retained in the future. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) the women should look after their families only.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Martyrs wanted an India in which all the communities would live in perfect harmony and there would be no high/low class.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>15. We must strive with total commitment to&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) defeat and overcome the enemies of the nation. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) revitalise our rich past culture. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) inject scientific temper into our past culture. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) make scientific advancements.&nbsp;<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [a]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">We must strive with total commitment to defeat and overcome the enemies of the nation.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>16. Our freedom fighters envisioned that in free India&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) there should be an egalitarian society. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) women would enjoy higher privileges and rights than&nbsp;others. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) the country would be taken forward by some selected&nbsp;classes of society. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) industrialization should occupy top priority.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>&middot;</strong> Women would enjoy equal rights with men and contribute their fullest to the making of a great nation.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 5</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Pidgins are languages that are not, acquired as mother tongues and that are used for a restricted set of communicative functions. They are formed from a mixture of languages and have a limited vocabulary and a simplified grammar. Pidgins serve as a means of communication between speakers of mutually unintelligible languages and may become essential, in multilingual areas. A creole develops from a pidgin when the pidgin becomes the mother tongue the community. To cope with the consequent, expansion of communicative functions of vocabulary is increased and the grammar becomes more complex. Where a creole and the standard variety of English coexist, as in the Caribbean, there is a continuum from the most extreme form of creole the form that is closest to the standard language. Linguists mark off the relative positions on the creole continuum as the &lsquo;basilect&rsquo; (the furthest from the standard language), the &lsquo;mesolect&rsquo;, and the &lsquo;acrolect&rsquo;. In such situations, most creole speakers can vary their speech along the continuum and many are also competent in the standard English of their country.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>17. Pidgin unlike mother tongue ______ a mixture of languages and have a limited vocabulary and a simplified grammar.</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) is &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) are </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) am&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) have&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[a]</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">When two subjects are connected by &lsquo;as well as, no less than, along with, with, together with, besides, in addition to, except, but, including, added to, combined with, coupled with&rsquo; etc., the verb agrees with the first subject.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Here &lsquo;pidgin&rsquo; is a singular noun so &lsquo;is&rsquo; will be used. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>18. According to the given passage a pidgin becomes a creole when&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) it ceases to be a means of communication.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) it becomes the mother tongue for a new generation of speakers.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) its vocabulary undergoes some kind to change. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) two or more languages are mixed with an existing pidgin.&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">According to the passage a pidgin becomes a creole when it becomes the mother tongue for a new generation of speakers. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>19. A pidgin develops in a situation when&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) different and mutually unintelligible languages exist side by side.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) a creole becomes the mother tongue of a linguistic community.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) a language with restricted vocabulary undergoes as expansion in grammar and vocabulary.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) two similar languages are mixed to create a new language. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[a]</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">A pidgin develops in a situation when- different and mutually unintelligible languages exist side by side. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>20. According to the passage. A creole continuum is&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) a linguistic term for the mixture of more than two languages.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) a scale which measures the linguistic competence of the speaker.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) a scale in which the proximity of the creole to the standard language is measured.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) a record of the continuous history of a creole.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">A creole continuum is a scale in which the proximity of the creole to the standard language is measured.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 6</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Crude mineral oil comes out of the earth as a thick brown or black liquid with a strong smell. It is a complex mixture of many different substances, each with its own individual qualities. Most of them are combinations of hydrogen and carbon in varying proportions. Such hydrocarbons are also found in other forms such as bitumen, asphalt and natural gas. Mineral oil originates from the carcasses of tiny animals and from plants that live in the sea.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Over millions of years, these dead creatures from large deposits under sea-bed and ocean currents cover them with a blanket of sand and slit. As this material hardens, it becomes sedimentary rock and effectively shuts out the oxygen, so preventing the complete decomposition of the marine deposits underneath. The layers of sedimentary rock become thicker and heavier. Their pressure produces heat, which transforms the tiny carcasses into crude oil in a process that is still going on today.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>21. Sedimentary rock leads to the formation of oil deposits because&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) it becomes hard and forms into rocks which produce oil.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) its pressure produces heat and turns the deposits of animal carcasses and plants into oil.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) it turns heavy and shuts out the oxygen. &nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) it becomes heavy and hard and applies pressure to squeeze oil. <strong>[b]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Mineral oil originates from the carcasses of animals and plants that live in the sea. Over millions of years ocean currents covers these dead creatures and as it hardens it becomes sedimentary rock.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>22. In order to have mineral oil, hydrogen and carbon are combined in&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) equal proportions &nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) fixed proportions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) varying proportions &nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) the proportion of two and one &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Mineral oil is a complex mixture of many different substances, most of them are combinations of hydrogen and carbon in varying proportions.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>23. The time it takes for the marine deposits to harden into rocks is&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) a few years &nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) thousands of years &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) hundreds of years &nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) million of years &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[d]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Marine deposits take over millions of years to harden into rocks, as referred from para 2<sup>nd</sup>.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>24. The most apt title for the passage is&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Crude mineral oil. &nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) How sedimentary rock is formed? &nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) How mineral oil is formed? &nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) Marine deposits under the sea. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&middot; &lsquo;How mineral oil is formed?&rsquo; would be the apt title because in this paragraph, we learnt about how long it takes to make oil.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 7</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">An earthquake comes like a thief in the night, without warning. It was necessary, therefore to invent instruments that neither slumbered nor slept. Some devices were quite simple. One, for instance, consisted of rods of various lengths and thicknesses which would standup on end like ninepins. When a shock came it shook the rigid table upon which these stood. If it were gentle, only the more unstable rods fell. If it were severe, they all fell. Thus, the rods by falling and by the direction in which they fell, recorded for the slumbering scientist, the strength of a shock that was too weak to waken him and the direction from which it came. But, instruments far more delicate than that were needed if any really serious advance was to be made. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">The ideal to be aimed at was to devise an instrument that could record with a pen on paper the movements, of the ground or of the table, as the quake passed by. While I write my pen moves but the paper keeps still. With practice, no doubt, I could, in time, learn to write by holding the pen still while the paper moved. That sounds a silly suggestion, but that was precisely the idea adopted in some of the early instruments (seismometers) for recording earthquake waves. But when table, penholder and paper are all moving how is it possible to write legibly</span>? The key to a solution of that problem lay in an everyday observation. Why does a person standing in a bus or train tend to fall when a sudden start is made ? It is because his feet move on, but his head stays still.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">25. Why was it necessary to invent instruments to observe an earthquake? </span></strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(a) Because an earthquake comes like a thief in the night</span>.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(b) To make people alert about earthquake during their conscious as well as unconscious hours. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(c) To prove that we are technically advanced. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(d) To experiment with the control of man over nature. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[a]</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Earthquake can come anytime, so we have to prepare for it.<span style="color:black"> It clears</span> from <span style="color:black">the first line of the first paragraph.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">26. A simple device which consisted of rods that stood up on end like ninepins was replaced by a more sophisticated one because it failed</span>&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(a) to measure a gentle earthquake. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(b) to measure a severe earthquake. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(c) to record the direction of the earthquake. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(d) to record the facts with a pen on paper</span>.<span style="color:black"> <strong>[d]</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">The first and second line of the second paragraph make it clear. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">27. The everyday observation referred to in the passage relates to</span>&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(a) a moving bus or train. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(b) the sudden start of a bus</span>. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(c) the tendency of a standing person to fall when a bus or train moves suddenly. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(d) people standing in a bus or train.&nbsp;&nbsp;&nbsp; &nbsp; <strong>[c] </strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">The last three lines of the passage make it clear. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">28. The early seismometers adopted the idea that in order to record the earthquake, it is</span>&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(a) the pen that should move just as it moves when we write on paper. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(b) the pen that should stay still and the paper should move. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(c) both pen and paper that should move. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(d) neither pen nor paper that should move.&nbsp; &nbsp; &nbsp;</span></span></span><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>[b]</strong> </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&middot; <strong> </strong>The early seismometers adopted the idea that in order to record the earthquake, it is<strong> </strong>the pen that should stay still and the paper should move.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 8</strong></span></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Our chief element of poetry is its revealing power. It opens our eyes to sensuous beauties and spiritual meanings in the worlds of human experience and of nature to which otherwise we should remain blind. There are few of us who have not some endowment of poetic insight and feeling, some measure of &quot;The vision and the faculty divine&quot;. But in the large majority of cases such poetic capacity as we possess, slight as it probably is at the best, is cramped by the ordinary conditions of existence, crippled by the mere material interests which fill so vast a place in our daily routine, and sometimes, even consciously or un consciously repressed. The true poet, whatever his range and quality, is one in whom the power of seeing and feeling the sensuous beauty and spiritual meaning of things exists in a pre-eminent degree, and to whom, moreover, another special power has been granted - the power of so expressing and interpreting what he sees and feels as to quicken our own imaginations and sympathies, and to make us see and feel with him.&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>29. What does the author mean by &#39;revealing power&#39; of poetry?&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Poetry helps us attain knowledge. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Poetry allows us to see and know what has been&nbsp;unknown. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Poetry gives us power to communicate. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) Poetry has the power to awaken us.&nbsp;&nbsp; <strong>[b]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Chief element of poetry is its revealing power. It opens our eyes to sensuous beauties and spiritual meanings in the world of human experience to which otherwise we should remain blind.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>30. Which of the following statements is not TRUE?&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) The true poet can compose poems of greater variety. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) He has the power of seeing and feeling pre-eminently.&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) He has a special power of expression and&nbsp;interpretation. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) He can quicken our own imaginations and sympathies.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[a]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Option (a) that the true poet can compose poems of greater variety.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>31. Which of the following statements is not TRUE?&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Poetry enlightens us by means of sensuous beauties&nbsp;and spiritual meanings. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Poetry teaches us worldly wisdom. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Poetry unveils the secrets of nature. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) The poet has a special power of expression and&nbsp;interpretation. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Poetry does not teach us wisdom of world so, option (b) is the answer.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>32. Which of the following factors is not responsible for&nbsp;suppression of poetic capacity in the large majority of&nbsp;cases?&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Lack of awareness </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Ordinary conditions of existence</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Material interests </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) Certain conscious and unconscious repressions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[a]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&middot; Lack of awareness is the factor which is not responsible for suppression of poetic capacity.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 9</strong></span></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp;&nbsp; Books by far are the most lasting product of human effort. Temples crumble into ruins, pictures and statues decay, but books survive. Time does not destroy the great thoughts contained in books which are as fresh today as when they first passed through their author&rsquo;s mind. These thoughts speak to us through the printed page. The only effect of time has been to throw out of currency the bad product among books. Nothing in literature which is not good can live for long. Good books have always helped man in various spheres of life. No wonder that the world keeps its books with great care.&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>33. The world keeps its books with care because&ndash;&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) they are readable. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) they are printable. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) they are everlasting. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) they help us in various spheres of life. <strong>[d]</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The world keeps its book with care because good books have always helped a man in various spheres of life.<strong>&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>34. Of the products of human effort, books are the most&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) important&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) enjoyable </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) historic&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) permanent&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[d]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Books by far are the most lasting product of human effort.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>35. Time does not destroy the great thoughts contained in books because&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) books are the most lasting product.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) the world keeps book with great care. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) they are as fresh today as when they first passed through authors mind.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) none of the above&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Time doesn&rsquo;t destroy the great thoughts contained in books because, they are as fresh today as when they first passed through author&rsquo;s mind. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>36. Time cannot destroy books because&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) they are not made of perishable material. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) they contain great ideas that continue to live in the&nbsp;minds of the people. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) they affect the bad intentions of their readers. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) they are a part of our natural habitat. <strong>[b]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Because books contain great ideas that continue to live in the minds of the people.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 10</strong></span></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp;&nbsp; Many African mothers carry or nestle, their babies on their backs. This custom has advantages for both mother and child. A working mother who has nobody to look after the baby knows he is safe on her back, while her hands are free for work. Meanwhile, the baby stays in close contact with his mother and feels warm and safe. Many women, however, prefer to carry their children all day long. They feel the children are safe, sleep longer, keep quieter and do not make a mess! I once visited a friend&#39;s home where the mama-nurse was nestling my friend&#39;s eleven-month-old child. Seeing he was restless, I asked the mama-nurse to put him down. At first, she didn&#39;t want because she thought the child would make the room untidy. When she finally agreed. I asked for some kitchen pots, spoons, unopened tins and boxes since there were no toys to play with. Immediately the child started examining them one by one. Then he started banging the pots and boxes with the spoons. The different sounds fascinated him. But mama-nurse didn&#39;t like the noise or the mess.&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>37. The word &#39;fascinated&#39; means&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) distracted&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) captivated </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) confused&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) disturbed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&lsquo;Fascinated&rsquo; means to attract and hold attentively by a unique power, charm or some other special quality.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Captivate means to attract and hold somebody&rsquo;s attention.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>38. The word &#39;nestle&rsquo; means to&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) take a baby with you in a perambulator. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) put a baby down gently on the ground.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) hold a baby in a comfortable position in a soft or warm&nbsp;place. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) play with the baby to quieten him.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&lsquo;Nestle&rsquo; means to be or go into a position, where you are comfortable. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Here option (c) is correct.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>39. The child was restless because&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) he didn&#39;t like his mother&#39;s back. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) he wanted to be carried in a carriage. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) he wanted freedom and a chance to use his limbs. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) he was feeling hungry. <strong>[c]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The child was restless because he wanted to use his limbs and wanted to enjoy some freedom.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>40. Many mothers carry children on their backs because&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) children love being carried this way all the day long. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) their husbands want them to carry children this way. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) they think that children remain safe and quiet this way. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) this is the best way of nestling children.&nbsp;&nbsp; <strong>[c]</strong>&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&middot; African mothers carry their babies on backs because they think that baby is safe on their back and remains quiet.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 11</strong></span></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp;&nbsp; &quot;A man who has no sense of history&rdquo;, Hitler declared, &ldquo;is like a man who has no ears or eyes&rdquo;. He himself claimed to have had a passionate interest in history since his school days and he displayed considerable familiarity with the course of European history. His conversation was studied with historical references and historical parallels. More than that Hitler&#39;s whole cast of thought was historical, and his sense of mission was derived from his sense of history. Like his contemporary Spengler, Hitler was fascinated by the rise and fall of civilizations. He was himself born at a critical moment in European history when the liberal bourgeois world of the nineteenth century was disintegrating. What would take its place? The future lay with the Jew-Bolshevik ideology of the masses unless Europe could be saved by the Nazi racist ideology of the elite. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>41. &ldquo;A man who has no sense of history&quot; is like&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) a man having sense of history. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) a man who has no ears or eyes. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) a man who has extra knowledge. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) a man having passionate interest in history.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]</strong>&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">It refers in the first line of the paragraph. This quote declared by Hitler.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>42. Hitler derived his sense of mission from&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) his love of mankind.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) contemporary society. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) &nbsp;religion of past. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) his sense of history.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[d]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">More than that Hitler&rsquo;s whole cast of thought was historical and his sense of mission was derived from his sense of history.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>43. The rise and fall of civilization fascinated&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Hitler </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Scientists </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Alexander </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) None of these&nbsp;<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [a]</strong>&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&shy; &lsquo;Hitler&rsquo; was fascinated by the rise and fall of civilization.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>44. Hitler was born at a moment when&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) the bourgeois world of 19<sup>th</sup> century was integrating. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) everything was liberally treated.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) the bourgeois world of the 19<sup>th</sup> century was&nbsp;disintegrating. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) none of the above&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&middot; Hitler was born at a critical moment in European history when the liberal bourgeois world of the nineteenth century was disintegrating.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 12</strong></span></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp;&nbsp; The other day we heard someone smilingly refer to poets as dreamers. Now, it is accurate to refer to poets as dreamers, but it is not discerning to infer, as this person did, that the dreams of poets have no practical value beyond the realm of literary diversion. The truth is that poets are just as practical as people who build bridges or look into microscopes; but just as close to reality and truth. Where they differ from the logician and the scientist is in the temporal sense alone; they are ahead of their time, whereas logicians and scientists are abreast of their time. We must not be so superficial that we fail to discern the practicableness of dreams. Dreams are the sunrise streamers heralding a new day of scientific progress, another forward surge. Every forward step man takes in any field of life, is first taken along the dreamy paths of imagination. Robert Fulton did not discover his steamboat with full steam up, straining at a hawser at some Hudson River dock; first he dreamed the steamboat, he and other dreamers, and then scientific wisdom converted a picture in the mind into a reality of steel and wood. The automobile and afterwards, long afterwards, the practical minded engineers caught up with what had been created by winging fantasy. He who looks deeply and with a seeing eye into the poetry of yesterday finds there all the cold scientific magic of today and much which we shall not enjoy until some tomorrow. If the poet does not dream so clearly that blueprint of this vision can immediately be drawn and the practical conversions immediately effected, he must not for that reason be smiled upon as merely the mental host for a sort of harmless madness. For the poet, like the engineer, is a specialist. His being, tuned to the life of tomorrow, cannot be tuned simultaneously to the life of today. To the scientist, he says, &quot;Here, I give you a flash of the future&quot;. The wise scientist thanks him, and takes that flash of the future and makes it over into a fibre of today. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>45. If the poet did not dream, what would happen?&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) There would perhaps be squint flashes. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) There would be no future.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) There would perhaps be no advancement in any field. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) None of the above&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">There would be no advancement in any field, if the poet did not dream.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>46. Are the poets dreamers?&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Yes, but up to the level of self-esteem. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Yes, poets are dreamers. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Yes, they build rationality and dream. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) None of the above&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Yes, they are the dreamers. It refers in the first and the second lines of the passage.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>47. In what way is the poet a specialist?&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) He is a dreamer and the dreams are taken up as agenda. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) He is a soothsayer of the tricks and these are used by&nbsp;scientist to make over. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) He gives the scientist a flash of the future which the&nbsp;scientist takes and makes over into fibre of today.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) He overcomes the melancholy of the scientist. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Poet says to the scientist that &lsquo;Here I give you a flash of the future&rsquo;. The wise scientist thanks him, takes that flash of the future and makes it over into a fibre of today.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>48. According to the author, dreams are useful to the world because&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) it is a psychological theory. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) it is a cultural fact. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) the artist enables us to see the beauty of the world. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) every forward step in any field of life is first taken&nbsp;along the dreamy path of imagination.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[d]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">According to the author, dreams are useful to the world because every step in any field of life is taken along the dreamy path of imagination.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 13</strong></span></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp;&nbsp; Genius is only the power of making continuous efforts. The line between failure and success is so fine that we scarcely know when we pass it: so fine that we are often on the line and do not know it. How many a man has thrown up his hands at a time when a little more effort, a little more patience would have achieved success. As the tide goes clear out, so it comes clear in. In business, sometimes prospects may seem darkest when really they are on the turn. A little more persistence, a little more effort and what seemed hopeless failure may turn to glorious success. There is no failure except in no longer trying. There is no defeat except within, no really insurmountable barrier save our own inherent weakness of purpose. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>49. Failure can turn into success by&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) waiting for the tide. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) a little more effort. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) grieving over failure. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) taking the help of successful people. <strong>[b]</strong>&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">A little more effort and a little more patience can turn failure into success.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>50. According to the paragraph, success requires one&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) to take swift decisions. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) to work hard and persistently. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) to choose the simple and easy path. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) accepting defeat from within.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Success required a little more persistence, a little more effort and hard work.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>51. Which word is opposite in meaning to &#39;insurmountable&#39;? </strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) hopeless&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) unconquerable </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) conquerable </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) rigid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&lsquo;Insurmountable&rsquo; means impossible to solve.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&lsquo;Conquerable&rsquo; means possible to defeat, possible to deal with or successfully fight against.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>52. The word similar in meaning to &lsquo;inherent&#39; is&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) superficial </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) inborn </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) alien&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) casual&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&lsquo;Inherent&rsquo; means permanent part of somebody /something that cannot be removed.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&lsquo;Inborn&rsquo; means present from or as if from birth, permanent since birth.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 14</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Have you ever, thought of the most important activity at your workplace? The answer is communication. It is an activity which consumes most of the time of an employee.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">It is therefore imperative to make these communications effective, so that it takes lesser time of the receiver.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">There is always a purpose in communication. Generally the purpose of oral communication is aimed to elicit and immediate response. Written communication is to facilitate informed decisions and actions. Thus while the objective of oral communication is to earn an Audience, written is earn a reader. Business writing depends on its purpose. The purpose of a Memo is to set up a meeting (internally). A letter is meant to respond to a query or put up one, a proposal to persuade (credibly) while a Report is aimed at presenting a case a problem, an analysis or a solution.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">What is important is to communicate effectively. This is difficult. An effective written communication involves proper structure, language, tone and style (Jargon must be kept out). Business writing is not so much a matter of creativity, rather it is a skill subject to certain rules. Oral communication is immediate, spontaneous very often. All said and one without communication nothing will move in an organisation. Communication greases the wheels of activity in every organisation.&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>53. All communication must be&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) impressive and praiseworthy.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) explicit and to the point.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) effective and purposeful.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) ambiguous and full of jargon.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Communication must be effective, purposeful because it grease the wheels of activity in every organization.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>54. Report Writing is usually&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) &nbsp;a personal of persuade&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) a notification&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) a presentation of a case</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) a query &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Report is aimed at presenting a case or a problem, an analysis or a solution.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>55. Business writing is a matter of&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) creativity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Adherence to principles&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) imaginative planning</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) skill&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[d]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Business writing is not so much a matter of creativity, rather it is a skill subject.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>56. Oral communication presupposes&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Spectators&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) A congregation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) An audience&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) Readers &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&middot; Oral communication&rsquo;s objective is to earn an <strong>&lsquo;</strong>Audience&rsquo;, written is to earn a <strong>&lsquo;</strong>Reader&rsquo;.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 15</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">I could not help thinking, as I looked at the works of Shakespeare on the shelf, that the bishop was right atleast in this; it would have been impossible, completely and entirely, for any woman to have written the plays of Shakespeare in the age of Shakespeare. Let me imagine, since facts are so hard to come by, what would have happened had Shakespeare had a wonderfully gifted sister, called Judith, let us say. Shakespeare himself went, very probably; his mother was an heiress to the grammar school, where he may have learnt Latin-Ovid, Virgil and Horace and the elements of grammar and logic. He was, it is well known, a wild boy who poached rabbits, perhaps, shot a deer, and had, rather sooner than he should have done, to marry a woman in the neighborhood, who bore him a child rather quicker than was right. That escapade sent him to seek his fortune in London. He had, it seemed, a taste for the theatre; he began by holding horses at the stage door. &nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>57. The passage is about&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Shakespeare&rsquo;s writing. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Shakespeare&rsquo;s life. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Shakespeare&rsquo;s sister.&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) Shakespeare&rsquo;s theatre. <strong>[b]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The passage is about Shakespeare life.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>58. Shakespeare&rsquo;s marriage reveals that he was&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) &nbsp;wise &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) stealthy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) impulsive</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) talented &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Reveals that he was very impulsive. (acting or done without forethought)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>59. Shakespeare&rsquo;s sister was&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) famous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) ordinary &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) wise</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) imaginary &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[d]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Shakespeare&rsquo;s sister was imaginary. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">You can refer 7<sup>th</sup>&ndash; 11<sup>th</sup> line for this answer.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Let me imagine, since facts are so hard to come by, what would have happened had Shakespeare had a wonderfully gifted sister, called Judith.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>60. Which of the following statements is true?&nbsp;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Shakespeare did not have a sister.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Judith was Shakespeare&rsquo;s wife. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Shakespeare&rsquo;s mother was poor. &nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) Shakespeare learnt Roman. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[a]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&middot; True statement is that Shakespeare did not have a sister, she was imaginary.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 16</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Mountaineering is now looked upon as the king of sports. But men have lived amongst the mountains since prehistoric times and in some parts of the world, as in the Andes and Himalayas, difficult mountain journeys have inevitably been part of their everyday life. However, some of the peaks there were easily accessible from most of the cities of Europe. It is quite interesting that while modern mountaineers prefer difficult routes for the greater enjoyment of sport, the early climbers looked for the easiest ones, for the summit was the prize they all set their eyes on. Popular interest in mountaineering increased considerably after the ascent of the Alpine peak of Matterhorn in 1865 and Edward Whimper&rsquo;s dramatic account of the climb and fatal accident which occurred during the descent.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">In the risky sport of mountaineering the element of competition between either individuals or teams is totally absent. Rather one can say that the competition is between the team and the peaks themselves. The individuals making up a party must climb together as a team, for they depend upon one another for their safety. Mountaineering can be dangerous unless reasonable precautions are taken. However, the majority fatal accidents happen to parties which are inexperienced or not properly equipped. Since many accidents are caused due to bad weather, the safe climber is the man who knows when it is time to turn back, however, tempting it may be to press on and try to reach the summit. &nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>61. Mountaineering is different from other sports because&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) it is risky and dangerous.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) it can be fatal.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) it is most thrilling and exciting, there is no competition between individuals.&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) it provides importance to competition. <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Mountaineering is different from other sports because the element of competition between either individuals or teams is totally absent.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>62. People living in the Andes and the Himalayas made mountain journeys because&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) it was a kind of sport.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) they had to undertake them in their day-to-day life.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) they lived in pre-historic time.&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) of the challenge offered by the difficult journey.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Men lived amongst the mountains since prehistoric times and in some parts of the world, as in the Andes and Himalayas, difficult mountain journeys have been part of their daily life.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>63. Mountaineers climb as a team because&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) the height is too much for one individual.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) the competition is between the team and the peak.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) they have to rely on each other for safety.&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) there is no competition among them. <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">As a team, mountaineers climb because they rely on each other for safety.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>64. &ldquo;............the summit was the prize they all set their eyes on&rdquo;. In the context of the passage, this means&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) reaching the top was their exclusive concern. &nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) they kept their eyes steadily on reaching the summit.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) they cared for nothing but the prize of reaching the summit.&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) they chose a route from which they could see the summit clearly.&nbsp;&nbsp;&nbsp; <strong>&nbsp; [a]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&middot; This line means the foremost concern for them to reach the top of mountains.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 17</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Too much importance must not be attached to the wrong acts done by children, particularly if they happen to be of minor nature. Many boys and girls at a young age are likely to be in the habit of stealing, neglecting their studies, slipping out of their classes or using bad language. In nearly every case of root cause of the trouble is the fact that proper care of the child is not taken in the house or sufficient interest is not shown to him. But if the parents were wise, they would correct the faults of their children by paying more attention to them. Whatever the case, one thing should never be done. Bad things in the children should never be repressed, that is, they should not be compelled to change for the better under fear of the rod. Physical punishment does not improve them. It only makes them worse than before. &nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>65. What do boys and girls at young age do?</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Watch movies. &nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Go to the temples very often. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) They are likely to be in the habit of stealing, neglecting their studies, slipping out of their classes or using bad language. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) They are likely to obey their parents.&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Many boys and girls at a young age are likely to be in the habit of stealing, neglecting their studies, slipping out of their classes or using bad language.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>66. The root cause of young boys and girls misbehaviour is&ndash;&nbsp;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) the fact that proper care of the child is not taken in the house or sufficient interest is not&nbsp;shown to him. &nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) a Lot of care of the child is taken in the house and sufficient interest is shown to them. &nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) they are pampered a lot. &nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) they are not spoilt kids.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[a]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The root cause of young boys and girls misbehaviour is<strong> </strong>that proper care of the child is not taken in the house or sufficient interest is not shown to him.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>67. What is the duty of a wise parent?</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) not to take enough care of the child. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) to correct the faults of their children by paying more attention to them. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) to give them all latest gadgets. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) none of these &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">But if the parents were wise, they would correct the faults of their children by paying more attention to them.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>68. Why should not a rod be used to make children better? &nbsp;&nbsp;&nbsp;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) so that the rod does not break. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) so that parents can sleep well. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) because physical punishment does not improve them. It only makes them worse than before. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) rods are very expensive. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Physical punishment does not improve them. It only makes them worse than before.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 18</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">A duty is an obligation. It is something we owe to others as social beings when we live together. We must let others live with us. My right of living implies my duty to my fellow beings to allow them the same conditions of life. In fact, rights and duties are correlated. What is a right in regard to one may be a duty in regard to others. Rights and duties are two sides of the same coin. We should always observe from the standpoint of others. Moral duty is more effective than legal rights. A moral duty is that which is binding upon the people on moral grounds. It is my moral duty to help the poor because of being a member of the society.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">I must try to create conditions that contribute to the welfare of humanity. Similarly, I owe a duty to my parents to be obedient and respectful to them. This duty originates from the sense of responsibility which is directly related to our conscience. So this is concerned with a moral duty which any person owes without a legal bondage.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">A sense of duty is paramount for the proper development of civilization. Hypocrisy is quite reverse to the sense of duty. It involves wickedness, while duty involves sincerity and faithfulness.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>69. According to the passage, rights and duties are&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) two sides of the same coin.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) correlated.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) both (a) and (b) </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) neither (a) nor (b) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">In fact, rights and duties are correlated. What is a right in regard to one may be a duty in regard to others. Rights and duties are two sides of the same coin. We should always observe from the standpoint of others.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>70. Duty comes from&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Responsibility&nbsp; (b) Legal bondage</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Hypocrisy&nbsp;&nbsp; (d) None of the above <strong>[a]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Duty originates from the sense of responsibility which is directly related to our conscience.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>71. Which of the following statements is not correct according to the passage?</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Hypocrisy involves wickedness.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Hypocrisy is opposed to duty.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Duty involves sincerity.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) Sense of duty is not important for the development of civilization<strong> [d]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">A sense of duty is paramount for the proper development of civilization is the correct statement.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>72. Why is it a duty to help the poor?</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) because I am poor.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) because I am rich.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) because I belong to the society.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) because God wants this.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&middot; It is my moral duty to help the poor because of being a member of the society.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 19</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">You may think the sign of a good manager is to have a department where everybody is busy at work on their assigned tasks. But if your people are merely &#39;doing their jobs, they&#39;re only working at about half their potential. A truly productive department is one in which every employee is actively thinking of better, more efficient methods of working ways in which to produce a higher quality product, in less time, at lower cost. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">To get this kind of innovation from your people, you have to be receptive to new ideas: what&#39;s more, you have to encourage your people to produce new ideas. Incentives are one way to motivate employees to be more productive. You can offer a cash bonus, time off, or a gift. But a more potent form of motivation is simply the employee&#39;s knowledge that management does listen to him or her and does put employee suggestion and ideas to work. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">When you listen to new ideas, be open minded. Don&#39;t shoot down a suggestion before you&#39;ve heard it in full. Many of us are too quick, too eager, to show off our own experience and knowledge and say that something won&#39;t work because &#39;we&#39;ve tried it before&#39; or &#39;we don&#39;t do it that way&#39;. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Well may be you did try it before but that doesn&#39;t mean it won&#39;t work now. And having done things a certain way in the past doesn&#39;t mean you&#39;ve been doing them the best way. A good manager is open-minded and receptive to new ideas. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>73. We understand from the passage that a good manager is one&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) who has a department where everybody is busy at work. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) who offers a cash bonus, time offer a gift to his workers. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) who is open minded and receptive to new ideas. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) who is too quick, too eager to show off his experience and knowledge. <strong>[c]</strong> </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">When you listen to new ideas, and be open minded, you are considered as a good manager.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>74. People &lsquo;merely doing their jobs&rsquo; in the passage means&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) that people busy at work do not perform their assigned tasks. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) that such people produce a higher quality product. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) that such people are working at about half their potential. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) that such people are innovative. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>&nbsp;[c] </strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">People merely doing their jobs means they are not doing it to the fullest or doing it with half of their potency.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>75. &quot;To be receptive to new ideas&quot; in the passage suggests&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) readiness to receive new ideas. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) to be cautious and careful about the new ideas.</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif; font-size:16px">(c) to share with your people the new ideas.</span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) to think of better and more efficient methods of working. &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c] </strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">To be receptive to new ideas means to come up with new ideas and share that with people.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>76. The innovative suggestions or new ideas from your employee can be obtained when&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) you offer a cash bonus to him. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) you make him feel that management does listen to him or her and puts his ideas to work. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) you distrust his experience and knowledge. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) you pressurize him to tender new ideas or face the consequences.&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&middot; Employee can suggest you with new ideas when you make him feel that management does listen to him or her and puts his ideas to work.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 20</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp;&nbsp; We develop the vital bond of attachment between a mother and her child through a smiling response. As a visual stimulus, the smile has attained its unique configuration principally by the simple act of turning up the corners of the mouth. The mouth is opened to some extent and the lips pulled back, as in the expression of fear, but with the curling-up of the corners, the character of the expression of radically changed. This development has in turn led to the possibility of another and contrasting facial posture that of the down-turned mouth. By adopting a mouth line that is the complete opposite of the smile it is possible to signal an anti-smile. Just as laughing, also the unfriendly face has evolved by a pendulum swing from the friendly face. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp;&nbsp; But there is more to smiling than a line of the mouth. As adults, we may be able to convey our mood by a mere twist of the lips, but the infant throws much more into the battle. When smiling at full intensity, it also kicks and waves its arms about, stretches its hands out towards the stimulus and moves them about, produces babbling sounds, tilts back its head and protrudes its chin, leans its trunk forward or rolls it to one side and exaggerates its respiration. Its eyes become brighter and may close slightly; wrinkles appear underneath or along the eye and sometimes also on the bridge of the nose; the fold of the skin between the sides of the nose and the side of the mouth becomes more accentuated, and the tongue may be slightly protruded. The body movements seem to indicate a struggle on the infant&#39;s part to make contact with the mother. With its clumsy physique, the baby is probably showing us all that remains of the ancestral primate&#39;s clinging response. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>77. We recognise a smile by&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>&nbsp;&nbsp;&nbsp; </strong>(a) the turning up of the corners of the mouth. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) opening the mouth, stretching the lips making them longer and curling up the corners. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) stretching the lips and turning down the corners while at the same time opening the mouth a little. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) kicking and moving the arms and stretching the hands towards the opposite person. &nbsp;&nbsp; <strong>[b]</strong> </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">We recognise a smile by opening the mouth, stretching the lips making them longer and curling up the corners.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>78. An adult can convey his smile by&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>&nbsp;&nbsp;&nbsp; </strong>(a) a mere twist of his lips. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) twisting his lips upwards. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) kicking his arms about, producing babbling noises and breathing hard. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) adopting a mouth line completely opposite the anti-smile shape. &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[d]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">By adopting a mouth line that is the complete opposite of the smile. It is possible to signal an anti-smile.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>79. Which of the following statements is true? </strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>&nbsp;&nbsp;&nbsp; </strong>(a) A baby&#39;s smile is more vigorous than that of an adult.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) When compared to adults, a baby smiles more quietly. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) It is not possible to speak when one is smiling, especially when the person is a baby. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) Babies make babbling noises, tilt their heads back and protrude their chin before they can smile.<strong> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [a]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">A baby&rsquo;s smile is more vigorous than that of an adult i.e. very forceful or energetic, healthy and strong. As adults, we may able to convey our mood by a mere twist of lips, but infant throws much more into the battle.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>80. Smiling is an effort on the infant&#39;s part to show&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) that it is happy. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) its mother is happy. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) that it is struggling to make contact with its mother. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) it attempts to develop a vital bond of attachment which its ape-like ancestors tried to do by clinging to the mother.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[d]</strong> </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>&middot;</strong> Smiling is an effort on the infant&rsquo;s part to show attempts to develop an important bond of attachment between a mother and her child.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 21</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">It is strange that, according to his position in life, and extravagant man is admired or despised. A successful businessman does nothing to increase his popularity by being careful with his money. He is expected to display his success, to have a smart car, an expensive life, and to be lavish with his hospitality. If he is not so, he is considered mean, and his reputation in business may even suffer in consequence. The paradox remains that if he had not been careful with his money in the first place, he would never have achieved his present wealth. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Among the low income group, a different set of values exists. The young clerk who makes his wife a present of a new dress when he hasn&#39;t paid his house rent, is condemned as extravagant. Carefulness with money to the point of meanness is applauded as a virtue. Nothing in his life is considered more worthy than paying his bills. The ideal wife for such a man separates her housekeeping money into joyless little piles-so much for rent, for food, for the children&#39;s shoes; she is able to face the milkman with equanimity every month, satisfied with her economizing ways, and never knows the guilt of buying something she can&#39;t really afford. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">As for myself, I fall into neither of these categories, If I have money to spare, I can be extravagant, but when, as is usually the case, I am hard up, then I am the meanest man imaginable. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>81. The phrase &quot;lavish with his hospitality in the third sentence of the first paragraph signifies&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) miserliness in dealing with his friends. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) considerateness in spending on guests and strangers. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) extravagance in entertaining guests. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) indifference in treating his friends and relatives. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Lavish with hospitality:- profligacy in entertaining guest. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">i.e. spending more than is necessary.<strong> </strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>82. We understand from the passage that&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) all mean people are wealthy. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) wealthy people are invariably successful. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) carefulness generally leads to failure. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) thrift may lead to success. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[d] </strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Thrift may lead success. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">i.e. the quality of being careful, not to spend too much money.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>83. It seems that low paid people should&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) not pay their bills promptly. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) not keep their creditors waiting. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) borrow money to meet their essential needs. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) feel guilty if they overspend.<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [d]</strong> </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">It seems that low paid people should feel guilty if they overspend. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>84. The statement &quot;she is able to face the milkman with equanimity&quot; implies that&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) she is not upset as she has been paying the milkman his dues regularly. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) she loses her nerve at the sight of the milkman who always demands his dues. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) she manages to keep cool as she has to pay the milkman only a month&#39;s dues. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) she remains composed and confident as she knows that she can handle the milkman tactfully.&nbsp;&nbsp;</span></span><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>[a]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&middot; It implies that she has been paying the milkman his dues.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 22</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">There is an interesting story about a rabbit and his grandpa. It happened on a full-moon night. Our friend, the rabbit, had gone out for a stroll when he&rsquo;s met a cunning jackal. Luckily for Mr. rabbit, Mr. jackal had a very hearty meal that night so, instead of making Mr. Rabbit his dinner, Mr. Jackal decided to have only some fun at the expense of Mr. Rabbit. He said to Mr. Rabbit, &ldquo;Look up there. Your grandpa is waiting for you on the moon. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Don&rsquo;t you want to go up there and see him?&rdquo; Mr. Rabbit was taken in. He did not understand that cunning Mr. Jackal was only trying to befool him. He paid no heed to the advice of his dear mother and went from friend to friend seeking help in reaching the moon.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>85. When did Mr. Rabbit meet Mr. Jackal? </strong> </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) In the evening</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) At night</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) In the morning &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) On a full-moon night&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[d]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">On a full-moon night, Mr. Rabbit met Mr. Jackal.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>86. Why did Mr. Jackal not eat up Mr. Rabbit?</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) He did not like Mr. Rabbit.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Rabbit&rsquo;s grandfather was with him. &nbsp;&nbsp; </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) His stomach was full.&nbsp; </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) None of the above&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Mr. Jackal had a very hearty meal that night.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>87. What was Mr. Rabbit told about his grandpa?</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) that his grandfather was waiting for him.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) that he was very active.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) that his mother was waiting for him.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) that his friends were waiting for him. <strong>[a]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">He told to Mr. Rabbit &ldquo;Look up there. Your grandpa is waiting for you on the moon.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>88. What was its effect on Mr. Rabbit?</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) The rabbit began to cry.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) The rabbit went to his mother for help. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) He believed what Jackal said. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) None of the above&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&middot; Mr. Rabbit was taken in. He did not understand that cunning Mr. Jackal was only trying to befool him.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 23</strong></span></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">As Japan was interested in India&rsquo;s freedom, India was not over run by the Japanese during the Pacific War.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">We were in class when the headmaster came in, followed by a &#39;new fellow&#39;, not wearing the school uniform, and a school servant carrying a large desk. Those who had been asleep woke up, and everyone rose as if surprised at his work. The headmaster made a sign to us to sit down. Then turning to the class master, he said to him in a low voice: &#39;Mr. Roger, here is a pupil whom I recommend to your care. &#39;The new boy was wearing a tight green jacket, yellow trousers and a strange cap which soon attracted the attention of the whole class.&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The new boy was still holding his strange cap on his knees even after the prayers were over. &lsquo;Rise&#39; said the master. The boy stood up; his cap fell. The whole class began to laugh. He stood to pick it up. A neighbour knocked it down again with his elbow: he picked it up once more, &#39;Get rid of your helmet,&#39; said the master, who was a bit of a joker, There was a burst of laughter from the boys, which so thoroughly shamed the boy that he didn&#39;t know whether to keep his cap in his hand, leave it on the ground, or put it on his head. He sat down again and placed it on his knee.&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&quot;Rise,&quot; repeated the master, &#39;and tell me your name. The new boy articulated in a stammering voice an unintelligible name, &#39;Again!&#39; said the master. The same sputtering of syllabels was heard, drowned by the tittering of the class. &lsquo;Louder!&#39; cried the master; &#39;louder!&#39; The new fellow opened a large mouth and shouted at the top of his voice as if calling someone the word &#39;Charbovari.&#39; A hubbub broke out; they shouted, barked, stamped and repeated &#39;Charbovari! Charbovari!&#39;.<strong>&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>89. Who disturbed the peace of the class?&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) the new boy </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) the mischievous boys of the class </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) the master </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) the headmaster&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The mischievous boys disturbed the peace of the class.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>90. What is the function of the clause &#39;a school servant carrying a large desk&#39; in the opening sentence? </strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) just to provide an extra information. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) to describe the atmosphere. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) to create seriousness. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) to create humour.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">This clause is describing the atmosphere.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>91. Who contributed most to the misery of the new boy?&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) the appearance of the boy </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) his shyness </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) the sadistic attitude of the master </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) insensitive class-mates <strong>[d]&nbsp;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The insensitive class-mates contributed the most.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>92. Which of the following is true about the description of the&nbsp;new boy? </strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) The boy has been sketched sympathetically. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) The boy has been caricatured. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) It is a serious description.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) The writer seems to hate the boy.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[a]</strong> </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&middot; The boy has been sketched sympathetically is true about the description.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 24</strong></span></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">In the past man&#39;s worst enemy was nature. He lived under the continued threat of famine and pestilence, a wet summer could bring death to whole nations, and every winter was a menace. Mountains stood like a barrier between people and people, a sea was less a highway than an impassable division. Today nature, though still an enemy, is an enemy almost completely conquered. Modern agriculture assures us of an ample food supply. Modern transportation has made the resources of the entire planet accessible to all its inhabitants. Modern medicine and sanitation allow dense population to cover the ground without risk of pestilence. True, we are still at the mercy of the more the violent natural convulsions. Against earthquake, flood and hurricane man has, as yet, devised no adequate protection. But these major cataclysms are rare. At most times, nature is no longer formidable, she has been subdued.&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>93. Modern medicine has helped man&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) to live longer everywhere in the world. &nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) to live a healthy life in hygiene conditions. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) to live in thickly populated areas without fear of epidemics. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) balance population with available resources.&nbsp;</span></span><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp;<strong>[c]</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Modern medicine has helped man to live without fear of epidemics.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>94. Man has not yet succeeded in controlling the furies of&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Earthquakes </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Floods </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) Hurricanes&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) All of the above&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[d]</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Against earthquake, flood, and hurricane man has, as yet, devised no adequate protection.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>95. Which one of the following statements reflects conviction of the passage?</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) Man can do wonders. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) Man&#39;s knowledge has no end. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c)Man has been able to control nature to a great extent. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) Man has been able to control nature completely. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[c]</strong>&nbsp;</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Man has been able to control nature to a great extent reflects conviction of the passage.</span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>96. The modern transport system is a blessing as it&ndash;</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(a) has helped decrease the distances between towns and&nbsp;villages. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) has brought comfort to both towns and villages. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) has made all the commodities available to everyone. </span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) has encouraged people to travel for pleasure.&nbsp;</span></span><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>&nbsp; [c]</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p style="margin-right:4px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Modern transport system has made all commodities available to everyone, this is why it is a blessing.</span></span></p>
+
+<p style="margin-right:4px"><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passage 25</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The capitalist system of society does not foster healthy relations among human beings. A few people own all the means of production and others-though nominally few have to sell their labour under conditions imposed upon them. The emphasis of capitalism being on the supreme importance of material wealth the intensity of its appeal is to the acquisitive intensity. It promotes worship of economic power with little regard to the means employed for its acquisition and the end that it serves. By its exploitation of human beings to the limits of endurance its concentration is on the largest profit rather than maximum production. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Thus the division of human family is done on the basis of economic circumstance. This is injurious to division of human dignity. And when the harrowed poor turn to the founders of religion for succor, they rather offer a subtle defense for the established order. They promise future happiness for their present suffering and conjure up visions of paradise to redress the balance to soothe the suffering and the revolt of the tortured men. The system imposes injustice, the religion justifies it. </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>97. The established order is supported by religion to&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>&nbsp;&nbsp;&nbsp; </strong>(a) alleviate the suffering of the poor in the capitalist system.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) perpetuate the injustice imposed by the capitalist system.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) balance the suffering of the poor with hopes of future rewards.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) help the tortured men to seek redress. <strong>[b]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong> </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">The established order supported by religion to perpetuate (continue for a long time) the injustice imposed by the capitalist system.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>98. In a capitalist system&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>&nbsp;&nbsp;&nbsp; </strong>(a) the means justify the ends.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) the ends justify the means.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) the means endorsed by religion are strictly followed.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) means which lead to exploitation are strictly prohibited. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">In capitalist system, the ends justify the means i.e. desired result is so good or important that any method may be used to achieve it.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>99. Capitalism is injurious to human relations because it divides society into two groups&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>&nbsp;&nbsp;&nbsp; </strong>(a) working and non-working.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) exploiters and exploited.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) religious and irreligious.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) buyers and sellers. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[b]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong> </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Capitalism is injurious because it divides exploited and exploiters.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>100. &nbsp;In a capitalistic system of society each man wishes&ndash;</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>&nbsp;&nbsp;&nbsp; </strong>(a) to acquire maximum wealth.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(b) to produce maximum wealth.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(c) to have visions of paradise.</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">(d) to soothe the sufferings of other.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>[a]</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Explanation:-</strong> </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">In capitalist system, each man wishes to acquire maximum wealth.</span></span></p>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.controls').classList.toggle('active');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function increaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            document.body.style.fontSize = (currentSize + 2) + 'px';
+        }
+
+        function decreaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            if (currentSize > 10) {
+                document.body.style.fontSize = (currentSize - 2) + 'px';
+            }
+        }
+
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
