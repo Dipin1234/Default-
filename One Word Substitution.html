@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>One word substitution </title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .menu-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .menu-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0);
+            top: 0;
+            right: 0;
+        }
+        .controls.active .round-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .round-button:nth-child(2) {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53); /* Dark Mode */
+            transition-delay: 0.1s;
+            top: 56px;
+            right: 0;
+        }
+        .round-button:nth-child(3) {
+            background: linear-gradient(135deg, #1e90ff, #00b4d8); /* Font + */
+            transition-delay: 0.2s;
+            top: 112px;
+            right: 0;
+        }
+        .round-button:nth-child(4) {
+            background: linear-gradient(135deg, #2ecc71, #27ae60); /* Font - */
+            transition-delay: 0.3s;
+            top: 168px;
+            right: 0;
+        }
+        .round-button:nth-child(5) {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Print */
+            transition-delay: 0.4s;
+            top: 224px;
+            right: 0;
+        }
+        .round-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .round-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .round-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .menu-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .menu-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .round-button span, .menu-button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="menu-button" onclick="toggleMenu()" title="Toggle Menu"><span>☢️</span></button>
+        <button class="round-button" onclick="toggleDarkMode()" title="Toggle Dark Mode"><span>🌙</span></button>
+        <button class="round-button" onclick="increaseFontSize()" title="Increase Font Size"><span>+</span></button>
+        <button class="round-button" onclick="decreaseFontSize()" title="Decrease Font Size"><span>-</span></button>
+        <button class="round-button" onclick="printPage()" title="Print Page"><span>🖨️</span></button>
+    </div>
+    <!--copy paste🤣🤣🤣😂-->
+<p style="text-align:center"><span style="font-size:18px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:#e74c3c">One Word Substitution</span></strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>1. </strong>The main character in a story - <strong>Protagonist</strong> (प्रमुख नायक)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>2.</strong> To collect or store things secretly - <strong>Hoard</strong> (गुप्त भंडार)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>3.</strong> To give someone a piece of one&rsquo;s mind - <strong>Reprimand</strong> (डांट लगाना, फटकारना)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>4.</strong> Scientific study of words - <strong>Etymology</strong> (शब्दों के उद्धम का शास्त्र, व्युत्पत्ति विज्ञान)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>5.</strong> Scientific study of insects - <strong>Entomology</strong> (कीट विज्ञान)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>6.</strong> Painless death from an incurable disease/ Mercy killing- <strong>Euthanasia</strong> (सुखमय मृत्यु)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>7.</strong> A relatively minor fault or sin - <strong>Peccadillo</strong> (अल्पदोष/मामूली गलती)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>8. </strong>To behave dramatically to attract attention - <strong>Histrionic</strong> (नाटकीय, अभिनय-संबंधी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>9. </strong>A written statement about someone&rsquo;s character - <strong>Testimonial</strong> (प्रमाण-पत्र)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>10.</strong> One who does not make mistakes- <strong>Infallible</strong> (कभी गलती न करने वाला)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>11. </strong>An official call to appear in a court of law - <strong>Summons</strong> (आदेश, अदालत का बुलावा)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>12.</strong> To cut a part of a person&rsquo;s body - <strong>Amputate</strong> (अंग काटना)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>13.</strong> A violent storm- <strong>Tempest</strong> (तूफान)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>14.</strong> One who pretends to be what he is not - <strong>Hypocrite/Imposter</strong> (ढोंगी/पाखंडी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>15.</strong> A situation that stops an activity from progressing - <strong>Bottleneck</strong> (मार्गावरोध)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>16. </strong>The Arrangement of dates, events etc. in order of occurrence - <strong>Chronology</strong> (कालक्रम)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>17.</strong> Anything occurring at night/Related to night - <strong>Nocturnal</strong> (रात्रि-संबंधी/निशाचर)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>18. </strong>Study of religions, religious ideas and beliefs - <strong>Theology</strong> (धर्मशास्त्र)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>19.</strong> A form of government in which all religions are honoured - <strong>Secular</strong> (धर्मनिरपेक्ष/लौकिक)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>20. </strong>The worship of idols and images- <strong>Idolatry</strong> (मूर्ति-पूजा)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>21. </strong>That which burns easily - <strong>Inflammable</strong> (ज्वलनशील)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>22.</strong> A place for public gathering where people can discuss - <strong>Forum</strong> (गोष्ठी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>23.</strong> A dead skin cast-off by a snake - <strong>Slough</strong> (मृत त्वचा)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>24.</strong> A place for keeping bees - <strong>Apiary</strong> (मधुवाटिका)</span></span></p>
+
+<pre>
+<span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>25.</strong><span style="background-color:#f8f9fa"> One who keeps bees for extracting honey - <strong>Apiarist</strong> (<span style="color:#202124">मधुमक्खीपालक</span>)</span></span></span></pre>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>26.</strong> Place for keeping birds - <strong>Aviary</strong> (पक्षीशाला)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>27.</strong> Instruments for recording earth&rsquo;s tremors - <strong>Seismograph</strong> (भूकंप सूचक यंत्र)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>28.</strong> One who studies/records earth&rsquo;s tremors - <strong>Seismologist</strong> (भूकंप विज्ञानी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>29.</strong> A collection of poems - <strong>Anthology</strong> (पद्य-संग्रह)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>30.</strong> A collection of short and amusing stories- <strong>Anecdote</strong> (लघुकथा)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>31.</strong> The process of deciding the nature of a disease by examination - <strong>Diagnosis</strong> (रोग-निदान/मूल्यांकन)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>32.</strong> One who finds nothing good in anything - <strong>Critic</strong> (आलोचक)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>33.</strong> Giving undue favour to one&rsquo;s kith and kin - <strong>Nepotism</strong> (बन्धु पक्षपात/भाई भतीजावाद)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>34.</strong> Irresistible desire of alcohol- <strong>Dipsomania</strong> (शराब की लत)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>35.</strong> A Government run by people of high intellectual ability/Government by meritorious people - <strong>Meritocracy</strong> (बुद्धिशालियों का राज्य)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>36.</strong> A form of government in which only one person rules - <strong>Autocracy </strong>(एकतंत्र, तानाशाही)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>37.</strong> A form of government in which two people rule- <strong>Diarchy</strong> (द्वैध शासन)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>38.</strong> A Government by clergy class -<strong>Theocracy/ Hierocracy</strong> (धर्मतंत्र)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>39.</strong> A Government run only by men - <strong>Patriarchy</strong> (पितृसत्ता, पितृतन्त्र)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>40.</strong> A Government run only by women - <strong>Matriarchy</strong> (मातृसत्ता, मातृतंत्र)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>41.</strong> A form of government in which the army rules - <strong>Stratocracy</strong> (सैनिक शासन)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>42.</strong> A Government run by a small group of people - <strong>Oligarchy</strong> (कुलीन तंत्र)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>43.</strong> A child who has no home or friends - <strong>Waif</strong> (बेघर या परित्यक्त बालक)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>44.</strong> Money paid to get a person free from captivity - <strong>Ransom</strong> (फिरौती)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>45.</strong> Giving someone tit for tat - <strong>Retaliate</strong> (बदला लेना)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>46.</strong> Asking everyone for opinion - <strong>Referendum</strong> (जनमत-संग्रह)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>47</strong>. Total absence of law and order - <strong>Anarchy</strong> (अराजकता, अव्यवस्था)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>48. </strong>One who doesn&rsquo;t follow any law and order - <strong>Anarchist</strong> (विद्रोहवादी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>49.</strong> Allowance given to a wife after divorce/separation - <strong>Alimony</strong> (गुजारा भत्ता)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>50.</strong> An expert in any skill of hand - <strong>Artisan</strong> (कारीगर)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>51.</strong> One who amuses by showing skills of hands- <strong>Juggler</strong> (बाज़ीगर)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>52.</strong> A war of religions - <strong>Crusade</strong> (धर्मयुद्ध)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>53.</strong> One who chooses to live alone with little or no social contact - <strong>Hermit</strong> (संत, एकान्तवासी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>54. </strong>That which cannot be controlled easily - <strong>Intractable</strong> (दु:साध्य)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>55.</strong> Examination of one&rsquo;s own thoughts and feelings - <strong>Introspection</strong> (आत्मपरीक्षण)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>56.</strong> One who believes in God - <strong>Theist</strong> (आस्तिक)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>57. </strong>One who doesn&rsquo;t believe in God - <strong>Atheist</strong> (नास्तिक)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>58.</strong> One who doubts the existence of God - <strong>Agnostic</strong> (संशयवादी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>59.</strong> One who believes in a single God - <strong>Monotheist</strong> (एकेश्वरवादी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>60. </strong>Customs of a particular group - <strong>Mores</strong> (रीति-रिवाज)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>61.</strong> The last station of any journey - <strong>Terminus</strong> (अंतिम स्टेशन)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>62.</strong> Water safe run for drinking - <strong>Potable</strong> (पीने योग्य)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>63.</strong> Anything that is safe to be eaten - <strong>Edible</strong> (खाने योग्य)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>64. </strong>Soldiers who fight on foot - <strong>Infantry</strong> (पैदल सेना)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>65. </strong>Soldiers who fight on horseback - <strong>Cavalry</strong> (घुड़सवार सेना)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>66.</strong> One who secretly listens to the talk of others - <strong>Eavesdropper</strong> (छिपकर बातें सुनने वाला)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>67. </strong>One who can be easily deceived - <strong>Gullible</strong> (भोला-भाला)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>68. </strong>One who is extremely careful - <strong>Meticulous</strong> (अतिसतर्क)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>69. </strong>An associate in crime - <strong>Accomplice</strong> (सह-अपराधी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>70.</strong> Fear of high places - <strong>Acrophobia</strong> (ऊँचाई का डर)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>71.</strong> Fear of water &ndash; <strong>Hydrophobia</strong> (पानी का डर)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>72. </strong>Fear of being egotistical, being alone or isolated - <strong>Autophobia </strong>(आत्म-डर)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>73.</strong> The firing of a number of guns together as a salute - <strong>Salvo</strong> (बारूद की बौछार)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>74.</strong> One who cannot be defeated - <strong>Invincible</strong> (अजेय)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>75.</strong> The science of compiling a dictionary - <strong>Lexicography</strong> (कोशविज्ञान)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>76. </strong>One who compiles a dictionary - <strong>Lexicographer</strong> (कोशकार)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>77. </strong>A lover of mankind/Philanthropist - <strong>Altruist</strong> (परोपकार के सिद्धान्त का/परोपकारी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>78. </strong>One who does a thing for pleasure and not as a profession &ndash; <strong>Amateur</strong> (शौक़ीन व्यक्ति)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>79. </strong>One who can use either hand with ease - <strong>Ambidextrous</strong> (द्विहत्थी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>80. </strong>One who is out to destroy all governments, peace and order - <strong>Anarchist</strong> (अराजकतावादी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>81.</strong> A person who has changed his faith - <strong>Apostate</strong> (स्वधर्मत्यागी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>82. </strong>A person appointed by two parties to solve a dispute - <strong>Arbitrator</strong> (पंच/न्यायकर्त्ता)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>83. </strong>One who leads an austere life - <strong>Ascetic</strong> (तपस्वी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>84.</strong> One who is unable to pay his debts/Insolvent - <strong>Bankrupt</strong> (दिवालिया)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>85.</strong> One who is filled with excessive enthusiasm in religious matters/Fanatic - <strong>Bigot</strong> (कट्टर व्यक्ति)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>86.</strong> One who feeds on flesh - <strong>Carnivorous</strong> (मांसभक्षी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>87.</strong> One who eats both flesh and plant foods- <strong>Omnivorous</strong> (सर्वाहारी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>88. </strong>One that lives on plant foods - <strong>Herbivorous</strong> (शाकाहारी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>89. </strong>Persons living at the same time - <strong>Contemporary</strong> (समकालीन)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>90. </strong>A person who regards the whole world as his country - <strong>Cosmopolitan</strong> (विश्वप्रेमी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>91. </strong>A polished and light hearted person &ndash; <strong>Debonair </strong>(खुशमिज़ाज)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>92.</strong> A lover of oneself, on one&#39;s advancement - <strong>Egoist</strong> (अहंवादी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>93.</strong> A person who leaves his country to settle in another country - <strong>Emigrant</strong> (देशत्यागी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>94.</strong> One who is for pleasure of eating and drinking - <strong>Epicure</strong> (अच्छा खाने-पीने वाला, चटोरा)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>95.</strong> One who believes in fate - <strong>Fatalist</strong> (भाग्यवादी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>96. </strong>One who wishes, works for the welfare of women - <strong>Feminist</strong> (नारीवादी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>97.</strong> One who runs away from Justice/Absconding person) &ndash; <strong>Fugitive</strong> (भगोड़ा)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>98.</strong> A lover of good food - <strong>Gourmand</strong> (चटोरा)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>99.</strong> A husband ruled by his wife - <strong>Henpecked</strong> (स्त्रीवश, जोरू का गुलाम)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>100. </strong>One who acts against religion - <strong>Heretic</strong> (विधर्मी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>101.</strong> One who holds a post without any salary - <strong>Honorary</strong> (अवैतनिक)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>102.</strong> One who does not know reading or writing - <strong>Illiterate</strong> (अनपढ़)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>103.</strong> A person who comes to a country from his own country for settling - <strong>Immigrant</strong> (अप्रवासी/परदेशवासी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>104.</strong> One who dies for a noble cause - <strong>Martyr</strong> (शहीद)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>105. </strong>One who does something for the sake of money&nbsp; - <strong>Mercenary</strong> (लोभी/खुदगर्ज)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>106. </strong>One who hates mankind - <strong>Misanthrope</strong> (मानवद्वेषी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>107.</strong> One who hates the idea of being married - <strong>Misogamist</strong> (विवाह से घृणा करने वाला)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>108. </strong>A person having the same name as another - <strong>Namesake</strong> (हमनाम)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>109. </strong>One who is inexperienced in anything&nbsp; - <strong>Novice</strong> (नौसिखुआ)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>110. </strong>A person who looks at the bright side of thing - <strong>Optimist</strong> (आशावादी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>111.</strong> One who looks at the dark sides of life - <strong>Pessimist</strong> (निराशावादी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>112. </strong>One who has lost one&#39;s parents - <strong>Orphan</strong> (अनाथ)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>113.</strong> One who speaks many languages - <strong>Polyglot</strong> (बहुभाषी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>114.</strong> One who hates war, loves peace - <strong>Pacifist</strong> (शांतिवादी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>115.</strong> One who collects stamps - <strong>Philatelist</strong> (डाक-टिकट संग्राहक)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>116.</strong> One who goes on foot - <strong>Pedestrian</strong> (पैदल यात्री)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>117.</strong> A person who feels pleasure by hurting other - <strong>Sadist</strong> (परपीड़क)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>118. </strong>A person who walks in sleep - <strong>Somnambulist</strong> (नींद में चलने वाला/निद्राचारी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>119.</strong> A person who talks in sleep - <strong>Somniloquist</strong> (नींद में बोलने वाला)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>120.</strong> One who does not take any intoxicating drugs - <strong>Teetotaller</strong> (मद्यत्यागी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>121.</strong> A noisy quarrelsome woman, a shrew - <strong>Termagant</strong> (झगडालू औरत/कलहप्रिय स्त्री)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>122. </strong>One who is habitual drinker - <strong>Toper/sot</strong> (पियक्कड़/शराबी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>123.</strong> One who has a long experience of any occupation - <strong>Veteran</strong> (अनुभवी) </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>124. </strong>Use of too many words - <strong>Verbose</strong> (शब्दबहुल)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>125.</strong> A solemn procession, especially for a funeral- <strong>Cortege </strong>(<strong>शवयात्रा</strong>) </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>126. </strong>A poem of serious reflection, typically a lament for the dead - <strong>Elegy </strong>(शोक<strong> </strong>गीत)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>127. </strong>A phrase or form of words written in memory of a person who has died - <strong>Epitaph </strong>(स्मृति-लेख)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>128.</strong> Killing of one&#39;s son or daughter - <strong>Filicide </strong>(पुत्र/पुत्री-हत्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>129. </strong>Destruction or abortion of a foetus - <strong>Foeticide </strong>(भ्रूण हत्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>130.</strong> Killing of one&#39;s brother - <strong>Fratricide </strong>(भ्रातृ हत्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>131.</strong> Killing of one&#39;s sister- <strong>Sororicide </strong>(भगिनी हत्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>132.</strong> Killing of a large group of people - <strong>Genocide </strong>(जनसंहार)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>133.</strong> Killing of one person by another - <strong>Homicide </strong>(नर हत्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>134.</strong> Killing of infants- <strong>Infanticide </strong>(शिशु हत्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>135. </strong>Killing of one&#39;s mother- <strong>Matricide </strong>(मातृ हत्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>136.</strong> Killing of one&#39;s father- <strong>Patricide </strong>(पितृ हत्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>137. </strong>Action of killing a king- <strong>Regicide </strong>(राजहत्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>138.</strong> Act of intentionally causing one&#39;s own death- <strong>Suicide </strong>(आत्म हत्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>139. </strong>A room or building in which dead bodies are kept- <strong>Mortuary </strong>(मुर्दाघर)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>140.</strong> A news article that reports the recent death of a person- <strong>Obituary </strong>(शोक समाचार)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>141.</strong> An examination of a dead body to determine the cause of death- <strong>Post-mortem </strong>(शव परीक्षण)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>142.</strong> One who makes an official examination &ndash; <strong>Auditor </strong>(लेखा परीक्षक)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>143.</strong> A specialist in nose diseases - <strong>Rhinologist</strong> (नासा विज्ञानी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>144.</strong> The art of making fireworks- <strong>Pyrotechnics</strong> (आतिशबाजी बनाने की विद्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>145.</strong> The murder of a whole race or group of people &ndash; <strong>Genocide</strong> (नरसंहार)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>146. </strong>Killing of a human being &ndash; <strong>Homicide</strong> (जनहत्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>147.</strong> Destruction of the environment &ndash; <strong>Ecocide</strong> (प्राकृतिक विछेदन)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>148.</strong> Killing of an enemy &ndash; <strong>Hosticide</strong> (शत्रु हत्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>149. </strong>Killing of dogs/wolves &ndash; <strong>Canicide</strong> (कुत्ते की हत्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>150.</strong> A place where animals or birds are protected &ndash; <strong>Sanctuary</strong> (अभयारण्य)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>151.</strong> Where the sky seems to meet the land &ndash; <strong>Horizon</strong> (क्षितिज)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>152.</strong> The highest point &ndash; <strong>Zenith</strong> (शीर्ष/शिखर) </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>153. </strong>The lowest point &ndash; <strong>Nadir</strong> (निम्न)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>154.</strong> A speech made in someone&rsquo;s praise &ndash; <strong>Eulogy</strong> (प्रशंसा भाषण/गुणगान)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>155.</strong> Incapable of being burnt &ndash; <strong>Incombustible </strong>(जिसमें आग न लग सके)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>156.</strong> That which can&rsquo;t be destroyed &ndash; <strong>Indestructible</strong> (अनश्वर)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>157. </strong>That which can&rsquo;t be corrected &ndash; <strong>Incorrigible</strong> (असुधार्य)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>158. </strong>One who doesn&rsquo;t get tired easily &ndash; <strong>Indefatigable</strong> (अथक)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>159. </strong>That which cannot be deleted&ndash;<strong>Indelible </strong>(अमिट)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>160.</strong> That which can&rsquo;t be understood &ndash; <strong>Unintelligible</strong> (अबोधगम्य)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>161.</strong> That which can&rsquo;t be explained &ndash; <strong>Inexplicable </strong>(अकथनीय)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>162.</strong> One who can&rsquo;t be defeated &ndash; <strong>Invincible </strong>(अजेय)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>163. </strong>That which can&rsquo;t be touched &ndash; <strong>Intangible</strong> (अस्पृश्य)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>164.</strong> One who loves one&rsquo;s country &ndash; <strong>Patriot</strong> (राष्ट्रप्रेमी/देशभक्त)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>165.</strong> A woman who is not married &ndash; <strong>Spinster</strong> (अविवाहिता, कुँवारी कन्या)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>166. </strong>A woman whose husband is dead &ndash; <strong>Widow</strong> (विधवा)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>167. </strong>A man whose wife is dead &ndash; <strong>Widower</strong> (विदुर)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>168. </strong>A person who doesn&rsquo;t get married for religious reasons &ndash; <strong>Celibate</strong> (ब्रह्मचार्य)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>169. </strong>One who is unable to pay one&rsquo;s debts &ndash; <strong>Insolvent/Bankrupt</strong> (दिवालिया/ऋण चुकाने में असमर्थ)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>170. </strong>One who has money to pay one&rsquo;s debts &ndash; <strong>Solvent </strong>(ऋण चुकाने में समर्थ)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>171. </strong>A person who is mentally ill &ndash; <strong>Lunatic</strong> (पागल)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>172. </strong>A compulsive desire to steal/Habit of stealing &ndash; <strong>Kleptomania </strong>(चोरी करने की बीमारी) </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>173. </strong>A person who belongs to the same country as another &ndash; <strong>Compatriot</strong> (हमवतन/देशभाई)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>174.</strong> A person who has the same name as another &ndash; <strong>Namesake</strong> (हमनाम/नामराशी)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>175. </strong>A person who has the same face as another <strong>Lookalike</strong> (हमशक्ल)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>176.</strong> A place where dead bodies are buried &ndash; <strong>Cemetery</strong> (कब्रिस्तान) </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>177.</strong> A place where weapons are keeps &ndash; <strong>Arsenal</strong> (शस्त्रागार)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>178.</strong> A collection of ships/aircraft &ndash; <strong>Fleet</strong> (जहाजी बेड़ा)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>179.</strong> A collection of poems &ndash; <strong>Anthology </strong>(पद्यावली)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>180. </strong>Fear of foreigners &ndash; <strong>Xenophobia</strong> (विदेशियों का भय)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>181. </strong>Fear of heights &ndash; <strong>Acrophobia </strong>(ऊँचाई का डर)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>182. </strong>Fear of fire &ndash; <strong>Pyrophobia </strong>(अग्निभित्ति)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>183. </strong>Fear of water &ndash; <strong>Aquaphobia/Hydrophobia</strong> (जलभित्ति)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>184. </strong>Fear of light &ndash; <strong>Photophobia </strong>(प्रकाश भित्ति)</span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>185.</strong> Fear of English &ndash; <strong>Anglophobia </strong>(अंग्रेजी/अंग्रेजों का भय)</span></span></p>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.controls').classList.toggle('active');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function increaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            document.body.style.fontSize = (currentSize + 2) + 'px';
+        }
+
+        function decreaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            if (currentSize > 10) {
+                document.body.style.fontSize = (currentSize - 2) + 'px';
+            }
+        }
+
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
