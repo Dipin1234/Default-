@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Active and Passive Voice</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .menu-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .menu-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0);
+            top: 0;
+            right: 0;
+        }
+        .controls.active .round-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .round-button:nth-child(2) {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53); /* Dark Mode */
+            transition-delay: 0.1s;
+            top: 56px;
+            right: 0;
+        }
+        .round-button:nth-child(3) {
+            background: linear-gradient(135deg, #1e90ff, #00b4d8); /* Font + */
+            transition-delay: 0.2s;
+            top: 112px;
+            right: 0;
+        }
+        .round-button:nth-child(4) {
+            background: linear-gradient(135deg, #2ecc71, #27ae60); /* Font - */
+            transition-delay: 0.3s;
+            top: 168px;
+            right: 0;
+        }
+        .round-button:nth-child(5) {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Print */
+            transition-delay: 0.4s;
+            top: 224px;
+            right: 0;
+        }
+        .round-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .round-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .round-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .menu-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .menu-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .round-button span, .menu-button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="menu-button" onclick="toggleMenu()" title="Toggle Menu"><span>☢️</span></button>
+        <button class="round-button" onclick="toggleDarkMode()" title="Toggle Dark Mode"><span>🌙</span></button>
+        <button class="round-button" onclick="increaseFontSize()" title="Increase Font Size"><span>+</span></button>
+        <button class="round-button" onclick="decreaseFontSize()" title="Decrease Font Size"><span>-</span></button>
+        <button class="round-button" onclick="printPage()" title="Print Page"><span>🖨️</span></button>
+    </div>
+    <!--copy paste🤣🤣🤣😂-->
+  <h3 style="text-align:center"><span style="color:#ff0000"><span style="font-size:18px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Active and Passive Voice</strong></span></span></span></h3>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#9b59b6"><strong>What is voice? </strong></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">- <span style="color:black">यह verb का<strong> </strong>एक<strong> </strong>रूप<strong> </strong>है<strong> </strong>जिसमें<strong> </strong>यह<strong> </strong>पता<strong> </strong>लगता<strong> </strong>है<strong> </strong>कि Subject ने<strong> </strong>कोई<strong> </strong>काम<strong> </strong>किया<strong> </strong>है<strong> </strong>या<strong> </strong>कोई<strong> </strong>काम Subject द्वारा<strong> </strong>किया<strong> </strong>गया<strong> </strong>है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- There are two types of voice:</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">1. Active voice</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">2. Passive voice</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">1. Active Voice (कर्तृवाच्य)</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- When the subject performs the action of the verb, the sentence is said to be in the active voice.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Verb का<strong> </strong>वह<strong> </strong>रूप<strong> </strong>जिसमें<strong> </strong>कर्ता,</span> <span style="color:black">कर्म</span> <span style="color:black">पर<strong> </strong>कोई<strong> </strong>क्रिया</span> <span style="color:black">करता<strong> </strong>है, Active Voice कहलाता<strong> </strong>है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">- <span style="color:black">इसमें Subject (कर्ता) को<strong> </strong>विशेष<strong> </strong>महत्व<strong> </strong>दिया<strong> </strong>जाता<strong> </strong>है<strong> </strong>और Verb को<strong> </strong>उसी<strong> </strong>के<strong> </strong>अनुसार<strong> </strong>रखा<strong> </strong>जाता<strong> </strong>है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Subject + Verb + Object</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; They will do the work.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; Mohan sang a song.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">2. Passive Voice</span></strong><span style="color:black"> <strong>(</strong></span><strong><span style="color:black">कर्मवाच्य)</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- When the subjects the action of the verb, the sentence is said to be in the passive voice.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Verb का<strong> </strong>वह<strong> </strong>रूप<strong> </strong>जिसमें<strong> </strong>कर्ता (Subject) doer of the Action न<strong> </strong>होकर &lsquo;by agent&rsquo; हो<strong> </strong>जाता<strong> </strong>है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">- <span style="color:black">इस<strong> </strong>प्रकार<strong> </strong>के<strong> </strong>वाक्यों<strong> </strong>में<strong> </strong>दो<strong> </strong>बातों<strong> </strong>पर<strong> </strong>जोर<strong> </strong>दिया<strong> </strong>जाता<strong> </strong>है</span><strong><span style="color:black">-</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">1. कार्य (Action) पर</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">2. कर्म (Object): जिस<strong> </strong>पर<strong> </strong>कार्य<strong> </strong>का<strong> </strong>प्रभाव<strong> </strong>पड़ता<strong> </strong>है<strong> </strong>या<strong> </strong>जिससे<strong> </strong>कार्य<strong> </strong>का<strong> </strong>सम्बन्ध<strong> </strong>जुड़ता<strong> </strong>है।<strong> </strong>इन्हें<strong> </strong>निम्नलिखित<strong> </strong>उदाहरणों<strong> </strong>द्वारा<strong> </strong>समझा<strong> </strong>जा<strong> </strong>सकता<strong> </strong>है</span><strong><span style="color:black">-</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:-</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Mohan sang a song.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong> <span style="color:black">A song was sung by Mohan.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Hari writes a letter. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> A letter is written by Hari. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">- <span style="color:black">विभिन्न</span> <span style="color:black">sentences</span> <span style="color:black">को Passive Voice में<strong> </strong>बदलने<strong> </strong>के<strong> </strong>Rules<strong> </strong>भी</span> <span style="color:black">अलग-अलग</span> <span style="color:black">होते</span> <span style="color:black">है।</span> <span style="color:black">इन</span> <span style="color:black">नियमों</span> <span style="color:black">की</span> <span style="color:black">जानकारी प्राप्त करने<strong> </strong>से<strong> </strong>पहले<strong> </strong>Passive Voice की<strong> </strong>कुछ<strong> </strong>प्रमुख<strong> </strong>बातों<strong> </strong>को<strong> </strong>जानना<strong> </strong>जरूरी<strong> </strong>है</span><strong><span style="color:black">- </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">❃ <strong><span style="color:black">Transformation of Active Sentences into Passive Voice</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(A)</span></strong><span style="color:black"> Active Voice के sentence के object को Passive Voice के sentence में subject के<strong> </strong>स्थान<strong> </strong>पर<strong> </strong>रखा<strong> </strong>जाता<strong> </strong>है<strong> </strong>तथा Active Voice के subject को Passive Voice के Sentence में &lsquo;by&rsquo; के<strong> </strong>साथ<strong> </strong>लिखा<strong> </strong>जाता<strong> </strong>है। (इसे Passive Voice के Sentence में agent कहा<strong> </strong>जाता<strong> </strong>है - by + agent)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(B)</span></strong> <span style="color:black">यदि Active Voice के Subject व Object दोनो<strong> </strong>ही Pronouns है<strong> </strong>तो<strong> </strong>वे<strong> </strong>आपस<strong> </strong>में<strong> </strong>इस<strong> </strong>प्रकार<strong> </strong>बदलते<strong> </strong>है</span><strong><span style="color:black">-</span></strong></span></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoTableGrid" style="border-collapse:collapse; border:1pt solid black; white-space:unset; width:75%">
+	<tbody>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; height:1px; width:83px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Person</span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; height:1px; width:141px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Pronoun(Subjective Form)</span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; height:1px; width:133px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Pronoun (Objective Form)</span></strong></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; width:83px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">IPerson</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:141px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:133px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">me</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:141px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">We</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:133px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">us</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; width:83px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">IIPerson</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:141px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">You</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:133px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">you</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="4" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; width:83px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">III Person</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:141px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:133px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">him</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:141px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">She</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:133px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">her</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:141px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">It</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:133px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">it</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:141px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">They</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; vertical-align:top; width:133px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">them</span></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(C)</span></strong><span style="color:black">Passive Voice बनाते<strong> </strong>समय<strong> </strong>मुख्य<strong> </strong>क्रिया (Main Verb) की Past Participle Form (Third Form) का</span> <span style="color:black">use</span> <span style="color:black">किया<strong> </strong>जाता<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(D)</span></strong><span style="color:black">Main Verb के Past Participle Form से<strong> </strong>पूर्व Active Voice के Tense व Object के Number तथा Person के<strong> </strong>अनुसार &lsquo;be&rsquo; (is, are, am, was, were, be, being, been etc.) का</span> <span style="color:black">use</span> <span style="color:black">आवश्यक</span> <span style="color:black">रूप</span> <span style="color:black">से</span> <span style="color:black">किया<strong> </strong>जाता<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Note1:</span></strong> <span style="color:black">केवल Transitive Verbs का<strong> </strong>ही Passive Voice बनाया<strong> </strong>जा<strong> </strong>सकता<strong> </strong>है</span><strong><span style="color:black">, </span></strong><span style="color:black">क्योंकि<strong> </strong>इनके Objects दिए<strong> </strong>रहते<strong> </strong>है। Intransitive Verbs के Objects नही<strong> </strong>होने<strong> </strong>के<strong> </strong>कारण<strong> </strong>इन्हें<strong> </strong>Passive Voice में<strong> </strong>नहीं<strong> </strong>बदला<strong> </strong>जा<strong> </strong>सकता।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong>Note2: </strong>&lsquo;Agent&rsquo; is omitted when it is understood, like &lsquo;No one, Nobody, Nothing, Someone, Somebody, Something, Everyone, Everybody, Everything, Police, We, They, One, People&rsquo; etc.</span></span></p>
+
+<p><strong style="color:#2980b9; font-family:Arial,Helvetica,sans-serif; font-size:16px">Tenses एवं उनकी Passive Forms</strong></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoTableGrid" style="border-collapse:collapse; border:1pt solid black; white-space:unset; width:75%">
+	<tbody>
+		<tr>
+			<td style="border-color:black; border-style:solid; border-width:1px; height:1px; text-align:center; width:108px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Tense</span></strong></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; height:1px; text-align:center; width:116px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Active Form</span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; height:1px; text-align:center; width:132px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive Form</span></strong></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; width:108px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Simple Present Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:116px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">V<sub>1</sub>/V<sub>5</sub>(s/es)</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:132px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">is/am/are + V<sub>3</sub></span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; width:108px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Present Continuous Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:116px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">is/am/are + V<sub>1 </sub>+ ing </span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:132px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">is/am/are + being + V<sub>3</sub></span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; width:108px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Present Perfect Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:116px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">has/have + V<sub>3</sub></span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:132px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">has/have + been + V<sub>3</sub></span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; width:108px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Simple Past Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:116px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">V<sub>2</sub></span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:132px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">was/were + V<sub>3</sub></span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; width:108px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Past Continuous Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:116px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">was/were + V<sub>1</sub> + ing</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:132px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">was/were + being + V<sub>3</sub></span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; width:108px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Past Perfect Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:116px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Had + V<sub>3</sub></span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:132px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">had + been + V<sub>3</sub></span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; width:108px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Simple Future Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:116px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">will/shall + V<sub>1</sub></span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:132px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">will/shall + be + V<sub>3</sub></span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; width:108px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Future Perfect Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:116px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">will/shall + have + V<sub>3</sub></span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:132px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">will/shall + have + been + V<sub>3</sub></span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; width:108px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Modal</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:116px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Modal + V<sub>1</sub></span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:132px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Modal + be + V<sub>3</sub></span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:1px; width:108px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Modals</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:116px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Modal + have + V<sub>3</sub></span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:1px; width:132px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Modal + have + been + V<sub>3</sub></span></span></span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active: </strong>They sell the caps. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">The caps are sold by them.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active: </strong>We don&#39;t like you. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black"><strong>Passive: </strong>You are not liked by us. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active: </strong>She is flying a kite. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">A kite is being flown by her.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active: </strong>He is beating them. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">They are being beaten by him. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active:</strong> She has bought a new scooter. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">A new scooter has been bought by her.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active: </strong>We have not plucked the flower. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">The flower has not been plucked by us. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active: </strong>Rahul threw the ball. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">The ball was thrown by Rahul. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active: </strong>We did not grow the rice. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">The rice was not grown by us. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active: </strong>Tom was building the flats in the society.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> The flats were being built by Tom in the society. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active: </strong>She had not done Sita&#39;s homework. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> Sita&#39;s homework had not been done by her. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active: </strong>He will not speak a word to you. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> Not a word will be spoken to you by him. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active: </strong>They will repair the car. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> The car will be repaired by them. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active: </strong>They will have sold all the bananas. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> All the bananas will have been sold by them. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active: </strong>Rita will have posted the letter tomorrow. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> The letter will have been posted by Rita tomorrow.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 1 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Simple Present Tense में Passive Voice बनाते<strong> </strong>समय</span> <span style="color:black">&lsquo;is/am/are&rsquo; के<strong> </strong>बाद Main Verb की Third Form रखते<strong> </strong>है।</span><strong> </strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> We worship various gods in India.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black"><strong>Passive:</strong> Various gods are worshipped in India.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> People eat wheat in most parts of our country.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black"><strong>Passive:</strong> Wheat is eaten in most parts of our country.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 2</span></strong><span style="color:black"> <strong>:</strong></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Simple Past Tense में</span> <span style="color:black">&lsquo;was/were&rsquo; के<strong> </strong>बाद Main Verb की Third Form रखते<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> They built bridges over the Rajasthan Canal.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> Bridges were built over the Rajasthan Canal.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">The police caught the thief.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">The thief was caught.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 3 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Future Simple Tense में</span> <span style="color:black">&lsquo;will/shall&rsquo; के<strong> </strong>बाद be + Main Verb की Third Form रखते<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> They will repair the car.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> The car will be repaired by them.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">We will not change quantum at all.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">Quantum will not be changed at all.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 4 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Present Continuous Tense में &lsquo;is/are/am&rsquo; के<strong> </strong>बाद being + Main Verb की Third Form रखते<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Shopkeepers are selling the gram.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">The gram is being sold by shopkeepers.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> She is eating a mango.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black"><strong>Passive: </strong>A mango is being eaten by her.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 5</span></strong><span style="color:black"> <strong>:</strong></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Past Continuous Tense में</span> <span style="color:black">&lsquo;was/were&rsquo; के<strong> </strong>बाद being + Main Verb की Third Form रखते<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Trisha was cooking delicious food.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">Delicious food was being cooked by Trisha.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">They were reading a book.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> A book was being read by them.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 6 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Present Perfect Tense में</span> <span style="color:black">&lsquo;has/have&rsquo; के<strong> </strong>बाद</span> <span style="color:black">been + Main Verb की Third Form रखते<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> They have built bridges over the Rajasthan Canal.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> Bridges have been built over the Rajasthan Canal.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">People have collected the goods.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">The goods have been collected.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 7 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Past Perfect Tense में</span> <span style="color:black">&lsquo;had&rsquo; के बाद been + Main Verb की Third Form रखते<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> I had answered all your questions.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> All your questions had been answered by me.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">They had received the parcel.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">The parcel had been received.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 8 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Future Perfect Tense में</span> <span style="color:black">&lsquo;will have/shall have&rsquo; के<strong> </strong>बाद</span> <span style="color:black">been + Main Verb की Third Form रखते<strong> </strong>है।</span><strong> </strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> They will have completed this work by January 2007.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> This work will have been completed by January 2007.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">The boy will have cleaned the windows.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">The windows will have been cleaned by the boy.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Note: </span></strong><span style="color:black">निम्नलिखित Tenses के</span> <span style="color:black">sentences</span> <span style="color:black">का Passive Voice में<strong> </strong>परिवर्तन<strong> </strong>नहीं<strong> </strong>होता<strong> </strong>है</span><strong><span style="color:black">-</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">1. Present Perfect Continuous Tense</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">2. Past Perfect Continuous Tense</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">3. Future Continuous Tense</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">4. Future Perfect Continuous Tense</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 9</span></strong><span style="color:black"> <strong>:</strong></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">- <span style="color:black">कुछ Intransitive Verbs (अकर्मक<strong> </strong>क्रियाएँ) किसी Preposition के<strong> </strong>साथ<strong> </strong>मिलकर Transitive Verbs (सकर्मक<strong> </strong>क्रियाएँ) का<strong> </strong>कार्य<strong> </strong>करती<strong> </strong>है।<strong> </strong>ऐसी<strong> </strong>स्थिति<strong> </strong>में Passive Voice में Preposition अपने Verb के<strong> </strong>साथ<strong> </strong>रहती<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Ram laughed at me.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> I was laughed at by Ram.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&bull; <strong>Active:</strong> My sister looks after your brother.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> Your brother is looked after by my sister.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 10 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Active Voice के<strong> </strong>कुछ sentences में can/ may/ could/ might/ should/ would/ must आदि<strong> </strong>के<strong> </strong>बाद Infinitive Verb का</span> <span style="color:black">use</span> <span style="color:black">होता<strong> </strong>है।</span> <span style="color:black">ऐसे sentences को Passive Voice में<strong> </strong>बदलते<strong> </strong>समय can/may/could/ might/ should/ would आदि<strong> </strong>के<strong> </strong>बाद be रखा<strong> </strong>जाता<strong> </strong>है</span><strong><span style="color:black">, </span></strong><span style="color:black">तत्पश्चात् Verb का Past Participle रूप<strong> </strong>लिखा<strong> </strong>जाता<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Sarita will write a letter.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> A letter will be written by Sarita.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Your team can win the match.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">The Match can be won by your team.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Our friends may help us.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> We may be helped by our friends. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Students must respect their teachers.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">Teachers must be respected by their students.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 11 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Active Voice के<strong> </strong>जिन<strong> </strong>वाक्यों<strong> </strong>में Modal Auxiliary के</span> <span style="color:black">बाद have + Past Participle दिया<strong> </strong>हो</span><strong><span style="color:black">, </span></strong><span style="color:black">तो<strong> </strong>उनको Passive Voice में<strong> </strong>बदलते<strong> </strong>समय have के<strong> </strong>बाद been का</span> <span style="color:black">use</span> <span style="color:black">किया<strong> </strong>जाता<strong> </strong>है।</span><strong> </strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Bhawesh will have cancelled this trip.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> This trip will have been cancelled by Bhawesh.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Mr. Sharma could have sent a reply.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">A reply could have been sent by Mr. Sharma.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Ram might have written the book .</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">The book might have been written by Ram.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">These businessmen must have paid advance tax.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> Advance tax must have been paid by these businessmen.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Trisha ought to have consulted a doctor.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">A doctor ought to have been consulted by Trisha.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 12 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">- <span style="color:black">कुछ</span> <span style="color:black">sentences</span> <span style="color:black">में Active Voice में is, am, are, was, were, has, have, had, shall have, will have के</span> <span style="color:black">पश्चात् to + First Form of Verb का</span> <span style="color:black">use होता है। Passive Voice में<strong> </strong>इन<strong> </strong>क्रियाओं<strong> </strong>के<strong> </strong>पश्चात् to + be + Third Form of Verb का</span> <span style="color:black">use</span> <span style="color:black">करते<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Pattern:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Object + is/am/are/was/were + to be + V<sub>3</sub> + by agent</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> The guide is to help him.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> He is to be helped by the guide.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">The teacher was to instruct him.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">He was to be instructed by the teacher.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">They are to assist the doctor.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">The doctor is to be assisted by them.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">I have to finish this work in an hour.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">This work has to be finished in an hour.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Somebody has to feed her.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> She has to be fed.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Mr. Sharma had to lead her.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> She had to be led by Mr. Sharma.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">I have to make some arrangements.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> Some arrangements have to be made by me.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 13 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- There से<strong> </strong>शुरू<strong> </strong>होने<strong> </strong>वाले Active Voice के<strong> </strong>कुछ</span> <span style="color:black">sentences</span> <span style="color:black">में Subject (Noun) के<strong> </strong>बाद Infinitive (to + Transitive Verb) का</span> <span style="color:black">use</span> <span style="color:black">होता<strong> </strong>है।<strong> </strong>इनका Passive Voice बनाते<strong> </strong>समय<strong> </strong>निम्नलिखित Pattern को</span> <span style="color:black">use</span> <span style="color:black">में<strong> </strong>लिया<strong> </strong>जाता<strong> </strong>है</span><strong><span style="color:black">-</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Pattern:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- There + H.V. + Subject (Noun) + to be + V<sub>3</sub></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> There is no form to reject.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> There is no form to be rejected.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> There is no plan to make against him.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> There is no plan to be made against him.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">There are some questions to answer.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">There are some questions to be answered.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 14 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Causative Sentences में Object के<strong> </strong>बाद Bare Infinitive (without &lsquo;to&rsquo;) दिया<strong> </strong>होता<strong> </strong>है</span><strong><span style="color:black">, </span></strong><span style="color:black">तो<strong> </strong>उनका Passive Voice निम्नलिखित Pattern का</span> <span style="color:black">use</span> <span style="color:black">करके<strong> </strong>बनाया<strong> </strong>जाता<strong> </strong>है</span><strong><span style="color:black">-</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Pattern: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Object + to be + Past Participle + to infinitive + by + agent.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> I made her wash my clothes.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> She was made to wash my clothes by me.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">We saw him cross the road.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> He was seen to cross the road by us.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">They got the boy polish their shoes.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black"><strong>Passive:</strong> The boy was got to polish their shoes.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule &ndash; 15 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- <strong>Active voice &ndash;</strong> It is time + to + V<sub>1</sub> + Obj.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black"><strong>Passive voice &ndash;</strong> It is time + for + Obj. + to + be + V<sub>3</sub></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> It is time to ring the bell.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> It is time for the bell to be rung.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> It is time to shut the gates.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> It is time for the gates to be shut.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#c0392b">❃<strong> Verbs Having Double Object</strong></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 16 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong>- <span style="color:black">कुछ<strong> </strong>क्रियाओं (Verbs) </span></strong><strong><span style="color:black">के</span></strong><strong> </strong><strong><span style="color:black">दो Objects होते<strong> </strong>हैं-</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(A) Direct या<strong> </strong>निर्जीव Object </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(B) Indirect या<strong> </strong>सजीव Object</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Passive Voice में<strong> </strong>इनमें<strong> </strong>से<strong> </strong>किसी<strong> </strong>एक<strong> </strong>को Subject बनाया<strong> </strong>जा<strong> </strong>सकता<strong> </strong>है</span><strong><span style="color:black">, </span></strong><span style="color:black">परन्तु<strong> </strong>सुविधा<strong> </strong>की<strong> </strong>दृष्टि<strong> </strong>से<strong> </strong>अधिकत्तर Indirect Object को Subject बनाया<strong> </strong>जाता<strong> </strong>है।</span><strong> </strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Patterns:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- (A) IO + H.V. + V<sub>3</sub> + DO.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- (B) DO + H.V. + V<sub>3</sub> + to + IO. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Somebody gave me a pen.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> (i) I was given a pen.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) A pen was given to me.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Everybody offered him bouquet.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> (i) He was offered bouquet.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Bouquet was offered to him.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Note: </span></strong><span style="color:black">जब Active Voice में Object इस<strong> </strong>प्रकार<strong> </strong>हो<strong> </strong>कि<strong> </strong>बाद<strong> </strong>वाला Object पहले<strong> </strong>वाले Object का Complement हो</span><strong><span style="color:black">, </span></strong><span style="color:black">तो<strong> </strong>पहले<strong> </strong>वाले<strong> </strong>Object को Passive Voice में Subject बना</span> <span style="color:black">देते<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> We made him captain.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> He was made captain by us.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">The boys called him hero.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> He was called hero by the boys.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> The garment business has made him rich.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> He has been made rich through the garment business.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">It&rsquo;s high time we asked him to leave the room.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">It&rsquo;s high time he was asked to leave the room.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#c0392b">❃<strong> Complex Sentences </strong><strong>को</strong><strong> Passive Voice </strong><strong>में</strong><strong> </strong><strong>बदलने</strong><strong> </strong><strong>के</strong><strong> </strong><strong>दो<strong> </strong>नियम<strong> </strong>हैं-</strong></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule &ndash; 17 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(A)</span></strong> <span style="color:black">केवल Main Clause को<strong> </strong>ही Passive Voice में<strong> </strong>बदलते<strong> </strong>है<strong> </strong>तथा<strong> </strong>इसे It से<strong> </strong>शुरू<strong> </strong>करते<strong> </strong>है<strong> </strong>और that से<strong> </strong>शुरू<strong> </strong>होने<strong> </strong>वाले Clause को<strong> </strong>ज्यों<strong> </strong>का<strong> </strong>त्यों<strong> </strong>रखते<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Pattern: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- It + &lsquo;be&rsquo; (is/are/am/was/were) + Past Participle + that + ........ (शेष<strong> </strong>भाग<strong> </strong>ज्यों<strong> </strong>का<strong> </strong>त्यों)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(B) </span></strong><span style="color:black">That से<strong> </strong>शुरू<strong> </strong>होने<strong> </strong>वाले Clause के Subject को<strong> </strong>ही Passive Voice का Subject बनाते<strong> </strong>है।<strong> </strong>शेष<strong> </strong>परिवर्तन to be + Past Participle के<strong> </strong>रूप<strong> </strong>में<strong> </strong>रखते है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Pattern:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Sub. + &lsquo;be&rsquo; (is/are/am/was/were) + past participle + to + be + ........ (शेष<strong> </strong>भाग<strong> </strong>ज्यों<strong> </strong>का<strong> </strong>त्यों)</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> People believe that smoking is injurious to health.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(i) It is believed that smoking is injurious to health.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Smoking is believed to be injurious to health.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> They say that apples are good for health.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(i) It is said that apples are good for health.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Apples are said to be good for health.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">They said that Akbar was a great king.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(i) It was said that Akbar was a great king.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Akbar was said to be a great king.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> They will suggest that we should revise the course.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(i) It will be suggested that the course should be revised. </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) The course will be suggested to be revised.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 18</span></strong><span style="color:black"> <strong>:</strong></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">- <span style="color:black">Modern English</span> <span style="color:black">में<strong> </strong>अब Passive Voice बनाते<strong> </strong>समय<strong> </strong>उन<strong> </strong>तमाम<strong> </strong>कर्ताओं (Subjects) को<strong> </strong>छोड़<strong> </strong>देते<strong> </strong>है<strong> </strong>जो<strong> </strong>अज्ञात (Unknown) होते<strong> </strong>है।<strong> </strong>जैसे</span> <span style="color:black">- Someone, Somebody, Everyone, Everybody, No One, Nobody, One, Children, People, Police, We, They etc.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> We saw the tiger in the field.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> The tiger was seen in the field.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> You demonstrated the lesson very well.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> The lesson was demonstrated very well.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> People speak English all over the world.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> English is spoken all over the world.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Somebody stole my car yesterday.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> My car was stolen yesterday.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule &ndash; 19 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">- <span style="color:black">ऐसे</span> <span style="color:black">Negative Sentences</span> <span style="color:black">जिनमें do/ does/ did + not + V<sub>1</sub> दिया<strong> </strong>हो</span><strong><span style="color:black">, </span></strong><span style="color:black">तो<strong> </strong>उनका Passive Voice बनाते<strong> </strong>समय do/ does + not + V<sub>1</sub> को is/ am/ are + not + V<sub>3</sub> में</span> <span style="color:black">बदल<strong> </strong>देते<strong> </strong>है<strong> </strong>और did + not + V<sub>1</sub> को was/ were + not + V<sub>3</sub> में<strong> </strong>बदल<strong> </strong>देते<strong> </strong>है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">- Active VoicePassive Voice</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">do/does + not + V<sub>1</sub> is/are/am + not + V<sub>3</sub></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">did + not + V<sub>1</sub> was/were + not + V<sub>3</sub></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">We do not repair mobiles here.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> Mobiles are not repaired here.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> The teacher did not write some words legibly on the black-board.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> Some words were not written legibly on the black-board.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule - 20</span></strong><span style="color:black"> <strong>:</strong></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">- <span style="color:black">कुछ</span> <span style="color:black">Verbs</span> <span style="color:black">के<strong> </strong>पश्चात् Passive Voice में by preposition के<strong> </strong>स्थान<strong> </strong>पर<strong> </strong>अन्य Prepositions (उन<strong> </strong>क्रियाओं<strong> </strong>हेतु<strong> </strong>निश्चित) का</span> <span style="color:black">use</span> <span style="color:black">होता<strong> </strong>है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(A)</span></strong><span style="color:black"> Surprised, Astonished, Disappointed, Displeased तथा Alarmed के<strong> </strong>पश्चात Passive Voice में</span> <strong><span style="color:black">&lsquo;at&rsquo;</span></strong> <span style="color:black">का</span> <span style="color:black">use</span> <span style="color:black">होता<strong> </strong>है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Your intelligence surprised me.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> I was surprised at your intelligence.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">His success astonished us.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> We were astonished at his success.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(B)</span></strong><span style="color:black"> Known तथा</span> <span style="color:black">Obliged के पश्चात् Passive Voice में</span> <strong><span style="color:black">&lsquo;to&rsquo;</span></strong> <span style="color:black">का</span> <span style="color:black">use</span> <span style="color:black">होता<strong> </strong>है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Example:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Everybody knows Gandhiji.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> Gandhiji is known to everybody.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(C)</span></strong><span style="color:black"> Pleased, Satisfied आदि<strong> </strong>के<strong> </strong>पश्चात् Passive Voice में</span> <strong><span style="color:black">&lsquo;with&rsquo;</span></strong> <span style="color:black">का</span> <span style="color:black">use</span> <span style="color:black">होता<strong> </strong>है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> My behaviour pleased him.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> He was pleased with my behaviour.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Your work satisfies the officers.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> The officers are satisfied with your work.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(D)</span></strong><span style="color:black"> Interested के<strong> </strong>पश्चात् Passive Voice में</span> <strong><span style="color:black">&lsquo;in&rsquo;</span></strong> <span style="color:black">का</span> <span style="color:black">use</span> <span style="color:black">होता<strong> </strong>है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Example:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">This book interests me.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">I am interested in this book.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#c0392b">❃<strong> Transformation of Interrogative Sentences into Passive Voice</strong></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Interrogative Sentences का Passive Voice सदैव Interrogative में<strong> </strong>ही<strong> </strong>बनता<strong> </strong>है।<strong> </strong>इनको Passive Voice में</span> <span style="color:black">बदलते<strong> </strong>समय<strong> </strong>Active Voice के<strong> </strong>कर्ता (Subject) को<strong> </strong>अधिकतर<strong> </strong>by लगाकर V<sub>3</sub> के<strong> </strong>बाद Object के<strong> </strong>रूप<strong> </strong>में<strong> </strong>रखते<strong> </strong>है</span><strong><span style="color:black">,</span></strong> <span style="color:black">क्योंकि<strong> </strong>बिना<strong> </strong>इनके<strong> </strong>वाक्य<strong> </strong>की<strong> </strong>पूर्णता<strong> </strong>नहीं<strong> </strong>बन<strong> </strong>पाती</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule &ndash; 21 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">- <span style="color:black">अगर<strong> </strong>वाक्य<strong> </strong>के<strong> </strong>प्रारंभ<strong> </strong>में<strong> </strong>प्रश्नवाचक<strong> </strong>सर्वनाम (Interrogative Pronoun) नहीं<strong> </strong>हो</span><strong><span style="color:black">, </span></strong><span style="color:black">केवल Auxiliary Verb (is, are, was, were, do, does, did etc.) हो</span><strong><span style="color:black">, </span></strong><span style="color:black">तो Passive Voice में<strong> </strong>अन्य<strong> </strong>बातें<strong> </strong>पहले<strong> </strong>के<strong> </strong>नियमों<strong> </strong>के<strong> </strong>अनुसार<strong> </strong>ही<strong> </strong>लागू<strong> </strong>होती<strong> </strong>है।</span> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Pattern: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- to be + Object + V<sub>3</sub> + by agent? </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Did he kill a lion?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">Was a lion killed by him?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Do you help your friends?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">Are your friends helped?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Do you study English?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> Is English studied by you?</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule &ndash; 22 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(A) </span></strong><span style="color:black">Active Voice में<strong> </strong>वाक्य<strong> </strong>के<strong> </strong>प्रारंभ<strong> </strong>में<strong> </strong>प्रश्नवाचक<strong> </strong>शब्द (Why, When, Where, How, Which, What etc.) हो</span><strong><span style="color:black">, </span></strong><span style="color:black">तो Passive Voice में<strong> </strong>इस<strong> </strong>प्रश्नवाचक<strong> </strong>शब्द<strong> </strong>को<strong> </strong>वाक्य<strong> </strong>के<strong> </strong>प्रारंभ<strong> </strong>में<strong> </strong>ज्यों<strong> </strong>का<strong> </strong>त्यों<strong> </strong>रख<strong> </strong>दिया<strong> </strong>जाता<strong> </strong>है</span><strong><span style="color:black">, </span></strong><span style="color:black">शेष<strong> </strong>बातें<strong> </strong>पूर्ववर्ती<strong> </strong>नियमों<strong> </strong>के<strong> </strong>अनुसार<strong> </strong>ही<strong> </strong>लागू<strong> </strong>होती<strong> </strong>हैं।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Pattern: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">- Wh. word + to be + Object + V<sub>3 </sub>+ by agent?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">When does he take his tea?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">When is his tea taken?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Why did you write a letter?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> Why was a letter written by you?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Where should we keep this money?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">Where should this money be kept?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">When will they open the gate?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">When will the gate be opened?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(B)</span></strong><span style="color:black"> Passive Voice बनाते<strong> </strong>समय<strong> </strong>प्रश्नवाचक<strong> </strong>सर्वनाम Who के<strong> </strong>स्थान<strong> </strong>पर<strong> </strong>या<strong> </strong>तो By whom रखते<strong> </strong>है<strong> </strong>या<strong> </strong>प्रारंभ<strong> </strong>में Who रखकर by वाक्य<strong> </strong>के<strong> </strong>बिल्कुल<strong> </strong>अंत<strong> </strong>में<strong> </strong>ले<strong> </strong>जाते<strong> </strong>है, Whom के<strong> </strong>स्थान<strong> </strong>पर Who का</span> <span style="color:black">use</span> <span style="color:black">करते<strong> </strong>है।</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Who called me?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> (i) By whom was I called?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Who was I called by?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Who stole my pen?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> (i) By whom was my pen stolen?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Who was my pen stolen by?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Who teaches you English?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> (i) By whom are you taught English?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) By whom is English taught to you?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Who wrote that book?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> (i) By whom was that book written?</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Who was that book written by?</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#c0392b">❃<strong> Transformation of Imperative Sentences into Passive Voice</strong></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Rule &ndash; 23 :</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif">- <span style="color:black">जिन</span> <span style="color:black">sentences</span> <span style="color:black">में Order, Command, Request, Advice, Suggestion and Proposal etc. का<strong> </strong>भाव<strong> </strong>प्रकट<strong> </strong>होता<strong> </strong>है</span><strong><span style="color:black">, </span></strong><span style="color:black">उन्हें Passive Voice में<strong> </strong>बदलने<strong> </strong>के<strong> </strong>लिए<strong> </strong>वाक्य<strong> </strong>में<strong> </strong>अपनी<strong> </strong>ओर<strong> </strong>से Let का</span> <span style="color:black">use</span> <span style="color:black">करते<strong> </strong>है<strong> </strong>तथा<strong> </strong>उसे<strong> </strong>वाक्य<strong> </strong>के<strong> </strong>प्रारंभ<strong> </strong>में<strong> </strong>रखते<strong> </strong>है।<strong> </strong>उसके<strong> </strong>बाद Object रखा<strong> </strong>जाता<strong> </strong>है।<strong> </strong>इसके<strong> </strong>पश्चात् be + V<sub>3 </sub>का</span> <span style="color:black">use</span> <span style="color:black">करते<strong> </strong>है।</span><strong> </strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#e74c3c"><strong>- Identification &ndash; </strong></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(A) V<sub>1</sub> (B) Do/Don&rsquo;t </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(C) Please/Kindly (D) Let us /Let&rsquo;s </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(A) V<sub>1</sub> &ndash; </span></strong><span style="color:black">(i)You are ordered to &hellip;&hellip;&hellip;.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Let + Obj. + be + V<sub>3</sub> &hellip;&hellip;...</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(iii) should + be + V<sub>3</sub> &hellip;&hellip;&hellip;.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Post this letter.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> (i) You are ordered to post this letter.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Let this letter be posted.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(iii) This letter should be posted.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Open all the doors.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> (i) You are ordered to opened all the doors.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Let all the doors be opened.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(iii) All the doors should be opened.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Answer all these questions.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> (i) You are asked to answer all these questions.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Let all these questions be&nbsp;answered.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(iii) All these questions should be </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(B) Do/Don&rsquo;t </span></strong><span style="color:black">(i) You are forbidden to&hellip;&hellip;.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Let + Obj. + be + V<sub>3</sub> &hellip;......</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Do it again.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">Let it be done again.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Do it quickly.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">Let it be done quickly.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Do not kill the bird.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(i) You are forbidden to kill the bird.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Let the bird not be killed.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Do not abuse Ram.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(i) You are forbidden to abuse Ram.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Let Ram not be abused.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Don&rsquo;t tease the old man.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(i) You are forbidden to tease the old man.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Let the old man not be teased.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(C) Please/Kindly </span></strong><span style="color:black">(i) You are requested to &hellip;..</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Obj. + should be + V<sub>3</sub> </span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Please help the poor man.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(i) You are requested to help the poor man.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) The poor man should be helped.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Please take the medicines.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(i) You are requested to take the medicines.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii)The medicines should be taken.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Please clean the table.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong> </span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(i) You are requested to clean the table.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) The table should be cleaned.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Please take your seat.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong><span style="color:black"> You are requested to take your seat.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active: </span></strong><span style="color:black">Kindly wake me up in the morning.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong><span style="color:black">You are requested to wake me up in the morning.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Avoid bad company.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Passive:</span></strong><span style="color:black"> You are advised to avoid bad company.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(D) Let us /Let&rsquo;s </span></strong><span style="color:black">(i) You are suggested to &hellip;.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Let + Obj. + be + V<sub>3</sub></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Let us help the lady.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive:</span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(i) You are suggested to help the lady.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Let the lady be helped.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&bull; Active:</span></strong><span style="color:black"> Let us not disturb others.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Passive: </span></strong></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(i) You are suggested not to disturb others.</span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(ii) Let others not be disturbed.</span></span></span></p>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.controls').classList.toggle('active');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function increaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            document.body.style.fontSize = (currentSize + 2) + 'px';
+        }
+
+        function decreaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            if (currentSize > 10) {
+                document.body.style.fontSize = (currentSize - 2) + 'px';
+            }
+        }
+
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
