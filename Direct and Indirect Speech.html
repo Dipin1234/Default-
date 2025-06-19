@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Direct and Indirect Speech</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .menu-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .menu-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0);
+            top: 0;
+            right: 0;
+        }
+        .controls.active .round-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .round-button:nth-child(2) {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53); /* Dark Mode */
+            transition-delay: 0.1s;
+            top: 56px;
+            right: 0;
+        }
+        .round-button:nth-child(3) {
+            background: linear-gradient(135deg, #1e90ff, #00b4d8); /* Font + */
+            transition-delay: 0.2s;
+            top: 112px;
+            right: 0;
+        }
+        .round-button:nth-child(4) {
+            background: linear-gradient(135deg, #2ecc71, #27ae60); /* Font - */
+            transition-delay: 0.3s;
+            top: 168px;
+            right: 0;
+        }
+        .round-button:nth-child(5) {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Print */
+            transition-delay: 0.4s;
+            top: 224px;
+            right: 0;
+        }
+        .round-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .round-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .round-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .menu-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .menu-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .round-button span, .menu-button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="menu-button" onclick="toggleMenu()" title="Toggle Menu"><span>☢️</span></button>
+        <button class="round-button" onclick="toggleDarkMode()" title="Toggle Dark Mode"><span>🌙</span></button>
+        <button class="round-button" onclick="increaseFontSize()" title="Increase Font Size"><span>+</span></button>
+        <button class="round-button" onclick="decreaseFontSize()" title="Decrease Font Size"><span>-</span></button>
+        <button class="round-button" onclick="printPage()" title="Print Page"><span>🖨️</span></button>
+    </div>
+    <!--copy paste🤣🤣🤣😂-->
+  <h3 style="text-align:center"><span style="color:#ff0000"><span style="font-size:18px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Direct and Indirect Speech</strong></span></span></span></h3>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#8e44ad"><strong>Definition: </strong></span><br />
+<span style="color:black">- <strong>Direct Speech -</strong> When the reporter quotes the actual words of the speaker. It is always written in inverted commas. (किसी वक्ता द्वारा कहे हुए शब्दों को बिना परिवर्तन ज्यों का त्यो लिख दें, तो उसे Direct speech कहते है।) </span><br />
+<strong><span style="color:black">Examples:</span></strong><br />
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdUAAACCCAYAAAAQRVIMAAAgAElEQVR4nO2dv2/jRtrHv3pxfeDbVIsUQSQtEJ+BNK7IbVLcCZIbN7E3hwNcBKBOaaTi7AMWBq5xAmjdkI1vpW6brONr3JhMaq0FXLcLOC5MbhAEwVW7cJE/YN6Cv8mhRFnUD9vfD0BAIoczzwwfzkPOM8+wJIQQIIQQQsjU/N+iBSCEEELuCjSqhBBCSEHQqBJCCCEFQaNKCCGEFASNKiGEEFIQNKqEEEJIQdCoEkIIIQVBo0oIIYQUBI0qIYQQUhA0qoQQQkhB0KgSQgghBUGjSgghhBQEjSohhBBSEDSqhBBCSEHQqBJCCCEFQaNKCCGEFASNKiGEzBUHltGEqpagGs6ihSEFQ6NKyJywmiWUSirG9qOO1+mWSmhaRQthQC2VoBpW/L9XkGOoKJVKsa1wGe45VrOKRqeP4XDRktwTxuh80SzMqL569Sq4aXu93qLEIDPBgaGWUp1zuKlQ1SYMi0/paSwYOztupzuD3J2rEwwBDC8T/y+u4ACotM8hbB0KAECDbgv06jMQ5B5T7wkIU1u0GPeGcTpfNFMZ1axOs1Kp4MmTJzg+Psb79++l5/7222/B719//XUaMcjSUUH7XMQ6Z1MICG+zzTVg2EenUb1Xw1/1noAQ52hXRqZC+/wctq7MRIbKozUAgLJajf3H2iNUwkRYcxNhY6SshCw/uXS+QAp5Uy2Xy+h2u+h2u2i1WgCA77//Hl9++SWq1SrevHmTOufJkycYDAYYDAb45ptvihCjML7++muUSiU8e/Zs0aLcbiob2JLYhkq9hxee0Rh2dsYPh5LiqK5CAbD2yOtO6pvQEHY4hNw55qzzhRjVSqWCvb097O3t4ejoCI7j4Pnz51hZWcH19TU+//xzqWF9/PgxHj9+XIQIhfH+/XscHx8vWow7T2Vjy3uLHeLSXrAw94nKBrYUBWF/UsWqEulwbopjoamqsSH+ZuxpKZyc07QAOAaavotAbcLz6MJoquH5uVxeEleDagTDejEfcWS/K7Lrt/aPq03LOx6fSBSkUw04svKiglrNyDG/XuOaLtoWasQtEi8rHNWx0CzJ9vt19uulomlYcBzDuxZFyJ59HbN9lOEcgcD9E7R1uj7+vIOUfz/IP6tdMpiVzmchpgCAACBqtZr0+PPnzzPTDAaD4Fi325XuHwwGolarBf9XVlZiebx8+VKsr68Hx8vlstje3haDwUAqTzK9f87Tp08DeVdWVmLHk/K/ffs2SFMul8W7d+9u3H53H1voCgSgCTN1SBeK17Za6qCfxhSaokSugyI03Y7lb+qaUBQvD1sXmuKlVfwybaFrSnh+VllZIuiaJ6ciNN0Utq0nZMgjp5tG1xShQBHJQ0E9vPMVzRS2roxumykwtfj1SP4XwhQaIKDoIiWqDP9aaqaX3r/uvvy20LXwXtJ0Xeiml9KrJzRd6LpfnuldR4neyAUIyoOswUzNzcuO7lKEoptB/WxTC/Qm0CFAKJouTNuXM9Qp06uPkr6Y0vLkaSCgKELzE9pmUHa0Gn4bKUndl8hg60r8utnutQzTTCN74jpq6euYbn7v2ii6CKvp1z2qX/41TNwfnvzpvN302shGjlZrnM4Xx0yNqhBClMvlIN3bt2+D/XmMqm+8tre3RavVCoyfEEK0Wq0gXavVEt1uN1bW2dlZTI5o+lqtJrrdrtje3hblclm0Wi0hhBCvX7+OPQi0Wi0xGAzEYDAQr1+/TsnnG36SRbZRDTrTrI574R11ng4qj5yRNJB0GkJ4nZzfkdnC1BWhKLMzquOZzKhKO1Sv40x1+Kk6ycua+KFC2lGHecWumalJjG/8uoU6lCVAdhuZWobBksibSufrSjTfjLRpY+vWIZWnqSX2TSe7b5Rl1zvZXq6MaZ2XPijkrqdw2ynvQ9+cmblRjRqzqAHKY1STx8ad++7du8CwRt9qo+lHyToq72gZrVYrMMxkFBKjatvC9N8cFU3y1uYlW3hHna+Dyitn5pO4qUk6HYlhnisTGlVZHSSd7EyNalb7ClvoSnyfGXkYk22Kbme8HSZKzKxPjge3LKMqq8eERnXsW/KUskvPjTxcpuoi06PgQTNanlwXgusV2Z96UFoiZh5S8/HHHwe/f/rpp4nOXV9fx97eXmr/d999F/z+6quvgt8PHjzA9vY2AOD6+hqvXr1Kpe92uxPJkOTBgwc4OjrCDz/8IJWNyOij4ftFqlU0+mvQTRvivJc9E/bRGoCoHyRkOEcn7LBziFjkT72H86jQU8npwDjoA8pWYpZtBRuyGV5LSqXei8xq9vxnjf68pfDabIiTs8gFsw7RQbR9HVxdANDMYDZ6cjsfPT07LNGbF9A/jfolT9HXNnHzKKSKq1I3mmvgt0EfjWoJqtpEVtTabGRP4JzhJCsuLJjEeIGrQMY6NjUAwxOEl9DC6YUCRYnud3B2Amwt6dT0ucapfvDBBxOl/+KLL6T7f/755+D3hx9+GHNmf/vttyPTf/bZZxPJQIrAD6kx4Ubn9XE5ZjL74jvqfB3UVHL6nc6MpvbPFcfyJhnt4BSbeLGAOMxKex9un3wWTIKxTvtQtjYi7WvjsqgA4Eob+xqA/kEwg9067UPbnM4sVVdv/kBVaZ/D1jUoAIZDT3ebRjoec0ayT0vdtarhg5F1ioutF3jhPTBd2nDvGyQfRJeHmRvVX375Jfj90UcfFZLnjz/+GPz2Q3lk28OHD1PpySKpo+d1tv1GjpmRC+6oc3dQS2BQFopjQK020ME+bHGOXru+oIcE/02ng0MLACyc9jXsx9483Zmf6J/mmpk7tsSoEXAMHPQ1TGuX7MshskY/8lBp93AubJi+7vY7qKppvZ2F7FPjhbv4D0bW6QW2NirxN2v7EsMlfhCduVGNhqd8+umnheRZq9WC334oj2z75JNPALjDyGRJqPfg2pw+GqNiJpakox7bQS2JnIvDgbHTwRAazN7i617f1YPO15EOZ/rDq30cyEIxgvCT3AVCV1w3gXF2guHUw6fe8HTKJTApFdQ93dVjQ6cRCpc9KYK3iIisbJ9UPaNDwAYOLrzj/nBx/xTNJXijHsVMjWqv18P19TUAoNVq4cGDB4Xk6xtLADBNc2z6crkc/JbFy5L5Uu95N3q/kRGLuFwddXYHNaWcfqczo+XS5kOBw6lFEHS+B9g5uIC+m+583Tc0YNipQjWi8ZIOjMMTrE5kzUI3QacDaXkT4bkEYkPW3uIFuXz0qZGUUf75gmVPUceue8Ogc5i80V29iQ/Ne2f5b9A7J1jbb3vHQ1n7y/BGPYKZGNX379/j2bNn+Pvf/w4AWFlZwT/+8Y/C8v/rX/8a/P7Xv/4lXQox6kfd3NwMfv/zn/8cmXf0bfo///mPNM3x8TGePXtGA31jKmi/8N4oGrIF5peho87TQU0rZ3K4Ms3F1QLMrXOFCwAYXsIeW7w3nBp583MsA82Di0h+BgzL8YY1gYvo5JhIWeHbTEbaXFTQ3nc75WGW3y0YLQGGnQaqwZyMKjrYR7sSlp+rRM+XO9HbpW8oOzto+s56x0Kz2gE0Mz5Zyn/46p96fn3Xd3946dehGi5sceGOpITrR1g4OxkC2r50UuDksjs4869NVDftS3et6sQDYqX9IniADhdpcGCoDfQVHS9kQvlDwMO1mPEMFozJfKO23IUo1HyLbsyMaaYOA+ECCt1uV3S7XVGr1WILKJTL5SDGM0qekJpRISvRUB2//KdPnwaLRSRDZ6Lpt7e3gzjV9fX1VNroghNPnz4N6iaEG8uKyPT7aOwtSRBb4CE9/T2IBYQbAJ8OBA/DBWxTDxdYcAMJhW5GAtnj0fLBdP1w1n1G2mzhU0HrwjbdfWEAak45hQjCBZJtEciqhHG2phZfTELRhS3ChQFmGUoQXpNIDPD4+JDIohv+YgZ+fRWhmWa4OIO/aWYYdhOL4bXlaSdCEk+crmlswY1gcQ8hKT9HmEmu2NSUCGZkYZLEQhDpAkJZFS1ckELx5XbrpGu6sGP5Ku5iIoXILr82aZ1JtpcbRpdu69EyZcUSZ6uDp4fK7BZ2yEMhRjW5ra+vi1arJV6+fJl57rRGVQghzs7OYgbQ32q1WmrxByHcFZOSKyqtr6+L58+fx9K9fv1abG9vx9JFF4igUR2HrGOS32zxdNF4wkV31Hk7qHFy2onFHySGMbKSjr8aU7rDjKdZ0hC9e0o6Fvb2cJtlX05KQgiR+RpLpLx58wa///47Hj58GPPvEjIPrGYT6PWKnVRCbo5jQN0BXpy3l8D/PyG3WfYl5Q+LFuA2wlhXsjAcA6eru+AXiJcFd7La2r64hUbpNsu+vCzsI+WEkElwYBkGDHsDvZwr/pAZYRmRL65U0YGOwifOzorbLPstgW+qhNwKKqi32xzyXQYiizIomokXSxH2lZPbLPstgT5VQgghpCA4/EsIIYQUBI0qIYQQUhA0qmRGODCMha5rckeRrfQ04fm8LuReM+09NBoaVTIjKnh0eSpZgpBMhXOGk9X0eqn54XUh95yp76HR0KiSmVHfBE52ZvdEeP+w0KyeTP1xZl4Xcn8p5h4aBY0qmR31Hl5snaCqqmhaDhz24jfCcbyPn5cauNBfSBdGnwheF3LPKPweGsViV0kk9wF/kfnk+reL3BRFCxawTwgrdG25ZAUUoSiaMO1iF2hdxutyV7fbpW93cZvNPSSDcarkHuLAsc5weHCCC2wF6546hopqB9D0fexu1FFhVDwpBOrbfYJGldxrHEPFDl7gfOOMC4uTmUN9u/vQqJJ7jgNDPcTl2gVWd89n62shhPp25+Hav+SeU0F7Hyid7kOwgyMzh/p21+GbKiGEEFIQDKkhhBBCCoJGlcwRB4bqf8sxsjWXfNk8x4BaUotfhWhW+RJCFgaNKpkjFbTPbegKoJkCQggIUwP6DczVrlrNCcqz0Kx2MCxeiBnlex+5hQ9rS/NAZaFZKs33/rvj0KiSxVLfha4AF1fz6l0cGAf9CdLX0bN1KIXLMat87yNL8LC2FA9qk+LAUBuY5G4g46FRJQvFMXbQGSrptTgdA6r3xqH6j/P+070VHgs7MveJ231LibwB+OcYTe9YFZ0h0G9E3mRkZUXffjI6QKvpl9eE5e4I35BGye/J0jzzMrJl5ZOpmOvD2rI8qE1KBe1zE9qixbhrzHzNJkJi2EJXIsuHaWZGGkXothBCmEKDInTbFJp/jqILWwhh64oANGF6efpZmRq8/ZFzgnLcfWGxsrK8PMIMBeCnSdclWgVT14U9Tn7/BFt3l6fz6uP/lzYJGUP8Wri6kbhmfnsDQvEP2LpQoAjdDI+F7R+5ZtG8/HN0Lb0cXvLaRstK6r5Up3zZI7o+SkZpOSP2m1o87+B+iMjm6yO5ETSqZM5EOj9Tk9/AkQ4B0U7E71yCE7wOQU/sj6bLOkfSKYVlhcY1lV+SaB1sXehmVp6SfCT5mlqiEyQ5Gfewdlse1EyhQROBeppaqEtSGdPlZJXv6pufty+zX5+s+4VMCod/yeKo92CudbAjHfLUYArPPyYEevWsTBSs4nJK/1SirOoVLjDEpZ3j1PoudHRwaAHWGbARyJlXflIkmun5Uy+u4p+2c85wMhyiUy2hVGqgjyEubX8YVoH+wl0usNLeh4Y+To0znAwVrFbd0+u7OhRc4MqJnLObcVGlZVk47UfOqa5mDP/Wsan10fBcAZV6D+cjZUyWk1U+4JydAPou6l45vYheaqa3ulPlEdby6j6RQqNKFkq9Z2KtU41P8qhsYEvp48A3trFJIJEb3jpFX9nCRnsTGoboHHqJ7EsMlS3k+mSirCx7A1sK0D/I883RCtr7GvqNEk4feeu4jpR/BI6Bg76Gfa5dNx2ZD2u340Gt3hMQwr0vAn+9TMZHknLGPNQNaS1nzyJej8l9JT5EFwxzBn6e5NBotp/K3cJhsvgxf3+0vDCtO5SXka9sX/B5tEh5qXoljqXylMmS9LFl5U/Gk/Rvy4Zk4zqnRYbqw5FcLeZrjA3XxnzfI1wK0rK8a52ZR5iXHtlpaqEvNS1jRp1G1jV+j2m6npA9WRcyKTSq5PZAfw+RkvNh7VY8qEUnR3nn5pUxagmz9kcnKkETmi931O/LB7yp4Nq/5PbgGFCrJ9iy+XUPUhC3Qadug4wkgD5VckvwA+aH6FSz/EyEELJY+KZKCLmnWGiW/BWFNJiih+WbpH0bZCRRaFQJIYSQguDwLyGEEFIQNKqEEEJIQdCoEkIIIQVBo0oIIYQUBI0qIYQQUhA0qoQQQkhB0KgSQgghBUGjSgghhBQEjSohhBBSEDSqhBBCSEHQqJJ7hgNDLaFUUpH6hvWyle1YMIwm1FIp30fOCVk0jgWjqUJN6fgi77v5QqNKZoB/A43YVBVq04B1x2+wG+MYUHca6HT6GC5almXHch88VMMK/pdKJahe7+0YaoYOGnAS+aTS8GkmP46BZrWBTn+4HDo7Ri9mxqI+5DoYDIKP5T5//nxRYpBZYptC8z7oHP1OsrDNyIee+dHxUfgfjdbyfDHa1oV2DxvT1pXYx7iT/92doS6O1Dnb+0i4ognz/jVlAfgfcV/8fZ1LL2bAVG+qWW8hlUoFT548wfHxMd6/fy8997fffgt+//rrr9OIQZaVSh2ba/L97XMbugIAQ3R2Em8MJKC6quROax12cDFDWZaVyiNXyZTVaux/PFEdvYjOnZxladwVLhQd9nkPdX4Q/FaTSy9mQCHDv+VyGd1uF91uF61WCwDw/fff48svv0S1WsWbN29S5zx58gSDwQCDwQDffPNNEWIUxtdff41SqYRnz54tWpQ7TAUbW57BGJ4gs48juXAMFY3+oqVYENVVKADWHlVi/7XN5JdHK2i/0KEAGHZ2JL49B8bOCbZetEF7egfIrRfFUohRrVQq2Nvbw97eHo6OjuA4Dp4/f46VlRVcX1/j888/lxrWx48f4/Hjx0WIUBjv37/H8fHxosW4Z6zhUVYv5hhoxvyzKpqx3tCBY3lpPB+Z4/lSXL9ZM955Zk6kyMYx/PxUNA0LjmPASLraxsqZo2zHQlNVs8+XSwdDLaHacb1Yw07VO7+JmIhe2XH5rBwjBJH2bVoAHFhG2L5q0x9liO9P+SujOUbT5a7nCCqPsAYF3gtJ+n8sbRv7GiAdIbEOcbL1Au1MXRzVhol5BNH6J3y1udy0E+u9E8oWKfvGbZ1HnydhlO4XVNcUk+hFkUwzdgzPJ1qr1aTHnz9/npkm6lPtdrvS/YPBQNRqteD/yspKLI+XL1+K9fX14Hi5XBbb29tiMBhI5Umm9895+vRpIO/KykrseFL+t2/fBmnK5bJ49+7djdvvPpDtE7RDv2qWj8PWhQIIRTeFLUTMF+ufYmoQin+dFE1oWsQX5p0PRffO18O0OX0+tq6E5wshbFOT+IjHyzm27GQewhampghFUXL5VH1/kSKrlK0LBYrQwoYRZsS/NKoZ/OvnptWFrute+9rhMU0XeqTd/TaSXVdTi5YZ6oBU7tzYQlc0YWb+T0nh+k1j7WoKLXKd00Xka8Og7sm8bFmZo8qaUO91U9h+e3p1v3Fb59Hn7JPTPtVRul9QXbNlmUQvimGmRlUIIcrlcpDu7du3wf48RtU3Xtvb26LVagXGTwghWq1WkK7Vaolutxsr6+zsLCZHNH2tVhPdbldsb2+LcrksWq2WEEKI169fxx4EWq2WGAwGYjAYiNevX6fk8w0/ySZtVG1hm3owaUTRsjsymUGWGo/AeCZvGNmkiUkmUrhpk52QqcVlyi1nZtleh5vqsezcnVm2UZXXISr32E42y0gmH1qS9UHiephael+Qds4TW/w6wTdAyog2nqANM9sk/6SzifVe1nZTtHV+fZaRpePy/YXUdcmYeUjNX/7yl+D3//73v4nOvb6+RrfbxfHxMY6OjgLf66tXr/Dvf/8bANDtdnF0dIS9vT3897//RblcBgD87W9/C/KJpq/Vavjhhx+wt7eH4+NjOI6Do6MjAMBnn32GP/3pT8F5H3/8cTBE/dlnnwEAPv30U7RaLdRqNXS73aUbvl5W+g1/aKeKaqODizUdpi1w3sv2X7mTdOLDNf5kg+GlLTljFfGRnQrc5ENIk+dk2DmMhf7Ud3WsTiVnHMc4QB8K9N20D3DquRXWITpDBVsb6Vau7/r+xUOMHJH0fFEpKo8gF6+K9PwqB8ZBH9A2UZemne4aTUx915u01MeBquIA++hludqKaMMJmFiflC3ERZuurafV50mYvq7Lx8yN6scffxz8/umnnyY6d319HXt7e6n93333XfD7q6++Cn4/ePAA29vbAFyD/OrVq1T6brc7kQxJHjx4gKOjo8Awk3xopoAQArbbk2F4AVTH3ByV9jmEOHd9XI4Dq6lCnetsHH8yVR+NaimMq6200Y70VtPJ6eDsZIgsv/Iks39lWKcj5KhswJ0rdoGrmU8Us3E5BNBvJKIFqvDcwbiYvRARIpOWhsBW6oEmZN5tOL3eT9fW87zvFn+PF89cF3/44IMPJkr/xRdfSPf//PPPwe8PP/wwpjjffvvtyPT+GydZDJX2C/cNYdhBNc+MDX9ySHUHp6v7eGFqM5cxSqV9DlvX3M633wmMa3ri6GLlvBkFvAlPimZCuG6n1HaeOUNoRgSTlqbKZDZtWIQ+TdPW89TnW3nvZPOHWRfwyy+/BL8/+uijQvL88ccfg9+j3jwfPnyYSk8WTQXtcxOXpQb6/Qaam2LEsFsTaqOPoWbCFnV3mNg6naOsLpV2D+ftXVjGIQ46fQz7HVQvAPvcG7ouRE73TWc2sZHecF9m3iNmXxfNxRUc1G9hyErONizibbUovb9pW8/zvluSe7xIZv6mGg1P+fTTTwvJs1arBb/9UB7Z9sknnwBwh5HJMlFHz3sa7TeaGb4oC81GH0NoMHuL6oQdGMFbaQX1dg/ntgk3IsOPrZ1WzmL8vln4w8f9U1krO7i6AKAkfdGzwPPnDTs4lIpiTB9aMyPm24ZF6P00bT3P+24Z7vHimalR7fV6uL6+BgC0Wi08ePCgkHx9YwkApmmOTe9PXgIgjZclC6Deg2tX+2iMijVbNBeJhSkqdezq0/k5k9Q3vQeMg+x2GOdvzFotptLedx8C+geS2FjX96bt33CxA+dqghWcwsU++g0VTSseh2gcnmB1SWegTNSGmZO3POM7F25vW98Jppk6jIyQmnfv3olutxsLjYmG0wiRL6Qmuj/r3PX1dWmsaLS8ly9f5gr/8WWP5i3j5cuXotvtBmE2JIPIequKNB7Sjq8BbNqRNJFwEm8OfTQUB5ophK0L3YzEBiK5Xqspic2LxgtOEB4QBmEmwl/yyzmq7CDmU9HDeE9dE5oXpwpAKKkQiVgGkbAXW5h6JKTD1LxwhGgMr9s2So51UIM1UxMhS2G7y2MP0/WMXu/ENkKOt2/fBqFtyX5kKuwJdCF3G0bDoEKd0TVd6JGYXyUzJvaGej8in0naejJ9ljZURpvK9hdUV7+fWZL1mgsxquVyWXS7XdHtdkWtVostoFAul6XGZxqjKkQ87tQv/+nTp8FiEUnjGU2/vb0dxKmur6+n0kYXnHj69GlQNyHcWNaoghZ6k98Zsm/oVJxbLDA8HTQe3GCK5hq2SLyaZprycjQzNARjttFxd7bQNV3Ytil0TQnkCxdoyCunLalnOobV1LVYkLxm2t7iE4ob8D6yw3AXi5AZP/ewGTPQUJQJHirim2bK9yu6HV8sQtqJS+qZbM8E0Qf0aKz6zQk7+Pg2JgYybxsmFu/362dqCK/lKPFuqvcpQz15W+crPyOHLB0fpftF1PUuGtXktr6+Llqtlnj58mXmudMaVSGEODs7ixlAf6vVaqnFH4RwV0xKrqi0vr6e+krO69evxfb2dixddIEIGlVC5kf0HufoEFl2SkIIATIRb968we+//46HDx/G/LuEkOL54x//iOvra5TLZTjO0nrfCQEwh5CauwhjXQmZDz///HMw2fHg4GDB0hAynrku/kDuEw6M1KdcCJERDV1K439W8s9//nP2+dQ1kovRulYEHP4lM8NqqrjaPc/+lBYhgLsAwNXuVCsqUddILgrQtXHwTZXMjPruFk6qzdhi9ITEcCw0Dy6ki9VPAnWNjKUgXRsHjSqZHZU2XugXaFT9j3uzxyMujuN91LzaAPYLeMOkrpEMCte1cSx28jG5F3hxnkpWMPpd3kbEJbqB7vniae/cpihC0fTi4wqpa9S1eelaBvSpEjJDHMfC2eEBTvrAmnnufTzAgaFWcQINW/u72KhX7sy6p2RxUNeWAxpVQuaBY6G5c4rN8x7QVHGw+mL+nzoj9wPq2kKhUSVkXlhNNE+BC2ziPPN7d4QUAHVtYXCiEiHzor6L1Ys+1jbZyZEZQ11bGHxTJYQQQgqCb6qEEEJIQdCoEkIIIQVBo0oIIYQUBI0quYM4MNQSSqXE1lzyRdcdA2pJhVH0YkCzyvdeQZ26ORaapRKWvamKgkaV3EEqaJ/b0BVAMwWEEBCmBvQb872xreYE5VloVjsYFi/EjPK9byyBTk2kT8ByXHsHhtpAf6EyzBcaVXI/qO9CV4CLq3k9sjswDibpSuro2TqUwuWYVb5kvjo1qT4By3HtK2ifm9AWKsN8oVEl9wLH2EFnqKS/UOEYUL2hPNUfI/OHzKzwWPiG4A5lucN/kWE1/xyj6R2rojME+o3IEKGsrOiwYsZbhdX0y2vCcnfEhx6T+SZkaZ55Gdmy8slNmalO3VifgDw65RhqOIStGnBGyZdVTtZ+Xz/9vGVyqbP9pulCmc8Sw4TMG1vo0UXVNTMjjSJ0WwghTKFBEbptCi1YiFsXthDC1hUBaML08vSzMjV4+yPnBOW4+8JiZWV5eYQZCsBPk65LtAqmrnsLpyfzldTZ1oUSqY//X9okZATz0ilZGfn0KchjpE6ZQoMm/KxsU3P1I1M+WTkZ+21dKHFTdhkAAAI7SURBVEHevsx+/aNpZHp+N6BRJXeUSGdlaqFBiSXRw87E2zRTSG56r3PQE/uj6bLOMUeVFe8MR3Y20TrYutBH5TtKziA7COWu9mozY446Zd5En/x043XKN96BDoyUL6s+6f22rkj0KvlAkPx/t+DwL7n71Hsw1zrYkQ55ajCFN/FECGQvk6pgFZdTTvpIlFW9wgWGuLRznFrfhY4ODi3AOgM2YnIm8t2YSkiSh6XQKUk5Tj6dqvcEhDCx1qmGbgWZfI9G1Ue+f5hLoe8uNKrkXlDvuR1IbPZkZQNbSh8HfscYm10Z6ZisU/SVLWy0N6FhiM6hl8i+xFDZQtKlJkVWlr2BLQXoH+TxL1XQ3tfQb5Rw+qgdfr5Llu9ZVh4ejoGDvoZ9frlkKmaqU9UxhWeVU8mjUxYMwwFQR08ImNoFruwM+eqjyknvr2xsQekfxOYaNI2rMZW5Yyzi9ZiQ2RL3fSmhs8nblxwey/BBBlvof4of8/dHywvTBv4xWb6yfYri/Y6Ul6qX5FgsX10iS8IXmJk/yWaeOjWFPiX3S3VK4nvPK19WOTGHvxbLRwv8xJF5BHdYD7mgPiFJHANq9QRb9jn4MkcKYdl1atnlu0Vw+JcQQggpCL6pEhLDQrPkrwCjwRQ98IuUZDqWXaeWXb7bBY0qIYQQUhAc/iWEEEIKgkaVEEIIKQgaVUIIIaQgaFQJIYSQgqBRJYQQQgqCRpUQQggpCBpVQgghpCBoVAkhhJCCoFElhBBCCuL/AdtHwnPyCB+wAAAAAElFTkSuQmCC" style="height:25%; width:25%" /><br />
+<span style="color:black">- <strong>Indirect Speech - </strong>When the reporter does not reproduce the actual words of the speaker but give the meaning of his own words, inverted commas are not used. (किसी वक्ता के कहे हुए शब्दों में कर्त्ता क्रिया में परिवर्तन करके लिखा जाता है, तो उसे Indirect speech कहते है।) </span><br />
+<strong><span style="color:black">Examples:</span></strong><br />
+<strong><span style="color:black">&bull; Indirect: </span></strong><span style="color:black">Ram said that he was very busy then. </span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">Rani told me that I was a liar. </span><br />
+<span style="color:black">&bull;In the above sentences we changed pronouns, verb and adverb and also added a connective (that). In few sentences reported verb is also changed.</span></span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b">❃<strong> Rules For Changing Direct into Indirect</strong></span><br />
+<span style="color:black">&bull; Reporting verb is changed according to the form and sense of the sentence.<br />
+&bull; Inverted commas are removed in the indirect-speech.<br />
+&bull; Connective word is used in the beginning of the reported speech.<br />
+&bull; Verb of the reported speech is changed according to the form and sense of the sentence.<br />
+&bull; Persons of the reported speech are changed.<br />
+&bull; Words showing nearness, time or place are changed.</span><br />
+<strong><span style="color:black">1. Change in Pronouns: </span></strong><br />
+<span style="color:black">-&nbsp;The first person of Reported Speech is changed as per the subject of Reporting Verb.<br />
+- The second person of Reported Speech is changed as per the object of Reporting Verb.<br />
+- The third person of Reported Speech is not changed. </span></span></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoTableGrid" style="border-collapse:collapse; border:1pt solid black; white-space:unset; width:75%">
+	<tbody>
+		<tr>
+			<td style="border-color:black; border-style:solid; border-width:1px; text-align:center; vertical-align:top; width:18%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">Person</span></strong></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:22%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">Number</span></strong></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:19%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">Subject</span></strong></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:17%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">Object</span></strong></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:23%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">Possessive</span></strong></span></span></td>
+		</tr>
+		<tr>
+			<td rowspan="2" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:18%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">1<sup>st</sup></span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:22%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Singular</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:19%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">I</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:17%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">me</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:23%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">my</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:22%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Plural</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:19%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">We</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:17%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">us</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:23%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">our</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:18%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">2<sup>nd</sup></span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:22%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Singular</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:19%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">You</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:17%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">you</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:23%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">your</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:22%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Plural</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:19%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">You</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:17%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">you</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:23%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">your</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:18%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">3<sup>rd</sup></span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:22%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Singular</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:19%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">He</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:17%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">him</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:23%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">his</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:22%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px">&nbsp;</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:19%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">She</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:17%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">her</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:23%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">her</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:22%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px">&nbsp;</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:19%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">It</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:17%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">it</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:23%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">its</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:18%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px">&nbsp;</span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:22%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Plural</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:19%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">They</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:17%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">them</span></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:23%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">their</span></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">Examples:</span></strong><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black"> He said to me, &ldquo;I am going to Kashmir.&rdquo;</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">He told me that he was going to Kashmir.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black"> She said to me, &ldquo;You are my cousin.</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">&nbsp;She told me that I am her cousin.</span><br />
+<strong><span style="color:black">2. Change in Tenses:</span></strong></span></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoTableGrid" style="border-collapse:collapse; border:1pt solid black; white-space:unset; width:75%">
+	<tbody>
+		<tr>
+			<td colspan="2" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; vertical-align:top; width:100%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b"><strong>Reporting Verbs</strong></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:45%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">say / says</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:54%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">say / says</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:45%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">say to / says to</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:54%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">tell/ tells</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:45%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">said </span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:54%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">said</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:45%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">said to </span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:54%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">told</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:45%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">will/shall + say</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:54%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">will/shall + say</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:45%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">will/shall + say to </span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:54%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">will/shall + tell</span></span></span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">- If the Reporting Verb (R.V.) is in Present or Future Tense, tense of the Reported Speech (R.S.) is not changed. </span><br />
+<span style="color:black">- If the Reporting Verb is in Past Tense but the Reported Speech expresses some universal truth, habitual action, historical fact, scientific conclusion etc. the tense of Reported Speech is not changed.</span><br />
+<strong><span style="color:black">Examples:</span></strong><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black"> Anil says to Abhishek, &ldquo;Himanshu is watching T.V.&rdquo;</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">Anil tells Abhishek that Himanshu is watching T.V.</span><br />
+<span style="color:black">&bull;&nbsp;<strong>Direct</strong></span><strong>:</strong> <span style="color:black">Khushboo says to me, &ldquo;You are the only person I have ever seen&rdquo;. </span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">Khushboo tells me that I am the only person she has ever seen.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Anil says, &ldquo;I have done the work.&rdquo; </span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">Anil says that he has done the work. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Susan will say to me, &ldquo;You are very late.&rdquo;</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">Susan will tell me that I am very late.</span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>The teacher said to me, &quot;The Earth revolves round the Sun.&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> The teacher told me that the Earth revolves round the Sun. </span><br />
+<span style="color:black">&bull;&nbsp;<strong>Direct: </strong>My father said to me, &ldquo;Two and two make four.&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> My father told me that two and two make four. </span><br />
+<span style="color:black">&bull;&nbsp;<strong>Direct: </strong>She said to her mother, &ldquo;Water contains H<sub>2</sub> and O<sub>2</sub>.&rdquo; </span><br />
+<strong><span style="color:black">Indirect :</span></strong><span style="color:black"> She told her mother that water contains H<sub>2</sub> and O<sub>2</sub>. </span><br />
+<span style="color:black">&bull;&nbsp;<strong>Direct: </strong>He said to me, &quot;I go for a walk daily.&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> He told me that he goes for a walk daily. </span><br />
+<span style="color:black">&bull;&nbsp;<strong>Direct: </strong>The saint said, &quot;Man proposes and god disposes.&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> The saint said that Man proposes and god disposes. </span><br />
+<span style="color:black">&bull;&nbsp;<strong>Direct: </strong>Sita said to Gita, &quot;India gained Independence in 1947.&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Sita told Gita that India gained Independence in 1947.</span></span></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoTableGrid" style="border-collapse:collapse; border:1pt solid black; white-space:unset; width:75%">
+	<tbody>
+		<tr>
+			<td style="border-color:black; border-style:solid; border-width:1px; text-align:center; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">Direct</span></strong></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; text-align:center; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">Indirect</span></strong></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Simple Present Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Simple Past Tense</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Present Continuous Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Past Continuous Tense</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Present Perfect Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Past Perfect Tense</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Present Perfect Continuous Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Past Perfect Continuous Tense</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Simple Past Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Past Perfect Tense</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Past Continuous Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Past Perfect Continuous Tense</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Past Perfect Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">No change</span> </span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Past Perfect Continuous Tense</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">No change</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">is /am/ are</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">was/were</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">was/were</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">had been </span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">has / have</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">had </span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">shall/will</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">would </span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">can</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">could </span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">may</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px">might</span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px">must</span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">has to/have to/had to </span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:72px; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">would/ should /could&nbsp;/might/must/used to&nbsp;/ought to/need not</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:72px; width:50%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">No change</span></span></span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">Examples:</span></strong><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">John said to Meera, &ldquo;You are my dear sister.&rdquo;</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">John told Meera that she was his dear sister. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Kamal said to Reeta, &ldquo;I have always helped you.&rdquo; </span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">Kamal told Reeta that he had always helped her. </span><br />
+<span style="color:black">&bull; <strong>Direct:</strong> He said to me, &ldquo;I never eat food.&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> He told me that he never ate food. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>She said to me, &ldquo;I love you.&quot;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> She told me that she loved me. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>My mother said to Trisha, &quot;Sunil was playing in the garden.&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> My mother told Trisha that Sunil had been playing in the garden.</span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>Rohan said to Ramesh, &ldquo;I had bought a scooter for you.&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Rohan told Ramesh that he had bought a scooter for him. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>Mohan said to Rohan, &quot;Sohan can pass the exam.&quot;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Mohan told Rohan that Sohan could pass the exam. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>Sita said to Gita, &quot;Rita will be sleeping at home.&quot;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Sita told Gita that Rita would be sleeping at home. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>My father said to Manish, &quot;You must pass the UPSC exam.&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> My father told Manish that he must pass the UPSC exam.</span></span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">3. Change of words showing nearness into words showing distance:</span></strong> </span></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoTableGrid" style="border-collapse:collapse; border:1pt solid black; white-space:unset; width:75%">
+	<tbody>
+		<tr>
+			<td style="border-color:black; border-style:solid; border-width:1px; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">this</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">that</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">these</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">those</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">here</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">there</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">now</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">then</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">thus</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">so</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">ago</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">before</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">today</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">that day</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">tonight</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">that night</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">yesterday</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">previous day/last day/the day before/earlier day</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">tomorrow </span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">the next day/the following day/the coming day/the day after</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">last night / week/month/year</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">previous night/ week/ month/ year</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">next night/ week/month/year</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:50px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">the following night/ week/ month/ year</span></span></span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">Examples:</span></strong><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Harsha said, &ldquo;I am very happy today.&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Harsha said that she was very happy that day. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Sheela said, &ldquo;I went to Shimla five years ago.&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Sheela said that she had gone to Shimla five years before.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">He said to Sita, &ldquo;I must go from here now.&rdquo;</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">He told Sita that he had to go from there then.</span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>Ram said to Shyam, &ldquo;They are playing football in the ground now.&quot;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Ram told Shyam that they were playing football in the ground then. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>Rimi said to me, &ldquo;I have bought a scooter today.&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Rimi told me that she had bought a scooter that day. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>She said to Ram, &quot;I have been reading a novel since yesterday.&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> She told Ram that she had been reading a novel since previous day. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>Ritu said to Ranu, &quot;I called you yesterday.&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Ritu told Ranu that she had called her last day.</span>&nbsp;<br />
+<strong><span style="color:black">4. Interrogative Sentences (प्रश्नवाचक वाक्य):</span></strong><br />
+<span style="color:black">-</span> <span style="color:black">यदि Reported Speech में</span> <span style="color:black">प्रश्न</span> <span style="color:black">है, तो Indirect Speech बनाते</span> <span style="color:black">समय Reporting Verb के</span> <span style="color:black">&lsquo;said&rsquo; को</span> <span style="color:black">&lsquo;asked&rsquo; में</span> <span style="color:black">बदल</span> <span style="color:black">देते</span> <span style="color:black">है।</span><br />
+<span style="color:black">- Connective word &lsquo;that&rsquo; is not used in the indirect speech.</span><br />
+<span style="color:black">-</span> <span style="color:black">यदि</span> <span style="color:black">प्रश्न Helping Verb से</span> <span style="color:black">प्रारंभ</span> <span style="color:black">है, तो</span> <span style="color:black">&lsquo;Connective if/whether&rsquo; का</span> <span style="color:black">use</span> <span style="color:black">होगा</span> <span style="color:black">और</span> <span style="color:black">प्रश्न</span> <span style="color:black">यदि W/h शब्द</span> <span style="color:black">से</span> <span style="color:black">प्रारम्भ</span> <span style="color:black">हो, तो</span> <span style="color:black">&lsquo;Connective वही W/h&rsquo; शब्द</span> <span style="color:black">रहेगा।</span><br />
+<span style="color:black">-</span> <span style="color:black">प्रश्न</span> <span style="color:black">को</span> <span style="color:black">सकारात्मक</span> <span style="color:black">वाक्य</span> <span style="color:black">में</span> <span style="color:black">बदल</span> <span style="color:black">देते</span> <span style="color:black">है।</span><br />
+<span style="color:black">- Mark of interrogation [?] is removed in the indirect speech.</span></span></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoTableGrid" style="border-collapse:collapse; border:1pt solid black; white-space:unset; width:75%">
+	<tbody>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; vertical-align:top; width:24%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px">&nbsp;</span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:30%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Yes/No type question</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; text-align:center; vertical-align:top; width:45%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Question containing an alternative</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:24%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">If</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:30%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px">✓</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:45%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px">✕</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:24%"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:black">Whether</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:30%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px">✓</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:45%">
+			<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px">✓</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">Examples:</span></strong><br />
+<span style="color:black">&bull; <strong>Direct:</strong> Tanisha said to me, &ldquo;Is you father at home?&rdquo; </span><br />
+<span style="color:black"><strong>Indirect:</strong> Tanisha asked me if my father was at home. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>Karan said to me, &rdquo;Are you waiting for someone?&rdquo;</span><br />
+<span style="color:black"><strong>Indirect: </strong>Karan asked me if I was waiting for someone.</span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>Suman said to me, &rdquo;Have you done your work?&rdquo;</span><br />
+<span style="color:black"><strong>Indirect: </strong>Suman asked me if I had done my work.</span><br />
+<span style="color:black">&bull;</span><strong><span style="color:black"> Direct: </span></strong><span style="color:black">Jitendra said to the girl, &rdquo;Can you speak Hindi fluently?&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Jitendra asked the girl if she could speak Hindi fluently.</span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>I said to him, &ldquo;Will you help me?&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> I asked him if he would help me. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>He said to them, &quot;Did I tell a lie?&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> He asked them if he had told a lie. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>I said to her, &quot;Are you studying English?&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> I asked her if she was studying English. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>We said to him, &ldquo;Can you solve this question?&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> We asked him if he could solve that question. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>He said to us, &quot;Do you know my name?&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> He asked us if we knew his name.</span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>David said to the stranger, &rdquo;Are you a British or an American?&rdquo;</span><br />
+<span style="color:black"><strong>Indirect:</strong> David asked the stranger whether he was a British or an American.</span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>She said to him, &quot;Will you help me or not?&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> She asked him whether he would help her or not. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>He said to me, &ldquo;Do you like tea or coffee?&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> He asked me whether I liked tea or coffee.</span><br />
+<span style="color:black">- &lsquo;<strong>Wh&rsquo; Interrogative Questions :</strong></span><br />
+<strong><span style="color:black">Examples:-</span></strong><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Nikhil said, &rdquo;Why is everybody laughing?&rdquo;</span><br />
+<span style="color:black"><strong>Indirect: </strong>Nikhil asked why everybody was laughing.</span><br />
+<strong><span style="color:black">&bull; Direct:</span></strong><span style="color:black"> Mahendra said to us, &rdquo;Where do you want to go?&rdquo;</span><br />
+<span style="color:black"><strong>Indirect:</strong> Mahendra asked us where we wanted to go.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Radha said to her students, &rdquo;Who will answer my question?&rdquo;</span><br />
+<span style="color:black"><strong>Indirect:</strong> Radha asked her students who would answer her question.</span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>Raman said to me, &quot;Where do you live?&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Raman asked me where I lived. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>Ranu said to Hari, &ldquo;What is your name?&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Ranu asked Hari what his name was. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>He said to her, &quot;What are you doing?&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> He asked her what she was doing.</span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>She said to me, &quot;When will you return my book?&quot;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> She asked me when I would return her book. </span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>He said to us, &quot;How much money do you want?&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> He asked us how much money we wanted.</span><br />
+<strong><span style="color:black">5. Imperative Sentence (आज्ञासूचक<strong> </strong>वाक्य):</span></strong><br />
+<span style="color:black">-</span> <span style="color:black">आज्ञासूचक</span> <span style="color:black">वाक्यों</span> <span style="color:black">से</span> <span style="color:black">आदेश (order/command), सुझाव (suggestion/advice), निवेदन (request) का</span> <span style="color:black">बोध</span> <span style="color:black">होता</span> <span style="color:black">है।</span><br />
+<span style="color:black">-</span> <span style="color:black">यदि Reported Speech में</span> <span style="color:black">वाक्य Imperative है, तो Indirect बनाते</span> <span style="color:black">समय Reporting Verb के said को</span> <span style="color:black">वाक्य</span> <span style="color:black">के</span> <span style="color:black">भाव</span> <span style="color:black">के</span> <span style="color:black">अनुसार</span> <span style="color:black">&lsquo;requested/ asked/ advised/ suggested/begged&rsquo; में</span> <span style="color:black">बदल</span> <span style="color:black">देते</span> <span style="color:black">है।</span><br />
+<span style="color:black">- Connective &lsquo;to&rsquo; का</span> <span style="color:black">use</span> <span style="color:black">होता</span> <span style="color:black">है और &lsquo;to&rsquo; के</span> <span style="color:black">बाद Verb की First form को</span> <span style="color:black">वैसा</span> <span style="color:black">ही</span> <span style="color:black">रहने</span> <span style="color:black">देते</span> <span style="color:black">है।</span><br />
+<span style="color:black">-</span> <span style="color:black">यदि Please शब्द</span> <span style="color:black">है, तो उसे</span> <span style="color:black">हटा</span> <span style="color:black">देते</span> <span style="color:black">है।</span><br />
+<strong><span style="color:black">Examples:</span></strong><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Yasin said, &ldquo;Please, give me a pen.&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Yasin requested to give him a pen.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Manohar said to his servant, &rdquo;Open all the windows.&rdquo;</span><br />
+<span style="color:black"><strong>Indirect:</strong> Manohar ordered his servant to open all the windows.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Manju said to the postman, &rdquo;Please read this letter for me.&rdquo;</span><br />
+<span style="color:black"><strong>Indirect:</strong> Manju requested to postman to read that letter for her.</span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>Virendra said to them, &rdquo;Be patient and wait for your turn.&rdquo;</span><br />
+<span style="color:black"><strong>Indirect:</strong> Virendra asked them to be patient and wait for their turn.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Manjeet said to his students, &rdquo;Read silently to comprehend the text.&rdquo;</span><br />
+<span style="color:black"><strong>Indirect:</strong> Manjeet advised his students to read silently to comprehend the text.</span><br />
+<strong><span style="color:black">&bull; Direct:</span></strong><span style="color:black"> She said to them, &quot;Do your work quietly.&rdquo;</span><br />
+<strong><span style="color:black">&bull; Indirect: </span></strong><span style="color:black">She ordered them to do their work quietly. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">She said to him, &quot;Don&#39;t disturb me.&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> She ordered him not to disturb her.</span><br />
+<span style="color:black">or </span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">She forbade him to disturb her. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">He said to them, &quot;Don&#39;t repeat this mistake.&rdquo; </span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">He ordered them not to repeat that mistake. </span><br />
+<span style="color:black">or</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">He forbade them to repeat that mistake.</span><br />
+<strong><span style="color:black">- Let&rsquo;s से<strong> </strong>शुरू</span></strong><strong> </strong><strong><span style="color:black">होने<strong> </strong>वाले<strong> </strong>वाक्य:</span></strong><br />
+<span style="color:black">-</span> <span style="color:black">यदि Reported Speech में</span> <span style="color:black">वाक्य Let&rsquo;s से</span> <span style="color:black">प्रारंभ</span> <span style="color:black">है</span> <span style="color:black">और Let का</span> <span style="color:black">अर्थ</span> <span style="color:black">प्रस्ताव</span> <span style="color:black">रखना</span> <span style="color:black">है, तो Indirect बनाते</span> <span style="color:black">समय Reported Verb के said को proposed में</span> <span style="color:black">बदल</span> <span style="color:black">देते</span> <span style="color:black">है।</span><br />
+<span style="color:black">- Connective &lsquo;that&rsquo; का</span> <span style="color:black">use</span> <span style="color:black">होता</span> <span style="color:black">है तथा Let को</span> <span style="color:black">हटा</span> <span style="color:black">देते</span> <span style="color:black">है।</span><br />
+<span style="color:black">- Let के</span> <span style="color:black">बाद</span> <span style="color:black">के Object को Subject में</span> <span style="color:black">बदलकर</span> <span style="color:black">उसे</span> <span style="color:black">नियमानुसार</span> <span style="color:black">बदल</span> <span style="color:black">देते</span> <span style="color:black">है।</span><br />
+<span style="color:black">- Subject बदलने</span> <span style="color:black">के</span> <span style="color:black">बाद</span> <span style="color:black">&lsquo;should + V<sub>1</sub>&rsquo; रखकर Indirect बना</span> <span style="color:black">देते</span> <span style="color:black">है।</span><br />
+<strong><span style="color:black">Examples:</span></strong><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Happy said, &ldquo;Let us go on a walk.&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Happy proposed that they should go on a walk. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Rajesh said to me, &rdquo;Let&rsquo;s go and speak to the manager.&rdquo;</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">Rajesh suggested to me that we should go and speak to the manager.</span><br />
+<span style="color:black">&bull; <strong>Direct:</strong> She said to me, &quot;Let us go for a picnic.&rdquo; </span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">She suggested to me that we should go for a picnic. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">He said to me,&quot; Let us study English.&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> He suggested to me that we should study English.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">He said to them, &ldquo;Let us watch the T.V.&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> He suggested to them that they should watch the T.V.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">You said to him, &quot;Let us not disturb others.&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> You suggested to him that you should not disturb others. </span><br />
+<strong><span style="color:black">&bull; Direct:</span></strong><span style="color:black"> He said to us, &quot;Let us play football.&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> He suggested to us that we should play football.</span><br />
+<strong><span style="color:black">6.</span></strong><span style="color:black"> <strong>Optative Sentences (</strong></span><strong><span style="color:black">इच्छासूचक<strong> </strong>वाक्य):</span></strong><br />
+<span style="color:black">-</span> <span style="color:black">इन</span> <span style="color:black">वाक्यों</span> <span style="color:black">से</span> <span style="color:black">इच्छा/कामना (wish/desire), आशीर्वाद (blessing), प्रार्थना (prayer), अभिशाप (curse) का</span> <span style="color:black">बोध</span> <span style="color:black">होता</span> <span style="color:black">है</span> <span style="color:black">और</span> <span style="color:black">ये sentence &lsquo;May&rsquo; से start होते</span> <span style="color:black">है</span> <span style="color:black">तथा</span> <span style="color:black">अन्त</span> <span style="color:black">में</span> <span style="color:black">विस्मयादिबोधक</span> <span style="color:black">चिह्न (!)</span> <span style="color:black">का</span> <span style="color:black">use</span> <span style="color:black">होता</span> <span style="color:black">है।</span><br />
+<span style="color:black">-</span> <span style="color:black">यदि Reported Speech में</span> <span style="color:black">वाक्य Optative हो, तो Indirect बनाने</span> <span style="color:black">के</span> <span style="color:black">लिए Reporting Verb के said को</span> <span style="color:black">वाक्य</span> <span style="color:black">के</span> <span style="color:black">भाव</span> <span style="color:black">के</span> <span style="color:black">अनुसार</span> <span style="color:black">&lsquo;wished, blessed or prayed&rsquo; में</span> <span style="color:black">बदल</span> <span style="color:black">देते</span> <span style="color:black">है।</span><br />
+<span style="color:black">- Connective &lsquo;that&rsquo; का</span> <span style="color:black">use</span> <span style="color:black">होता</span> <span style="color:black">है।</span><br />
+<span style="color:black">- Subject बदलने</span> <span style="color:black">के</span> <span style="color:black">बाद</span> <span style="color:black">&lsquo;might + V<sub>1</sub>&lsquo; का</span> <span style="color:black">use</span> <span style="color:black">करते</span> <span style="color:black">है।</span><br />
+<strong><span style="color:black">Examples:</span></strong><br />
+<span style="color:black">&bull; <strong>Direct: </strong>He said to me, &ldquo;May you get success!&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> He wished me that I might get success.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">She said to him, &quot;May you live long!&quot;</span><br />
+<strong><span style="color:black">Indirect</span></strong><span style="color:black">: She wished that he might live long. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">He said to me, &ldquo;May you always succeed in life!&quot;</span><br />
+<span style="color:black"><strong>Indirect:</strong> He blessed that I might always succeed in life. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">She said to him, &ldquo;May you never get peace in life!&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> She cursed him that he might get peace in life. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">He said &quot;Good morning Varun!&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> He wished good morning to Varun.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Aman said &ldquo;I wish my friends were here!&rdquo;</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">Aman wished that his friends had been there.</span><br />
+<strong><span style="color:black">7. Exclamatory Sentences</span></strong><br />
+<strong><span style="color:black">(विस्मयादिबोधक<strong> </strong>वाक्य):</span></strong><br />
+<span style="color:black">-</span> <span style="color:black">यदि Reported Speech में Alas!, Hurrah!, Oh!, Ah! etc.</span> <span style="color:black">हो</span> <span style="color:black">और</span> <span style="color:black">विस्मय</span> <span style="color:black">प्रकट</span> <span style="color:black">करें, तो</span> <span style="color:black">उसे</span> <span style="color:black">विस्मयादिबोधक</span> <span style="color:black">वाक्य</span> <span style="color:black">कहते</span> <span style="color:black">है।</span><br />
+<span style="color:black">-</span> <span style="color:black">यदि Reported Speech में</span> <span style="color:black">वाक्य</span> <span style="color:black">विस्मयादिबोधक</span> <span style="color:black">हो, तो Indirect बनाते</span> <span style="color:black">समय Reporting Verb के said को</span> <span style="color:black">&lsquo;exclaimed with joy/ sorrow/ surprise/ regret / delight/ applause/ praise&rsquo; में</span> <span style="color:black">बदल</span> <span style="color:black">देते</span> <span style="color:black">है।</span><br />
+<span style="color:black">- Connective &lsquo;that&rsquo; का</span> <span style="color:black">use</span> <span style="color:black">करते</span> <span style="color:black">है।</span><br />
+<span style="color:black">- Alas! Hurrah! Oh! etc. शब्दों</span> <span style="color:black">को</span> <span style="color:black">हटा</span> <span style="color:black">देते</span> <span style="color:black">है।</span><br />
+<strong><span style="color:black">(i)</span></strong><span style="color:black"> Hurray!, Hurrah! - happiness, joy, delight</span><br />
+<strong><span style="color:black">(ii)</span></strong><span style="color:black"> Oh!, Alas! - sorrow, sadness</span><br />
+<strong><span style="color:black">(iii)</span></strong><span style="color:black">&nbsp; Bravo!, Well done! - praise, applause</span><br />
+<strong><span style="color:black">(iv)</span></strong><span style="color:black">&nbsp; Eurekha!, What!, How!, Wow!, Wonder! - surprise</span><br />
+<strong><span style="color:black">(v)</span></strong><span style="color:black"> Sorry! - regret</span><br />
+<strong><span style="color:black">Examples:</span></strong><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Captain said, &ldquo;Hurrah! We won the match.&rdquo;</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">Captain exclaimed with joy that they had won the match.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Raman said, &rdquo;Alas! I am ruined.&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Raman exclaimed with sorrow that he was ruined.</span><br />
+<span style="color:black">&bull; <strong>Direct: </strong>He said to us, &quot;Hurrah! I have pass the exam&quot;.</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">He exclaimed with joy that he had passed the exam. </span><br />
+<span style="color:black">&bull; <strong>Direct:</strong> Ayansh said us, &quot;Fantastic! We have won the prize. </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Ayansh exclaimed with happiness that we had won the prize. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">She said to us, &quot;Alas! The old beggar is dead.&quot; </span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">She exclaimed with sorrow that the old beggar was dead. </span><br />
+<strong><span style="color:black">&bull; Direct:</span></strong><span style="color:black"> Nisha said to me, &quot;Alas! I have lost my diamond ring.&rdquo; </span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">Nisha exclaimed with sadness that she had lost her diamond ring. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">The teacher said to me, &quot;Bravo! You have done well.&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> The teacher exclaimed with praise that I had done well. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">My uncle said to me, &quot;Well done! You have done a good job.&quot; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> My uncle exclaimed with applause that I had done a good job.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Arnav said to me, &ldquo;Sorry! For being late.&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Arnav exclaimed with regret that he was late.</span><br />
+<strong><span style="color:black">Note: </span></strong><span style="color:black">यदि</span> <span style="color:black">विस्मयादिबोधक</span> <span style="color:black">वाक्य What! या How! से</span> <span style="color:black">प्रारंभ</span> <span style="color:black">हो, तो said को</span> <span style="color:black">&lsquo;exclaimed with surprise&rsquo; में</span> <span style="color:black">बदल</span> <span style="color:black">देते</span> <span style="color:black">है। What! या How! शब्द</span> <span style="color:black">को</span> <span style="color:black">हटा</span> <span style="color:black">देते</span> <span style="color:black">है।</span> <span style="color:black">subject</span> <span style="color:black">व</span> <span style="color:black">verb</span> <span style="color:black">को</span> <span style="color:black">नियमानुसार</span> <span style="color:black">बदलकर Adjective के</span> <span style="color:black">पहले</span> <span style="color:black">&lsquo;very/ great&rsquo; को</span> <span style="color:black">रखकर Indirect बनाते</span> <span style="color:black">है।</span><strong> </strong><br />
+<strong><span style="color:black">Examples:</span></strong><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">He said to her, &ldquo;What a fool you are!&rdquo;</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">He exclaimed with surprise that she was a great fool.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Vijay said, &rdquo;What a beautiful story!&rdquo;</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">Vijay exclaimed with surprise that it was a very beautiful story.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Sumitra said, &rdquo;What a great man Mahatma Gandhi was!&rdquo;</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">Sumitra exclaimed with surprise that Mahatma Gandhi was a very great man.</span><br />
+<strong><span style="color:black">&bull; Direct</span></strong><span style="color:black">: Niharika said, &rdquo;How easy it is to do!&rdquo;</span><br />
+<span style="color:black"><strong>Indirect:</strong> Niharika exclaimed with surprise that it was very easy to do it.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">She said to me, &quot;What a beautiful house it is!&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> She exclaimed with surprise that it was a very beautiful house.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">He said to her, &ldquo;How tall you are!&rdquo; </span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> He exclaimed with surprise that she was very tall. </span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">He said to her, &quot;What a teacher you are!&rdquo; </span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">He exclaimed with surprise that she was a great teacher.</span></span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#2980b9"><strong>✯ </strong><u><strong>Important Facts:</strong></u></span><br />
+<strong><span style="color:black">-</span> </strong><span style="color:black">यदि Reported Speech में Time Clause के</span> <span style="color:black">साथ Past Continuous Tense/Simple Past Tense का use हुआ</span> <span style="color:black">हो, तो Indirect Speech का</span> <span style="color:black">Tense नहीं</span> <span style="color:black">बदलता</span> <span style="color:black">है।</span><br />
+<strong><span style="color:black">Example:</span></strong><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Jenny said to me, &ldquo;While I was studying, you were playing.&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Jenny told me that while she was studying, I was playing.</span><br />
+<strong><span style="color:black">&bull; Direct: </span></strong><span style="color:black">Gaytri said, &ldquo;When I met him, he was studying.&rdquo;</span><br />
+<strong><span style="color:black">Indirect:</span></strong><span style="color:black"> Gaytri said that when she met him, he was studying.</span><br />
+<strong><span style="color:black">-</span> </strong><span style="color:black">यदि Reported Speech में</span> <span style="color:black">Simple Past Tense का</span> <span style="color:black">use simultaneous actions (समकालिक</span> <span style="color:black">कार्य) को</span> <span style="color:black">दर्शाने</span> <span style="color:black">के</span> <span style="color:black">लिए</span> <span style="color:black">होता</span> <span style="color:black">है, तो Indirect Speech का Tense नहीं</span> <span style="color:black">बदलता</span> <span style="color:black">है।</span><br />
+<strong><span style="color:black">Example:</span></strong><br />
+<strong><span style="color:black">&bull; Direct:</span></strong><span style="color:black"> Anita said, &ldquo;I prepared the tea and he fried the chips.&rdquo;</span><br />
+<strong><span style="color:black">Indirect: </span></strong><span style="color:black">Anita said that she prepared the tea and he fried the chips.</span></span></span></p>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.controls').classList.toggle('active');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function increaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            document.body.style.fontSize = (currentSize + 2) + 'px';
+        }
+
+        function decreaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            if (currentSize > 10) {
+                document.body.style.fontSize = (currentSize - 2) + 'px';
+            }
+        }
+
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
