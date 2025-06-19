@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Translation </title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .menu-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .menu-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0);
+            top: 0;
+            right: 0;
+        }
+        .controls.active .round-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .round-button:nth-child(2) {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53); /* Dark Mode */
+            transition-delay: 0.1s;
+            top: 56px;
+            right: 0;
+        }
+        .round-button:nth-child(3) {
+            background: linear-gradient(135deg, #1e90ff, #00b4d8); /* Font + */
+            transition-delay: 0.2s;
+            top: 112px;
+            right: 0;
+        }
+        .round-button:nth-child(4) {
+            background: linear-gradient(135deg, #2ecc71, #27ae60); /* Font - */
+            transition-delay: 0.3s;
+            top: 168px;
+            right: 0;
+        }
+        .round-button:nth-child(5) {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Print */
+            transition-delay: 0.4s;
+            top: 224px;
+            right: 0;
+        }
+        .round-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .round-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .round-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .menu-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .menu-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .round-button span, .menu-button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="menu-button" onclick="toggleMenu()" title="Toggle Menu"><span>☢️</span></button>
+        <button class="round-button" onclick="toggleDarkMode()" title="Toggle Dark Mode"><span>🌙</span></button>
+        <button class="round-button" onclick="increaseFontSize()" title="Increase Font Size"><span>+</span></button>
+        <button class="round-button" onclick="decreaseFontSize()" title="Decrease Font Size"><span>-</span></button>
+        <button class="round-button" onclick="printPage()" title="Print Page"><span>🖨️</span></button>
+    </div>
+    <!--copy paste🤣🤣🤣😂-->
+<p style="text-align:center"><span style="color:#ff3300"><span style="font-size:20px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Translation</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>1.&nbsp;<span style="color:#e67e22">Step of Translation (अनुवाद के चरण)</span></strong><br />
+❖ मूल वाक्य का पता करना और उसकी अंग्रेजी बनाना।<br />
+❖ वाक्य के Tense की पहचान करना कि वह वाक्य Present Tense में है या Past Tense में है अथवा Future Tense.<br />
+❖ &lsquo;Tense (काल) की पहचान करने के बाद उस वाक्य के Subject (कर्त्ता) का पता लगाना।<br />
+❖ वाक्य के कर्ता की पहचान करने के बाद Helping Verb या Linking Verb की पहचान करना।<br />
+❖ वाक्य में verb (क्रिया) दी हुई हो, तो उसकी पहचान करना।<br />
+❖ कुछ क्रियाओं का use Present Continuous में नहीं करके उनको Simple Present Tense में अनुवादित करना चाहिए जैसे &ndash; Love, Like, hear etc. क्रियाओं का use Simple Present में किया जाता है।<br />
+❖ &lsquo;To be&rsquo; and &lsquo;to have&rsquo; forms की पहचान कर पता करना की ये main verb के रूप में use हुए या helping verb के रूप में।<br />
+❖ Tense, Subject और Verb की पहचान करने के बाद उस वाक्य के Object की पहचान करनी चाहिए।<br />
+❖ &lsquo;Tense&rsquo; के पश्चात् हमें विभिन्न नियमों का ज्ञान होना चाहिए&ndash;<br />
+&nbsp;&nbsp; (i) Subject verb agreement<br />
+&nbsp;&nbsp; (ii) Sequence of Tense<br />
+&nbsp;&nbsp; (iii) Determiners, Articles, Adverbs, Adjectives, Prepositions, Nouns, Pronouns, &nbsp;Conjunctions, Interjections, Modals etc.<br />
+&nbsp; (iv) Reported speech and Voices<br />
+&nbsp; (v) Sentence: Simple, Compound, Complex etc.<br />
+❖ प्रत्येक दिन verb की form याद करना।<br />
+❖ Verb से पूछिये &ndash;किसे<span dir="RTL" lang="HI">/</span>क्या<span dir="RTL" lang="HI">/</span>कहाँ<span dir="RTL" lang="HI">/</span>कब<span dir="RTL" lang="HI">/</span>क्यों<span dir="RTL" lang="HI">/</span>कैसे<br />
+❖ मूल वाक्य के पीछे <span dir="RTL" lang="HI">(</span>किसे<span dir="RTL" lang="HI">/</span>क्या<span dir="RTL" lang="HI">/</span>कहाँ<span dir="RTL" lang="HI">) </span>आदि के उत्तर लिख कर Practice करनी चाहिए।&nbsp;<br />
+<strong>Examples:</strong><br />
+Maya is watching T.V. at this time.<br />
+&nbsp; &nbsp;माया इस समय टी. वी. देख रही है।<br />
+&nbsp; (इस वाक्स में Sub. (माया) है अर्थात् verb (watch) का use हुआ है, यह वाक्य Present Continuous Tense में है।)<br />
+We could not help laughing at this joke.<br />
+&nbsp;&nbsp; हम उसके मज़ाक पर हंसे बिना नहीं रह सके।<br />
+Water was below his knees.<br />
+&nbsp;&nbsp; पानी उसके घुटनों के नीचे था।<br />
+Khushboo has been living in Mumbai since her birth.<br />
+&nbsp;&nbsp; खुशबू अपने जन्म से ही मुम्बई में रह रही है।<br />
+Distribute these copies among the students.<br />
+विद्यार्थियों में यह कॉपियाँ बांट दो।<br />
+The Sun rises in the east.<br />
+सूर्य पूर्व दिशा में उदय होता है।<br />
+Bhawesh does not help others.<br />
+भावेश दूसरों की मदद नहीं करता है।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+Will Ramesh not eat food now?<br />
+क्या रमेश अब खाना नहीं खाएगा?&nbsp;&nbsp;<br />
+There was a cat on the table.<br />
+टेबल के ऊपर बिल्ली थी।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+Ankit has seven watches.<br />
+अंकित के पास सात घड़ियाँ है।&nbsp;<br />
+This fight is between Raghav and&nbsp;Trisha.<br />
+ये झगड़ा राघव और त्रिशा के बीच है।&nbsp;<br />
+It is 8 o&#39;clock by my watch.<br />
+मेरी घड़ी में 8 बजे है।<br />
+I shall play football everyday in the evening.<br />
+मैं रोज शाम को फुटबॉल खेलूंगा।<br />
+My friends will have returned from Jaipur by the end of next week.<br />
+अगले सप्ताह के अन्त तक मेरे दोस्त जयपुर से लौट चुके होंगे।&nbsp;&nbsp;&nbsp;&nbsp;<br />
+Water boils at 100<sup>&deg;</sup> temperature.<br />
+पानी 100<sup>&deg;</sup> पर उबलता है।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+Madhav as well as his brothers is also intelligent.<br />
+अपने भाईयों के जैसे के जैसे माधव भी होशियार है।<br />
+Call all the students.<br />
+सारे विद्यार्थियों को बुलाओ।&nbsp;&nbsp;&nbsp;<br />
+Let Akshita decorate their room.<br />
+अक्षिता को उनका&nbsp;कमरा सजाने दो।<br />
+<strong>Note :</strong> जब हिन्दी के वाक्य की शुरूआत &#39;क्या&#39; शब्द से हो, तो अंग्रेजी अनुवाद में वाक्य की शुरूआत &#39;Helping Verb&rsquo; से होगी।<br />
+<strong>Examples :</strong></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Does Trisha like music?<br />
+क्या त्रिशा संगीत पसंद करती है?<br />
+Do you need my support?<br />
+क्या तुम्हें मेरी मदद की आवश्यकता है?<br />
+Did you call me last night?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+क्या तुमने मुझे कल रात फोन किया?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+<span style="color:#e67e22"><strong>2. English to Hindi (पहचान वाला चार्ट)</strong></span></span></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="Table" style="border:double black 1pt; width:100%">
+	<tbody>
+		<tr>
+			<td style="background-color:#bfbfbf; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:84px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Names</span></strong></span></span></p>
+			</td>
+			<td style="background-color:#bfbfbf; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:147px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Simple</span></strong></span></span></p>
+			</td>
+			<td style="background-color:#bfbfbf; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:130px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Continuous</span></strong></span></span></p>
+			</td>
+			<td style="background-color:#bfbfbf; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:114px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Perfect</span></strong></span></span></p>
+			</td>
+			<td style="background-color:#bfbfbf; border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:130px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Perfect&nbsp;Continuous</span></strong></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:84px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Present (है)</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:147px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">ता है, ती है, ते है।</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:130px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">रहा है, रही है, रहे है</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:114px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">चुका, चुकी, चुके /लिया, दिया + है</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:130px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">समय से रहा है, रही है, रहे हैं</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:84px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Past (था)</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:147px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">ता था, ती थी, ते थे/ गया, लिया, दिया, लिया, पिया</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:130px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">रहा था, रही थी, रहे थे</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:114px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">चुका था/ चुकी थी/ चुके थे</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:130px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">समय से रहा था, रही थी, रहे थे</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:84px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">Future (गा)</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:147px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">गा, गे, गी</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:130px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">रहा होगा, रही होगी, रहे होंगे</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:114px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">चुका होगा/ चुकी होगी/ चुके होंगे</span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; width:130px">
+			<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">समय से रहा होगा, रही होगी, रहे होंगे</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Examples :-</strong><br />
+I have good books of English&nbsp;grammar.<br />
+मेरे पास अंग्रेजी व्याकरण की अच्छी किताबें है।<br />
+She is not happy with me.<br />
+वह मेरे साथ खुश नहीं है।<br />
+She did not invite me to her birthday&nbsp;party.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+उसने मुझे अपनी जन्मदिन की पार्टी पर आमन्त्रण नहीं दिया।<br />
+He is fond of sweets.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+वह मिठाई का शौकीन है।<br />
+<strong>Note : </strong>एक ही शब्द preposition का अनुवाद भिन्न<span dir="RTL" lang="HI">-</span>भिन्न शब्दों में होता है।<br />
+❖ यहाँ सभी Preposition को underline किया गया है और सभी Preposition (to, with, from और by) का अर्थ है- &#39;से&#39; यहाँ हम देख सकते है कि हिन्दी में &#39;से&#39; के लिए भिन्न-भिन्न Preposition का use किया गया है।<br />
+<strong>Examples :</strong><br />
+Mohit was talking <u>to</u> his brother.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+मोहित अपने भाई से बात कर रहा था।<br />
+Rohit killed a snake <u>with</u> a strick.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+रोहित ने लकड़ी से एक सर्प को मारा।<br />
+The hospital is far <u>from</u> here.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+यहाँ से अस्पताल दूर है।<br />
+Pramila went to Surat <u>by</u> bus.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+प्रमिला बस से सूरत गई।<br />
+<span style="color:#e67e22"><strong>3. Kinds of sentences</strong></span><br />
+(i) Affirmative Sentence<br />
+(ii) &nbsp; Negative Sentence<br />
+(iii) Interrogative Sentence<br />
+(iv)&nbsp; Interrogative Negative Sentence<br />
+(v)&nbsp;&nbsp; Interrogative (Wh word + ?)<br />
+(vi)&nbsp; Interrogative Negative (Wh word + not+?)<br />
+<strong>Examples :- </strong><br />
+He is a doctor. <strong>(Aff.)</strong><br />
+He is not a doctor. <strong>(Neg.)</strong><br />
+Is he a doctor? <strong>(Int.)</strong><br />
+Is he not a doctor? <strong>(Int. &ndash; Neg.)</strong><br />
+Where is he a doctor? <strong>(Int. + W/H word)</strong><br />
+Why is he not a doctor?<strong> (Int. Neg. + W/H word + not)</strong><br />
+<strong>(i) &#39;To be&#39; - Affirmative Sentence</strong><br />
+<strong>(सकारात्मक वाक्य)</strong><br />
+<strong>Examples:</strong><br />
+I am a doctor.<br />
+मैं एक डॉक्टर हूँ।<br />
+He is a good teacher.<br />
+वह एक अच्छा अध्यापक है।<br />
+He is my friend.<br />
+वह मेरा दोस्त है।<br />
+Mitali is my classmate.<br />
+मिताली मेरी सहपाठी है।<br />
+<strong>(ii)&nbsp;&lsquo;To be&rsquo; &ndash; Negative Sentence </strong><br />
+<strong>(नकारात्मक वाक्य) </strong><br />
+<strong>Examples:</strong><br />
+Sayam is not in his room.<br />
+संयम अपने कमरे में नहीं है।&nbsp;&nbsp;<br />
+My friend is not dishonest.<br />
+मेरा दोस्त बेईमान नहीं है।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+I am not happy.<br />
+मैं खुश नहीं हूँ।<br />
+My father is not at home.<br />
+मेरे पिताजी घर पर नहीं है।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+Seema is not coward/weak.<br />
+सीमा डरपोक नहीं है।&nbsp;&nbsp;<br />
+<strong>(iii)&nbsp;&lsquo;To be&rsquo; - Interrogative Sentence&nbsp;(प्रश्नवाचक वाक्य)<br />
+Examples:</strong><br />
+Are they your enemies?<br />
+क्या वे तुम्हारे शत्रु है?&nbsp;&nbsp;<br />
+Is he a poet?<br />
+क्या वह एक कवि है?<br />
+Is Sunita not a liar?<br />
+क्या सुनिता झूठी नहीं है?<br />
+Where is my bag?<br />
+मेरा बैग कहाँ है?<br />
+Who is Mohit here?<br />
+यहाँ मोहित कौन है?<br />
+What is there on your table?<br />
+तुम्हारी टेबल पर क्या है?&nbsp;&nbsp;&nbsp;&nbsp;<br />
+Why are you talking here?<br />
+तुम यहाँ क्यों बातें कर रहे हो?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+Is Pawan not a good boy?<br />
+क्या पवन अच्छा लड़का नहीं है?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+<span style="color:#e67e22"><strong>4. Use of Verb &#39;To Be&#39;</strong></span><br />
+<strong>❖</strong><strong> </strong>&lsquo;is/are/am&rsquo; as Main Verb.<br />
+<strong>Note :</strong> यदि <span dir="RTL" lang="HI">&#39;</span>is/are/am&rsquo; के बाद अन्य कोई Verb नहीं आई हो, तो is/are/am ही वाक्य में Main verb होगी।<br />
+❖ I &ndash; am<br />
+❖ He/She/Singular Person &ndash; is<br />
+❖ You - are<br />
+<strong>5. Past Tense</strong><br />
+❖ Be form (was/were)<br />
+<strong>(i)</strong> <strong>Affirmative Sentence</strong><br />
+❖ Singular + was<br />
+❖ Plural + were<br />
+<strong>Examples:</strong><br />
+Akbar was a noble king.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+अकबर एक आदर्श<span dir="RTL" lang="HI">/</span>नेक राजा था।<br />
+We were absent from the school yesterday.<br />
+हम कल विद्यालय से अनुपस्थित थे।<br />
+He was busy with his work.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+वह अपने कार्य में व्यस्त था।<br />
+<strong>(ii)&nbsp;Negative Sentence</strong><br />
+<strong>Examples:</strong><br />
+We were not at home yesterday.<br />
+हम कल घर नहीं थे।<br />
+He was not my cousin.<br />
+वह मेरा चचेरा भाई नहीं था।<br />
+He was not a good player.<br />
+वह अच्छा खिलाड़ी नहीं था।&nbsp;&nbsp;<br />
+<strong>(ii)&nbsp;Interrogative Sentence </strong><br />
+❖ Helping Verb______?<br />
+❖ W/H word + Helping Verb __________?&nbsp;&nbsp;<br />
+<strong>Examples:</strong><br />
+Was your friend generous?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+क्या तुम्हारा मित्र उदार<span dir="RTL" lang="HI">/ </span>दयालु था?<br />
+Were Sita and Geeta classmates?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+क्या सीता और गीता सहपाठी थी?<br />
+Who was in the class?<br />
+कक्षा में कौन था?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+Where were you yesterday?<br />
+तुम कल कहाँ थे?&nbsp;<br />
+<span style="color:#e67e22"><strong>6. Use of &#39;There&#39;</strong></span><br />
+❖ जिन वाक्यों में किसी वस्तु का होना या न होना समझा जाए, उन वाक्यों को आरम्भ करने के लिए <span dir="RTL" lang="HI">&#39;</span>there&rsquo; का use होता है।&nbsp;<br />
+There + is/are/was/were + Subject &nbsp;<br />
+<strong>Examples:</strong>&nbsp;&nbsp;<br />
+There are fifty students in our class.<br />
+हमारी कक्षा में पचास विद्यार्थी है।<br />
+There is a twenty rupee note in my pocket.<br />
+मेरी जेब में बीस रू<span dir="RTL" lang="HI">. </span>का नोट है।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+There is not water in a jug.<br />
+जग में पानी नहीं है।<br />
+Is there no tea in the cup?<br />
+क्या कप में चाय नहीं है&zwnj;?&nbsp;&nbsp;<br />
+Was there no temple in the village?<br />
+क्या गाँव में मन्दिर नहीं था?<br />
+Why was there no student in the&nbsp;class?<br />
+कक्षा में कोई छात्र क्यों नहीं था?<br />
+<span style="color:#e67e22"><strong>7. Use of &lsquo;It&#39;</strong></span><br />
+❖ &lsquo;मौसम, समय व स्थिति<span dir="RTL" lang="HI">&#39; </span>का वर्णन करने वाले वाक्य का आरम्भ &#39;It&#39; से किया जाता है।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+❖ किसी व्यक्ति या वस्तु की ओर संकेत करने के लिए भी &#39;It&#39; का use किया जाता है।<br />
+<strong>Examples:</strong><br />
+It is very cold today.<br />
+आज बहुत सर्दी है।<br />
+It is no time to go out.<br />
+अब बाहर जाने का समय नहीं है।<br />
+Is it your frock?<br />
+क्या यह फ्रॉक तुम्हारी है?<br />
+<span style="color:#e67e22"><strong>8. Imperative Sentence</strong></span><br />
+❖ Imperative Sentence Verb से start किए जाते हैं। इसमें verb की 1<sup>st</sup> form का use किया जाता है।<br />
+❖ Imperative Sentence में Negative वाक्यों की शुरुआत &lsquo;Don&rsquo;t/do + not&rsquo; से की जाती है।<br />
+<strong>Examples:</strong><br />
+Clean your room.<br />
+&nbsp;&nbsp; अपना कमरा साफ करो।<br />
+Don&rsquo;t tell a lie.<br />
+झूठ मत बोलो।<br />
+<span style="color:#e67e22"><strong>9.&nbsp;Degree of Comparison</strong></span><br />
+❖ Degree तीन प्रकार की होती है:<br />
+(i) Positive Degree<br />
+(ii) Comparative Degree<br />
+(iii) Superlative Degree<br />
+<strong>Examples:</strong><br />
+Ram is an intelligent boy.<br />
+राम एक होशियार लड़का है।<br />
+Ram is more intelligent than Ramesh.<br />
+राम, रमेश से अधिक होशियार है।<br />
+Ram is the most intelligent of all the boys in the class.<br />
+राम कक्षा में सबसे अधिक होशियार लड़का है।<br />
+<span style="color:#e67e22"><strong>10.&nbsp;Translation of Simple Present Sentences</strong></span><br />
+❖ (Do/does) V<sub>1</sub>/V<sub>1</sub>+s/es <img src="file:///C:/Users/Utkarsh/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png" style="height:14px; width:24px" />&nbsp;is/are/am+V<sub>3</sub><br />
+<strong>Examples </strong><br />
+<strong>(i) Active Voice</strong><br />
+He writes poems.<br />
+&nbsp;&nbsp;वह कविता लिखता है।<br />
+He does not write poems.<br />
+Does he write poems?<br />
+Does he not write poems?<br />
+Why does he write poems?<br />
+Why does he not write poems?<br />
+<strong>❖ Passive Voice&nbsp;</strong><br />
+Poems are written by her.<br />
+&nbsp;&nbsp; कविता उसके द्वारा लिखी जाती है।<br />
+Poems are not written by her.<br />
+Are poems written by her? &nbsp;<br />
+Are poems not written by her?<br />
+Why are poems written by her?<br />
+Why are poems not written by her?<br />
+<strong>(ii)&nbsp;&nbsp; Active Voice</strong><br />
+My sister cooks food.<br />
+&nbsp;&nbsp; मेरी बहन खाना पकाती है।<br />
+My sister does not cook food.<br />
+Does my sister cook food?&nbsp;<br />
+Does my sister not cook food?<br />
+Why does my sister cook food?<br />
+Why does my sister not cook food?&nbsp;<br />
+<strong>❖ Passive Voice</strong><br />
+Food is cooked by my sister.<br />
+&nbsp;&nbsp; खाना मेरी बहन द्वारा पकाया जाता है।<br />
+Food is not cooked by my sister.<br />
+Is food cooked by my sister?<br />
+Is food not cooked by my sister?<br />
+Why is food cooked by my sister?<br />
+Why is food not cooked by my sister?<br />
+<strong>Note :</strong> अभ्यास के लिए इन्हीं वाक्यों के Past व Future Tense स्वयं बनाएँ।<br />
+<span style="color:#e67e22"><strong>11.&nbsp; Translation of Simple Past and Future Tense</strong></span></span></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="Table" style="border:1pt double black; height:0%; width:0%">
+	<tbody>
+		<tr>
+			<td style="vertical-align:top; width:73px">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp;</span></span></p>
+			</td>
+			<td style="vertical-align:top; width:132px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Active</strong></span></span></p>
+			</td>
+			<td style="vertical-align:top; width:153px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Passive</strong></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top; width:73px">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Past</strong></span></span></p>
+			</td>
+			<td style="vertical-align:top; width:132px">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">did + V<sub>1 </sub>/ V<sub>2</sub></span></span></p>
+			</td>
+			<td style="vertical-align:top; width:153px">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">was/were + V<sub>3</sub></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align:top; width:73px">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Future</strong></span></span></p>
+			</td>
+			<td style="vertical-align:top; width:132px">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">will/shall + V<sub>1</sub></span></span></p>
+			</td>
+			<td style="vertical-align:top; width:153px">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">will/shall + be + V<sub>3</sub></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Note :</strong> जब वाक्य में Helping Verb के रूप में&nbsp;&lsquo;do/does/did&rsquo; हो, तो Main verb हमेशा&nbsp;&lsquo;V<sub>1</sub>&lsquo;आएगी।<br />
+<strong>Examples :&nbsp;&nbsp;</strong><br />
+Why did Sohan not call me last evening?<br />
+सोहन ने कल शाम मुझे कॉल क्यों नहीं किया?<br />
+Food was cooked by Meena.<br />
+मीना द्वारा खाना पकाया गया।<br />
+Food was not cooked by Meena.<br />
+मीना द्वारा खाना नहीं पकाया गया।<br />
+Was food cooked by Meena?<br />
+क्या मीना द्वारा खाना पकाया गया?<br />
+Was food not cooked by meena?<br />
+क्या खाना मीना द्वारा नहीं पकाया गया?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+Why was food cooked by Meena?<br />
+मीना द्वारा खाना क्यों पकाया गया?&nbsp;&nbsp;<br />
+Why was food not cooked by Meena?<br />
+मीना द्वारा खाना क्यों नहीं पकाया गया?</span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Some Selected Proverbs :</strong><br />
+To kill two birds with one stone.<br />
+&nbsp;&nbsp; एक पंथ दो काज।<br />
+Man proposes, God disposes.<br />
+तेरे मन में कुछ और है विधाता के कुछ और।<br />
+Out of sight, out of mind.<br />
+आँखों से दूर, दिल से दूर।<br />
+A figure among ciphers.<br />
+अंधों में काना राजा।<br />
+Every potter praises his own pot.<br />
+अपने दही को खट्टा कौन कहता है या अपना पूत सबको प्यारा।<br />
+Every cock fights best on his own ding hill.<br />
+&nbsp;&nbsp; अपनी गली में कुत्ता भी शेर होता है।<br />
+Penny wise pound foolish.<br />
+&nbsp;&nbsp; अशरफियाँ लुटीं कोयलों पर मोहर।<br />
+A pimple upon an ulcer.<br />
+&nbsp;&nbsp; एक करेला दूसरा नीम चढ़ा।&nbsp;<br />
+Bravado on top of robbery.<br />
+&nbsp;&nbsp; उल्टा चोर कोतवाल को डांटे।&nbsp;<br />
+Your eyes withdrawn your property gone.<br />
+&nbsp;&nbsp; आँख बची माल यारों का।<br />
+We are between two fires.<br />
+&nbsp;&nbsp; आगे कुआँ पीछे खाई।<br />
+A wolf in sheep&rsquo;s clothing.<br />
+&nbsp;&nbsp; मुख में राम बगल में छुरी।<br />
+Better wear out than rust out.<br />
+&nbsp;&nbsp; बेकार से बेगार भला।<br />
+A closed mouth catches no files.<br />
+&nbsp;&nbsp; बिना रोए मां भी दूध नहीं देती।<br />
+Spare the rod and spoil the child.<br />
+&nbsp;&nbsp; बच्चे को डण्डा ही ठीक रखता है।&nbsp;&nbsp;<br />
+To error is human, to forgive divine.<br />
+&nbsp;&nbsp; गलती काम मनुष्य का, क्षमा करना भगवान का।<br />
+From a bad paymaster, get what you can.<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;or<br />
+&nbsp;Something is better than nothing.<br />
+भागते चोर की लँगोटी ही सही।<br />
+What is looted cannot be blotted.<br />
+भाग्य का लिखा कौन मिटाता।<br />
+First deserve, then desire.<br />
+पहले हकदार बनो फिर मांगो।&nbsp;<br />
+Body at ease, mind at ease.<br />
+तन सुखी, तो मन सुखी।<br />
+Save life, save all.<br />
+जान बची सो लाखों पाये।<br />
+Out of the frying pan into the fire.&nbsp;<br />
+आसमान से गिरा खजूर में लटका।&nbsp;&nbsp;<br />
+He who digs a pit for others falls into it himself.<br />
+जो दूसरों के लिए गड्ढा खोदता है वह स्वयं उसमें गिरता है।<br />
+When the old cock crows, the young cock learns.<br />
+खरबूजे को देखकर खरबूजा रंग बदलता है।<br />
+Curst cows have short horns.<br />
+भगवान गंजे को नाखून न दे।&nbsp;<br />
+Rolling stone gathers no moss.<br />
+धोबी का कुत्ता न घर का न घाट का।<br />
+Between two stools one falls to the ground.<br />
+दुविधा में दोनों गये माया मिली न राम।<br />
+Romance is the magic of distance.<br />
+दूर के ढोल सुहावने।<br />
+It is hard to live in Rome and fight with the Pope.<br />
+दरिया में रहना और मगरमच्छ से बैर।<br />
+The game is not worth the candle.<br />
+पैसे की बुढ़िया रूपया सिर मुँडाई।&nbsp;&nbsp;<br />
+Deceit will not succeed long.<br />
+कागज़ की नाव सदा बहती नहीं।&nbsp;&nbsp;&nbsp;&nbsp;<br />
+Truth is bitter.<br />
+सच्ची बात कड़वी लगती है।<br />
+Spend and God will send.<br />
+शक्करखोरे को ईश्वर शक्कर दे ही देता है।<br />
+It is never too late to mend.<br />
+सुबह का भूला शाम को वापस आ जाये तो भूला नहीं कहलाता।<br />
+Whom God keeps, no frost can kill.<br />
+जाको राखे साइयाँ मार सके न कोय।<br />
+Necessity knows no law.<br />
+जरूरत के समय सब उचित है।<br />
+Familiarity breeds contempt.<br />
+कद्र खोद देता है रोज का आना जाना।<br />
+Uneasy lies the head that wears the crown.<br />
+कोठी वाला रोए, छप्पर वाला सोए।<br />
+There is many a slip between the cup and the lip.<br />
+कानी के ब्याह को जोखिम।<br />
+One doth the blame, another bears the shame.<br />
+करे कोई भरे कोई।<br />
+If you lie with dogs, you get up with fleas.<br />
+कोयलों की दलाली में मुँह काला।<br />
+Birds of feather flock together.<br />
+एक ही श्रेणी के सब एक होते हैं।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+You cannot fool all the people all the time.<br />
+काठ की हड्डियाँ बार-बार नहीं चढ़ती।<br />
+Let bygones be bygones.<br />
+गड़े मुर्दे मत उखेड़ो।<br />
+No prophet is honoured in his own land.<br />
+घर का जोगी जोगड़ा बाहर का जोगी सिद्ध।&nbsp;<br />
+A bitter jest is the poison of friendship.<br />
+लड़ाई का घर हँसी।<br />
+Rod tames every one.<br />
+लकड़ी के डर से बन्दर नाचे।&nbsp;<br />
+A desperate man, all things can.<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;or<br />
+A dying man catches at a straw.<br />
+मरता क्या न करता।<br />
+Death keeps no calendar.<br />
+मरने का कोई समय नहीं।<br />
+Death defies doctors.<br />
+मौत की दवा नहीं।&nbsp;&nbsp;<br />
+When there is peace at home, there is no need of a judge.<br />
+मियां बीबी राज़ी तो, क्या करेगा काज़ी।<br />
+Let him fry in his own pan.<br />
+मियाँ की जूती मियाँ के सिर।&nbsp;<br />
+Do not look a gift horse in the mouth.<br />
+मांगे के दाँत कौन देखता है।<br />
+A priest goes not farther than the church.<br />
+मुल्ला की दौड़ मस्ज़िद तक।&nbsp;&nbsp;<br />
+Welcome or not, I am still your guest.<br />
+मान न मान मैं तेरा मेहमान।<br />
+A little knowledge is a dangerous thing.<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;or<br />
+Half knowledge is dangerous.<br />
+नीम हकीम खतरा-ए-जान।<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; or<br />
+अल्प ज्ञान भयंकरी<br />
+A bad workman always quarrels with his tools.<br />
+नाच न जाने आँगन टेढ़ा।<br />
+Time is a great healer.<br />
+समय गुज़रने पर दुख कम हो जाते हैं।<br />
+Every rise has a fall.<br />
+उन्नति के पीछे अवनति।<br />
+A full purse never lacks friends.<br />
+पैसे के सब यार।<br />
+Coming events cast their shadows before.<br />
+होनहार बिरवान के होत चिकने पात।<br />
+Rome was not built in a day.<br />
+बड़े काम एक दिन में नहीं हो जाते।&nbsp;<br />
+Like ruler, like subjects.<br />
+यथा राजा तथा प्रजा।&nbsp;</span></span></p>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.controls').classList.toggle('active');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function increaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            document.body.style.fontSize = (currentSize + 2) + 'px';
+        }
+
+        function decreaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            if (currentSize > 10) {
+                document.body.style.fontSize = (currentSize - 2) + 'px';
+            }
+        }
+
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
