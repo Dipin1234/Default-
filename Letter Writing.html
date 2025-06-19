@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Letter writing </title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .menu-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .menu-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0);
+            top: 0;
+            right: 0;
+        }
+        .controls.active .round-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .round-button:nth-child(2) {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53); /* Dark Mode */
+            transition-delay: 0.1s;
+            top: 56px;
+            right: 0;
+        }
+        .round-button:nth-child(3) {
+            background: linear-gradient(135deg, #1e90ff, #00b4d8); /* Font + */
+            transition-delay: 0.2s;
+            top: 112px;
+            right: 0;
+        }
+        .round-button:nth-child(4) {
+            background: linear-gradient(135deg, #2ecc71, #27ae60); /* Font - */
+            transition-delay: 0.3s;
+            top: 168px;
+            right: 0;
+        }
+        .round-button:nth-child(5) {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Print */
+            transition-delay: 0.4s;
+            top: 224px;
+            right: 0;
+        }
+        .round-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .round-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .round-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .menu-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .menu-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .round-button span, .menu-button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="menu-button" onclick="toggleMenu()" title="Toggle Menu"><span>☢️</span></button>
+        <button class="round-button" onclick="toggleDarkMode()" title="Toggle Dark Mode"><span>🌙</span></button>
+        <button class="round-button" onclick="increaseFontSize()" title="Increase Font Size"><span>+</span></button>
+        <button class="round-button" onclick="decreaseFontSize()" title="Decrease Font Size"><span>-</span></button>
+        <button class="round-button" onclick="printPage()" title="Print Page"><span>🖨️</span></button>
+    </div>
+    <!--copy paste🤣🤣🤣😂-->
+<p style="text-align:center"><span style="color:#ff3300"><strong><span style="font-size:18px">Letter Writing</span></strong></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="color:#e74c3c"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong></span><strong><span style="font-size:13.0pt"><span style="color:#e74c3c"> Introduction</span> </span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">●</span></strong><strong> </strong><span style="font-size:10.5pt">Letter writing is an intricate task as it demands meticulous attention, still candidates can fetch good marks if they are careful about what is being written.</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:13.0pt"> Kinds of Letter</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">(A) Formal </span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Business letters</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Letters to concerning authorities</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Letters to editors</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Job applications</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Others</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">(B) Informal </span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Letters to friends</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Letters to family members</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:13.0pt"> Format of Official Letters</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">●</span></strong><strong><span style="font-size:10.5pt"> Main parts of An Official/Formal Letter-</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">1. The Heading:</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">(a) The writer&rsquo;s address</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">(b) Date</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">Patterns of Date:</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">(a) March 10, 2021</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">(b) 10<sup>th</sup> March, 2021</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">2. The inside address of the recipient:</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">●</span></strong><strong> </strong><span style="font-size:10.5pt">Generally it is started with the designation of the recipient.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">3. The Salutation : </span></strong><span style="font-size:10.5pt">Sir/Dear Sir</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> If the person to whom the letter is written is senior, &ldquo;Sir&rdquo; is preferred and the word &ldquo;Dear&rdquo; is not used.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">4. The Body :</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">●</span></strong><strong> </strong><span style="font-size:10.5pt">It is the most important part of a letter. The main message or communication is placed in this part. If the message contains more words and lines, it should be well arranged in different paragraphs according to the subject matter.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt">&nbsp;The language of a formal letter should be clear, to the point, easy to understand and lucid. It should not be complicated or vague.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">5. The Subscription :</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">●</span></strong><strong> </strong><span style="font-size:10.5pt">It is a kind of leave taking phrase. The examples of the subscription in a formal </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">letter &ndash; Yours faithfully, Yours truly</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">6. The signature :</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">●</span></strong><strong> </strong><span style="font-size:10.5pt">The signature should be followed by the post if the writer has any.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">7. Postscript (P.S.) :</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">●</span></strong><strong> </strong><span style="font-size:10.5pt">It is an afterthought that generally occurs after the letter has been written and signed.<strong> </strong></span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:13.0pt"> Forms of Writing Letters</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">1. The indented pattern :</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">●</span></strong><strong> </strong><span style="font-size:10.5pt">It is one of the oldest forms of a business letter. In this pattern, each line of the writer&rsquo;s address is given at the close start to the right hand margin.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">2. The fully blocked pattern :</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">●</span></strong><strong> </strong><span style="font-size:10.5pt">In this pattern, everything is started from the left hand margin. This form is preferred these days. The modern computerized letters fall into this category.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">3. The semi blocked pattern :</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">●</span></strong><span style="font-size:10.5pt"> It is the combination of both the indented and the fully blocked form. The body of the letter is indented whereas the heading, address and other elements are blocked.</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:13.0pt"> Punctuating Letters</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Don&#39;t forget to punctuate the letters as per following norms&ndash;</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Use commas after the salutation in a personal letter and after the complimentary closing in all letters.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">(i) Salutation:</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Dear Abhishek,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">My dearest Trisha, </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">(ii) Closing:</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Sincerely,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Truly yours,</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:13.0pt"> Colons in Special Cases</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">(1) Numerical expressions of time:</span></strong></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> The colon goes between the hour and minute. If seconds are noted, a colon goes between the minute and second.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">Examples:</span></strong> </span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt"><span style="font-family:Symbol">&middot;&nbsp;</span></span><span style="font-size:10.5pt">He ran the marathon in 2:14:33.2. </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">(Two hours, fourteen minutes and thirty-three point two seconds.)</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt"><span style="font-family:Symbol">&middot;</span></span><span style="font-size:10.5pt">&nbsp;He ran the mile in 4:12. </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">(Four minutes and twelve seconds)</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">(2) Periodical references in a bibliography or formal reference:</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> This may vary slightly depending on the form followed. Most frequently the reference is Volume : Issue Number or Volume : Page Number.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">(3) Bible references, Chapter:Verse</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Example: John 3:16 (&ldquo;The book of John, chapter 3, verse 16.&quot;) </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">(4) Subtitles for books, periodicals and articles are preceded by a colon:</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Example: Ben-Hur: A Tale of the Christ </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">(5) We can also use &quot;colon&#39; with salutations in business letters as per following</span></strong><span style="font-size:10.5pt"> :</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Dear Sir/Madam:</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">(6) &nbsp; Colons follow labels that identify important ideas meant to get attention:</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Warning: To be opened by authorised personnel only. </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Notice: Do not use before October 15.</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:13.0pt"> Capital Letters</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> There are two additional rules for capitalising when writing letters. </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">(a) Capitalize the first word and all nouns in the salutation or greeting.</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> My dearest Aunt,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Dear Sir,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Greetings! </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">(b) Capitalize the first word in the complimentary closing</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Sincerely,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Truly yours,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">With best wishes,</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:13.0pt"> Examples of Formal Letter</span></strong></span></span></span><br />
+<span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt">Business Letter</span></strong></span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Ref.Po/</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Dated 11/05/2019</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">M/s Jaipur Publications</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Chaura Rasta,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Jaipur</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Sub: Supply of Proper Books.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Dear Sir,</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Today we have received the parcel of books sent by you. We are surprised to find that you have sent all the twenty books of English Grammar written by some Mr. Sarraff, while we have ordered for the English Grammar written by Mr. Gupta and Gupta.</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">We are returning the books. You are requested to supply the books of English Grammar written by Mr. Gupta and Gupta. Please be kind enough to supply the proper books immediately. The parcel be packed properly with polythene.</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Thanking you</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Yours faithfully,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">B.K. Garg</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Partner</span></span></span></p>
+
+<p><span style="color:#e67e22"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt">Official Letter</span></strong></span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">B-21, Jeevan Jyoti</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Dayalbagh</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Date 21/02/2021</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">The Superintendent of Police/SDM,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Agra</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Sir,</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">I want to draw your kind attention to the nuisance caused by the use of loud-speakers. I am a student of class XII appearing at the Board examinations. It is a time when all the students are busy day and night preparing for the coming examinations. Their success depends much on the proper use of their time and the concentration of their minds. It is regrettable that majority of citizens do not realise the importance of this time for students.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">They enjoy full liberty to use loud-speakers at their highest pitch to celebrate every occasion that comes to their hands. The result is that we are unable to make preparations in the right way.&nbsp;</span></span></span><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">I, therefore, request you to kindly impose a ban on the use of loud-speakers for the period of Examinations and punish those who are found guilty.</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Thanking you</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Yours faithfully</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Bhawesh Bhargav</span></span></span></p>
+
+<p><span style="color:#e67e22"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt">Social Letter</span></strong></span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">45, Sarojni Nagar</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">New Delhi</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Date 02/04/2021</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">The Editor,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Dainik Bhaskar,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Bhikaji Kama Place, New Delhi</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Dear Sir,</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">I shall be grateful to you if you permit me to express my views on street begging in our city through the columns of your esteemed daily. I wish to draw the attention of the public as well as the Government against this menace.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Begging in Sarojni Nagar has become a common sight. Turn where you may, you will always find one or two beggars with their begging bowls asking to spare a few coins for them. Some of these beggars are quite hale and hearty and can jolly well earn their living but they seem to have taken to easy money out of the pockets of others. Let me tell you that these beggars do not spare even the tourists to this area. It is indeed a reflection of our culture and country. I would therefore, appeal to the public not to encourage these beggars and to the Government that the Anti-Beggary Law should be stringently implemented to uproot this social evil.</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Yours truly </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">G.K. Meena </span></span></span></p>
+
+<p><span style="color:#e67e22"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt">Letter to the editor</span></strong><strong> </strong></span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Khushboo</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">4, Gandhinagar</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Mumbai.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Dated: 15/05/2020</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">The Editor</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Hindustan News</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Mumbai.</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Subject: Absence of Amul milk booth in</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Gandhinagar</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Respected Sir/Madam</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">I am Khushboo, a resident of Gandhinagar. I am writing to you in order to raise the issue of the absence of an Amul milk booth in my locality. Gandhinagar has a huge population that comprises daily wagers. Still, the area does not have an Amul milk booth. The residents face many problems as they have to walk upto 10 kilometres every morning to get their daily stock of milk and milk products. This has also led to black marketing. The people of the area are getting harassed.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">As the situation is serious, I request you to highlight it through your newspaper so that the Amul authorities are sensitized towards it and do the needful.</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Thanking You</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Yours sincerely</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Khushboo</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:13.0pt"> Demi Official Letters</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> This form of letters is generally used in correspondence between two or more than officers to supplement or explain matter which has been referred officially.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> The subject matter of such letters is confidential in nature.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> The style of writing is not formal.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> It is a kind of private letters having official subject. </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Form of language is generally singular.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Signature is placed without mentioning the designation.</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:13.0pt"> Example of a Demi Official Letter :</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">●</span></strong><strong> </strong><span style="font-size:10.5pt">Dear Mr. Sharma,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:Symbol"><span style="color:#e74c3c">❖</span></span></span></strong><span style="color:#e74c3c"><strong><span style="font-size:10.5pt"> Introduction:</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Letter writing is an intricate task as it demands meticulous attention, still candidates can get good marks it they are careful about what is being written.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">In spite of so many reminders, we haven&rsquo;t received the list of employees to be promoted in the next academic session which is to start very soon. I think you will act upon promptly and dispatch the list of qualified employees who deserve promotion.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Expecting a quick response from your side.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Yours faithfully,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">S.K. Mishra</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:13.0pt"> Circular Letters</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> It is a kind of a brief note to be distributed or sent to a large number of people /authorities/employees.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> A circular is generally sent or distributed to seek and inquiry on a particular point from a number of subordinate officers or heads of the departments.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> It is not necessary to use salutation or subscription in circular letters.</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:10.5pt"> Main characteristics of a circular letter:</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Conciseness</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Reliability</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Mutual Interest</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">●</span></strong><strong> </strong><span style="font-size:10.5pt">Circular letters in organizations are prepared with a purpose to inform the members of an organization of certain issues related to the organization.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">Beginning &ndash; </span></strong><span style="font-size:10.5pt">Dear Sir/Madam,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">Subscription -</span></strong><span style="font-size:10.5pt"> Yours faithfully,</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:13.0pt"> Example of a Circular Letter:</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">Circular letter announcing change of </span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">academic head</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">Utkarsh Classes</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">Jodhpur</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Ref. No. &hellip;&hellip;&hellip;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Date : June 07, 2020</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Dear&hellip;&hellip;..,</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">We regret to inform you that Mr. Rajesh Jha who has been our academic head for the last ten years has recently resigned from his post to take up another appointment.&nbsp;</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">In his place we have appointed Mr. Nadeem Khan who will take control over our academic section.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">All the employees will coordinate with Mr. Nadeem Khan from here on.</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Yours faithfully,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Nirmal Gehlot,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">C.E.O. Utkarsh Classses.</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:13.0pt"> Memorandum</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> &lsquo;Memorandum&rsquo; is a short note which aims at providing information about something to be remembered. It reminds the employees of an action to be done or acted upon in the future. </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> It is a kind of short reminder. It is an informal message to be sent between two or more than two employees of the same company.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> It contains information about a particular matter. Sometimes the term &lsquo;Memorandum&rsquo;<strong> </strong>refers to<strong> </strong>an informal legal agreement or a letter of agreement.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><strong> </strong><span style="font-size:10.5pt">It is informative in nature.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> It is generally sent by a high ranking officer to his subordinates.</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:10.5pt"> A Memorandum Contains:-</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Reference.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> Date and subject.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> The designation of the receiver.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">●</span><span style="font-size:10.5pt"> The designation of the sender.</span></span></span></p>
+
+<p><span style="color:#e74c3c"><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol">❖</span></span></strong><strong><span style="font-size:13.0pt"> Example of a Memorandum:</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">Utkarsh Classes</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:10.5pt">Jodhpur</span></strong></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Ref. No&hellip;&hellip;. &nbsp;&nbsp;&nbsp;&nbsp; Date : Dec. 05, 2020</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">To </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">All non academic employees.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Sub: Change in Office timings.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">All the employees are reminded that the office timing for non-academic employees will be changed from the first of January. The office timing for non academic employees will be from 10:00 am to 5:00 pm that will be effective from the 1<sup>st</sup> of January.</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Looking forward to your warm corporation,</span></span></span><br />
+<br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Nirmal Gehlot</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">(C.E.O.)</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt"><span style="font-family:Symbol"><span style="color:#e74c3c">❖</span></span></span></strong><span style="color:#e74c3c"><strong><span style="font-size:13.0pt"> Example of Informal Letter</span></strong></span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><strong><span style="font-size:13.0pt">Personal Letter</span></strong></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">12/31, Gandhi Colony, </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Jaisalmer </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">July 23, 2020</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">My dear Ajay,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">I am glad to see your result in the Rajasthan Patrika of today that you have been successful in the RAS examination and secured good rank. I conveyed this happy news to my father who was sitting beside me. He too was overjoyed. </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">I thank God for his kindness and wish you a bright future. I know well that you have been intelligent and diligent in your school and college days. Certainly your success is due to God&#39;s grace as well as your hard work and also timely guidance of your respected parents. </span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Please convey my respectful compliments to your parents. Again congratulations to you.</span></span></span></p>
+
+<p><span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Yours sincerely,</span></span></span><br />
+<span style="font-size:11pt"><span style="font-family:Aptos,sans-serif"><span style="font-size:10.5pt">Anil</span></span></span></p>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.controls').classList.toggle('active');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function increaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            document.body.style.fontSize = (currentSize + 2) + 'px';
+        }
+
+        function decreaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            if (currentSize > 10) {
+                document.body.style.fontSize = (currentSize - 2) + 'px';
+            }
+        }
+
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
