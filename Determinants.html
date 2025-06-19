@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Determiners</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .menu-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .menu-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0);
+            top: 0;
+            right: 0;
+        }
+        .controls.active .round-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .round-button:nth-child(2) {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53); /* Dark Mode */
+            transition-delay: 0.1s;
+            top: 56px;
+            right: 0;
+        }
+        .round-button:nth-child(3) {
+            background: linear-gradient(135deg, #1e90ff, #00b4d8); /* Font + */
+            transition-delay: 0.2s;
+            top: 112px;
+            right: 0;
+        }
+        .round-button:nth-child(4) {
+            background: linear-gradient(135deg, #2ecc71, #27ae60); /* Font - */
+            transition-delay: 0.3s;
+            top: 168px;
+            right: 0;
+        }
+        .round-button:nth-child(5) {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Print */
+            transition-delay: 0.4s;
+            top: 224px;
+            right: 0;
+        }
+        .round-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .round-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .round-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .menu-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .menu-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .round-button span, .menu-button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="menu-button" onclick="toggleMenu()" title="Toggle Menu"><span>☢️</span></button>
+        <button class="round-button" onclick="toggleDarkMode()" title="Toggle Dark Mode"><span>🌙</span></button>
+        <button class="round-button" onclick="increaseFontSize()" title="Increase Font Size"><span>+</span></button>
+        <button class="round-button" onclick="decreaseFontSize()" title="Decrease Font Size"><span>-</span></button>
+        <button class="round-button" onclick="printPage()" title="Print Page"><span>🖨️</span></button>
+    </div>
+    <!--copy paste🤣🤣🤣😂-->
+    <p style="text-align:center"><span style="color:#ff0000"><span style="font-size:18px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Determiners</strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Definition:</span></strong><br />
+<span style="color:black">-&nbsp; &lsquo;Determiners&rsquo; are noun modifiers. They are placed just before a noun to give additional information about it.</span><br />
+<span style="color:black">(यह</span> <span style="color:black">ऐसे</span> <span style="color:black">शब्द</span> <span style="color:black">होते</span> <span style="color:black">हैं</span> <span style="color:black">जो</span> <span style="color:black">किसी</span> <span style="color:black">वाक्य</span> <span style="color:black">में Noun से</span> <span style="color:black">तुरन्त</span> <span style="color:black">पहले use किये</span> <span style="color:black">जाते</span> <span style="color:black">हैं</span> <span style="color:black">और</span> <span style="color:black">इस</span> <span style="color:black">बात</span> <span style="color:black">का</span> <span style="color:black">निर्धारण</span> <span style="color:black">करते</span> <span style="color:black">हैं</span> <span style="color:black">कि</span> <span style="color:black">किसकी</span> <span style="color:black">बात</span> <span style="color:black">हो</span> <span style="color:black">रही</span> <span style="color:black">है</span> <span style="color:black">या</span> <span style="color:black">फिर</span> <span style="color:black">कितनी &lsquo;संख्या</span> <span style="color:black">या</span> <span style="color:black">मात्रा&rsquo; की</span> <span style="color:black">बात</span> <span style="color:black">हो</span> <span style="color:black">रही</span> <span style="color:black">है।</span> <span style="color:black">चूँकि</span> <span style="color:black">यह</span> <span style="color:black">भी</span> <span style="color:black">संज्ञा</span> <span style="color:black">के</span> <span style="color:black">बारे</span> <span style="color:black">में</span> <span style="color:black">कुछ</span> <span style="color:black">अतिरिक्त</span> <span style="color:black">सूचना</span> <span style="color:black">देते</span> <span style="color:black">हैं</span> <span style="color:black">इसलिए</span> <span style="color:black">ये</span> <span style="color:black">भी Adjectives (विशेषण) कहलाते</span> <span style="color:black">हैं।</span></span></span></p>
+
+<p><span style="color:#2980b9"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><u><strong>Kinds of Determiners</strong></u></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">-&nbsp; <strong>Articles</strong> - A, An, The</span><br />
+<span style="color:black">- <strong>Demonstratives -</strong> This, That, These, Those</span><br />
+<span style="color:black">- <strong>Possessives </strong>- My, Your, His, Her, Its, Our, Their</span><br />
+<span style="color:black">-&nbsp; <strong>Quantifiers</strong> - Few, Little, Much, Many, A lot of, Some, Any, Enough</span><br />
+<span style="color:black">-&nbsp; <strong>Numerals </strong>- First, Second, Next, Last, Previous One, Ten, Thirty </span><br />
+<span style="color:black">-&nbsp; <strong>Distributives -</strong> All, Both, Half, Either, Neither, Each, Every</span><br />
+<strong><span style="color:black">-&nbsp; Interrogatives -</span></strong><span style="color:black"> Which, What, Whose etc. </span><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I need <strong>a</strong> phone.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I saw <strong>a</strong> movie last night.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">The</span></strong><span style="color:black"> movie is based on a real life incident.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I will come after <strong>an</strong> hour.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Seven</span></strong><span style="color:black"> is my lucky number.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Each team consists of <strong>eleven</strong> players.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I finished in <strong>first</strong> place in the competition.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">You will go <strong>second.</strong></span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Whose</span></strong><span style="color:black"> car keys are these?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">What</span></strong><span style="color:black"> books did you read?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Which</span></strong><span style="color:black"> three teachers do you prefer?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I have read <strong>this</strong> book.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">This is <strong>a</strong> very useful book.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I can answer <strong>all</strong> questions.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Both</span></strong><span style="color:black"> answers are right.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Many</span></strong><span style="color:black"> dogs were barking last night.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">That</span></strong><span style="color:black"> building was used for specific purpose.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">These</span></strong><span style="color:black"> sums are really very hard.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">My</span></strong><span style="color:black"> bird was singing all day.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">1. Some/Any</span></strong><br />
+<strong><span style="color:black">-&nbsp; &lsquo;Some</span></strong><span style="color:black"> and <strong>Any&rsquo;</strong> are used with countable and uncountable nouns, to describe an indefinite or incomplete quantity.</span><br />
+<span style="color:black">(अनिश्चित</span> <span style="color:black">और</span> <span style="color:black">अधूरी</span> <span style="color:black">मात्रा</span> <span style="color:black">तथा</span> <span style="color:black">संख्या</span> <span style="color:black">का</span> <span style="color:black">वर्णन</span> <span style="color:black">करने</span> <span style="color:black">के</span> <span style="color:black">लिए Some और Any का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है। Some और Any का use गणनीय</span> <span style="color:black">और</span> <span style="color:black">अगणनीय</span> <span style="color:black">संज्ञा</span> <span style="color:black">से</span> <span style="color:black">पहले</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।)</span><br />
+<strong><span style="color:black">(i)</span></strong><span style="color:black"> &lsquo;<strong>Some&rsquo;</strong> is used in positive statements:</span><br />
+<span style="color:black">(Some का use सकारात्मक</span> <span style="color:black">वाक्यों</span> <span style="color:black">में</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">हैं।)</span><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I had <strong>some</strong> rice for lunch.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He is got <strong>some</strong> books from the library.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I will have <strong>some</strong> news next week.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">She has <strong>some</strong> valuable books in her house.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(ii) </span></strong><span style="color:black">&lsquo;Some&rsquo; का use, interrogative sentence (प्रश्नात्मक</span> <span style="color:black">वाक्यों) में</span> <span style="color:black">जो offer, request, advice, suggestion के</span> <span style="color:black">लिए</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Would you like <strong>some</strong> help?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Will you have <strong>some</strong> more tea/coffee?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Could I have <strong>some</strong> books, please?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Why don&rsquo;t you take <strong>some</strong> books home with you?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Would you like to take <strong>some</strong> chocolates?</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(iii) &lsquo;Any&rsquo;</span></strong><span style="color:black"> is used in negative sentences and Interrogative sentences:</span><br />
+<span style="color:black">(Any का use नकारात्मक</span> <span style="color:black">तथा</span> <span style="color:black">प्रश्नात्मक</span> <span style="color:black">वाक्यों</span> <span style="color:black">में</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">हैं।)</span><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Have you got <strong>any</strong> tea?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He didn&rsquo;t give me <strong>any</strong> tea?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I don&rsquo;t think we&rsquo;ve got <strong>any</strong> books?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">They don&rsquo;t want <strong>any</strong> help moving to their new house.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Do you have <strong>any</strong> friends in London?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Have they got <strong>any</strong> children?</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Note:</span></strong> <span style="color:black">किसी</span> <span style="color:black">भी/कोई</span> <span style="color:black">भी</span> <span style="color:black">के</span> <span style="color:black">अर्थ</span> <span style="color:black">में &lsquo;any&rsquo; का use होता</span> <span style="color:black">है।</span><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">You can get an auto - rickshaw at <strong>any</strong> railway station.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Any</span></strong><span style="color:black"> ball will do its work.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">You can ask this question to <strong>any</strong> student of my class.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Note : &lsquo;</span></strong><span style="color:black">If clause&rsquo; वाले sentences में &lsquo;Any&rsquo; का use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।</span><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">If you have <strong>any</strong> problem, come to me.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">If you have <strong>any</strong> symptoms of COVID-19, quarantine yourself.</span></span></span></p>
+
+<p>&nbsp;</p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoTableGrid" style="border-collapse:collapse; border:1pt solid black; white-space:unset; width:75%">
+	<tbody>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; vertical-align:top; width:95px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Affirmative Sentence</span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; vertical-align:top; width:142px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Negative Sentence</span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; vertical-align:top; width:113px">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Interrogative Sentence</span></strong></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:95px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Use &lsquo;some&rsquo;</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:142px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Use &lsquo;any&rsquo; (not, nobody, no one, nothing, nowhere, never, neither, nor, too__to etc.)</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:113px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Use &lsquo;any&rsquo; in questions.</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:95px">&nbsp;</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:142px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Use &lsquo;any&rsquo; if the real sense of the sentence is negative &ndash; scarcely, hardly, rarely, barely, never, forbade, seldom, without, doubt, refuse, deny etc.</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:113px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Use &lsquo;some&rsquo; in questions if the expected answer is &lsquo;yes&rsquo;</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:54px; vertical-align:top; width:95px">&nbsp;</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:54px; vertical-align:top; width:142px">&nbsp;</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:54px; vertical-align:top; width:113px"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Use &lsquo;some&rsquo; in offers and requests.</span></span></span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:-</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I have given him <strong>some</strong> money to buy chocolates.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Can I have <strong>some</strong> tea, please?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Would you give me <strong>some</strong> more time to think?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">The teacher allowed us to ask <strong>some</strong> questions.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I have not given him <strong>any</strong> money to spend.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He denied having <strong>any</strong> involvement in the crime.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I doubt there is <strong>any</strong> money in his bank account.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">She refused to share <strong>any</strong> information with us.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">The teacher forbade us to ask <strong>any</strong> questions.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He seldom gets <strong>any</strong> extra money to spend.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">She has hardly <strong>any</strong> friend in this school.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">2. Much/Many</span></strong><br />
+<strong><span style="color:black">-&nbsp; Much</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Much </span></strong><span style="color:black">means &lsquo;A lot of&rsquo;. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">It is used with uncountable nouns.</span><br />
+<span style="color:black">(Much का</span> <span style="color:black">अर्थ &lsquo;अधिक&rsquo; होता</span> <span style="color:black">है</span> <span style="color:black">लेकिन Quantity (मात्रा) में। Much का use अगणनीय</span>&nbsp; <span style="color:black">संज्ञा</span>&nbsp; <span style="color:black">के</span> <span style="color:black">साथ</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है, गणनीय</span> <span style="color:black">संज्ञा</span> <span style="color:black">के</span> <span style="color:black">साथ</span> <span style="color:black">नहीं।)</span><br />
+<strong><span style="color:black">-&nbsp; Many&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Many&rsquo;</span></strong><span style="color:black"> is used with countable (plural) nouns.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Many का</span> <span style="color:black">अर्थ &lsquo;अनेक&rsquo; होता</span> <span style="color:black">है</span> <span style="color:black">लेकिन Number (संख्या)&nbsp; में।</span> </span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(Many का use गणनीय</span> <span style="color:black">संज्ञा</span>&nbsp; <span style="color:black">के</span> <span style="color:black">साथ</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है, अगणनीय</span> <span style="color:black">संज्ञा</span> <span style="color:black">के</span> <span style="color:black">साथ</span> <span style="color:black">नहीं।)</span><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Many</span></strong><span style="color:black"> children are there in the park today.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He was among the <strong>many</strong> visitors to the site.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Among his <strong>many</strong> faults is self-importance.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">There isn&rsquo;t <strong>much</strong> food in the house.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I don&rsquo;t have <strong>much</strong> free time.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">You always give me too<strong> much</strong> trouble.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Note:-</span></strong><span style="color:black"> Use of <strong>&lsquo;Much</strong> and <strong>Many&rsquo; </strong>according to the following table:</span></span></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoTableGrid" style="border-collapse:collapse; border:1pt solid black; white-space:unset; width:75%">
+	<tbody>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; height:36px; vertical-align:top; width:40%">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Affirmative Sentence</span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; height:36px; vertical-align:top; width:28%">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Negative Sentence</span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; height:36px; vertical-align:top; width:31%">
+			<p style="text-align:center"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Interrogative Sentence</span></strong></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:41px; vertical-align:top; width:40%"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Use &lsquo;a lot of&rsquo;, &lsquo;lots of&rsquo; and &lsquo;plenty of&rsquo;</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:41px; vertical-align:top; width:28%"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Use &lsquo;many&rsquo; and &lsquo;much&rsquo;</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:41px; vertical-align:top; width:31%"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Use &lsquo;many&rsquo; and &lsquo;much&rsquo;</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; vertical-align:top; width:40%"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Use &lsquo;many&rsquo; and &lsquo;much&rsquo;, with &lsquo;so&rsquo;, &lsquo;too&rsquo; and &lsquo;as&rsquo;</span></span></span></td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:28%">&nbsp;</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; vertical-align:top; width:31%">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">We have <strong>a lot of</strong> time. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I have made <strong>a lot of</strong> friends at college.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He made <strong>a lot of</strong> mistakes in the test, therefore he didn&rsquo;t get good marks.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">There are <strong>a lot of/plenty of</strong> job opportunities in big cities.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I have made <strong>so many</strong> friends at college.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He gave us <strong>too many</strong> tasks to accomplish in a short time.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I read <strong>as many</strong> books as I could.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">We have <strong>so</strong> <strong>much</strong> time. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">3. Many A/An</span></strong><br />
+<span style="color:black">-&nbsp; <strong>&lsquo;Many a/an&rsquo;</strong> is used with singular countable noun and singular verb.</span><br />
+<span style="color:black">(Many a/an का use एकवचन</span> <span style="color:black">गणनीय</span> <span style="color:black">संज्ञा</span> <span style="color:black">तथा</span> <span style="color:black">एकवचन</span> <span style="color:black">की</span> <span style="color:black">क्रिया</span> <span style="color:black">के</span> <span style="color:black">साथ use किया</span> <span style="color:black">जाता</span> <span style="color:black">है।)</span><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Many a</span></strong><span style="color:black"> player is playing cricket in the field now.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Many a</span></strong><span style="color:black"> man was killed in the First World War.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Many a</span></strong><span style="color:black"> girl is not interested in this.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Many an</span></strong><span style="color:black"> apple is eaten by Rohan.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">4. Little/A Little/The Little</span></strong><br />
+<span style="color:black">-&nbsp; Little का अर्थ नकारात्मक (नगण्य या कुछ नहीं) होता है। A little का अर्थ &#39;कुछ&#39;, &#39;थोड़ा सा&rsquo; होता है। जबकि The little का अर्थ &lsquo;जो कुछ भी वो सारा&rsquo; (not much but all that is) होता है।</span>&nbsp;<br />
+<span style="color:black">-&nbsp; It shows quantity. (मात्रा)</span><br />
+<strong><span style="color:black">(A) Little :</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Little&rsquo;</span></strong><span style="color:black"> is used before uncountable noun and takes singular verb. It shows very small quantity. It denotes negative sense. &lsquo;Little&rsquo; has a rather negative meaning. It means hardly any. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I am sorry. I have <strong>little</strong> interest in politics.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He had <strong>little</strong> courage so he could not face the situation boldly.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">The tank is nearly empty. There is <strong>little</strong> water in it.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He has very <strong>little</strong> patience, so he can&rsquo;t wait.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He takes <strong>little</strong> interest in parental business. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">We have <strong>little</strong> hope of his recovery. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He has <strong>little</strong> knowledge of computers.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(B) A Little</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">It shows a small quantity. These expressions show the speaker&rsquo;s attitude towards and the quantity he/she is referring to. A little means some. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">With <strong>a little</strong> patience, you will be able to solve all your problems.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Please give them <strong>a little</strong>/<strong>some time</strong> to make themselves comfortable.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">You have become weak. You should pay <strong>a little</strong>/<strong>some more</strong> attention to your health.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">We have <strong>a little</strong> hope of his recovery.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">A little</span></strong><span style="color:black"> knowledge is always dangerous. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He takes <strong>a little</strong> interest in parental business.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(C) The Little :</span></strong><br />
+<strong><span style="color:black">-</span>&nbsp; </strong><span style="color:black">not much but all that is available.</span><br />
+<strong>&nbsp; </strong><span style="color:black">(जो</span> <span style="color:black">कुछ</span> <span style="color:black">भी</span> <span style="color:black">वो</span> <span style="color:black">सारा)</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I have lost <strong>the little</strong> energy I had.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">The little</span></strong><span style="color:black"> money that he earns is not enough to meet his expenses.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Do you wish me to use <strong>the little</strong> water I saved for Honey?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">The little</span></strong><span style="color:black"> money she had, was also spent on medicines. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He has wasted <strong>the little</strong> money he had in gambling.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">5. Few/A Few/The Few</span></strong><br />
+<span style="color:black">-&nbsp; &lsquo;Few&rsquo; का use countable nouns के लिए किया जाता है। Few का अर्थ नकारात्मक (नगण्य, न के बराबर) होता है। &lsquo;A few&rsquo; का अर्थ &#39;कुछ, थोड़ा सा&#39; होता है, जबकि &lsquo;The few&rsquo; का अर्थ &#39;जो भी थोड़ा सा सब&#39;।</span><br />
+<strong><span style="color:black">-</span>&nbsp; </strong><span style="color:black">It shows number. (संख्या)</span><br />
+<strong><span style="color:black">(A) Few :</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Few&rsquo;</span></strong><span style="color:black"> is used with plural nouns and takes plural verb. It shows a very small number, negligible (ना</span> <span style="color:black">के</span> <span style="color:black">बराबर /अपर्याप्त). It denotes negative sense.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">How can we arrange a get-together in this pandemic situation? <strong>Few</strong> will come for such a programme.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I am sorry. I have <strong>few</strong> friends.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">The box is nearly empty. There are <strong>few</strong> apples in it.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He is not popular at all. <strong>Few</strong> people know him.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Few</span></strong><span style="color:black"> people are fully happy.&nbsp; </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Few</span></strong><span style="color:black"> men are free from any disease.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Few</span></strong><span style="color:black"> women can avoid talking.&nbsp;</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Few</span></strong><span style="color:black"> people reach the age of 100 years.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Few</span></strong><span style="color:black"> women can keep secrets.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(B) A few :</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">These expressions show the speaker&rsquo;s attitude towards the numbers &lsquo;he/she&rsquo; is referring to. A small number/some. (संख्या</span> <span style="color:black">में</span> <span style="color:black">थोड़े/कुछ)</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">A few (for countable nouns) describe the number in positive way.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I have only <strong>a few</strong> minutes to answer these questions.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">There were only <strong>a few</strong> people in the hall at that time.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I do have <strong>a few</strong> books of communication skills.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">A few</span></strong><span style="color:black"> persons can write correct English.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He asked me <strong>a few</strong> questions.&nbsp;</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He died only <strong>a few</strong> months ago. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">A few</span></strong><span style="color:black"> students secured more than 80% marks in Physics.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Please wait for <strong>a few</strong> minutes.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">(C) The Few:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Not many but all that are available. (जो</span> <span style="color:black">भी</span> <span style="color:black">थोड़े</span> <span style="color:black">बहुत</span> <span style="color:black">हैं</span> <span style="color:black">वे</span> <span style="color:black">सभी)<strong> </strong></span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:-</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">The few</span></strong><span style="color:black"> things that he bought were of no use.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">The few</span></strong><span style="color:black"> students who came yesterday were not able to answer this question.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">She spent <strong>the few</strong> rupees which she found in the wallet.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">The few</span></strong><span style="color:black"> utensils she had, were taken by the thief. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">The few</span></strong><span style="color:black"> clothes he had, all burnt in fire.&nbsp;</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">The few</span></strong><span style="color:black"> members of the committee all took part in the demonstration.&nbsp; </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">The few</span></strong><span style="color:black"> books he had, were taken by the thief.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">6.</span></strong><span style="color:black"> <strong>Each/Every</strong></span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Both &lsquo;Each&rsquo; and &lsquo;Every&rsquo; go before a singular countable noun and take singular verb. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(Each और Every का use एकवचन</span> <span style="color:black">की</span> <span style="color:black">संज्ञा</span> <span style="color:black">और</span> <span style="color:black">एकवचन</span> <span style="color:black">की</span> <span style="color:black">क्रिया</span> <span style="color:black">के</span> <span style="color:black">साथ</span> <span style="color:black">होता</span> <span style="color:black">है।)</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Each&rsquo; </span></strong><span style="color:black">is used for two or more things/places/ persons but<strong> &lsquo;Every&rsquo;</strong> is used for three or more things/places/persons.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Each</span></strong><span style="color:black"> का use निश्चित संख्या हेतु, तथा </span><strong><span style="color:black">Every</span></strong><span style="color:black"> का use अनिश्चित संख्या हेतु किया जाता है। </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Each</span></strong><span style="color:black"> का use उस समय किया जाता है जब, वस्तु या व्यक्ति को individuality, separate action express करना हो but <strong>Every</strong> का use group में action को express करना होता है।</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong><br />
+<span style="color:black">If we use <strong>each</strong> for more things, we see them one by one.</span><br />
+<span style="color:black">There were houses on <strong>each</strong> side of the road.</span><br />
+<span style="color:black">In Japan, children are taught to write with <strong>each</strong> hand.</span><br />
+<strong><span style="color:black">Each</span></strong><span style="color:black"> half of the earth is called a hemisphere.</span><br />
+<span style="color:black">I have only two pens but <strong>each</strong> pen writes well.</span><br />
+<span style="color:black">I know <strong>each</strong> and <strong>every</strong> student in the class.</span><br />
+<span style="color:black">The Lok Sabha elections are held <strong>every</strong> five years.</span><br />
+<strong><span style="color:black">Every</span></strong><span style="color:black"> boy is reading his book.</span><br />
+<span style="color:black">I visit my parents <strong>every</strong> two weeks.</span><br />
+<span style="color:black">When we use <strong>every</strong>, we see things collectively.</span><br />
+<strong><span style="color:black">Every</span></strong><span style="color:black"> student gets a prize.</span><br />
+<strong><span style="color:black">Every</span></strong><span style="color:black"> candidate was given a certificate.</span><br />
+<strong><span style="color:black">NOTE :-&nbsp; Determiners</span></strong><br />
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR8AAABaCAYAAACBtVImAAAS+0lEQVR4nO2df2gT9//Hn/ny+WN/zGqaf0SkK7n+UxTSsesGWzKmYK9rx7CsM2k3toKyNpnINjdTUmWUaTUZIohrkuJYGUoSdLSIlzUVFLxQNk1Li/rXPNc/RPZHa6b7w/533z+6u90ll+aSJr1WXw84uNz7fe/3633JPfN+v1/vHxZJkiQQBEGsMf9ntgEEQbyYkPgQBGEKJD4EQZgCiQ9BEKZA4kMQhCmQ+BAEYQokPgRBmAKJD0EQpkDiQxCEKZD4EARhCiQ+BEGYAokPQRCmQOJDEIQpGBKfdDoNi8UCi8WC1tbWFcPT6bQmLB6Po7W1VQm3WCxobm6Gz+fDgwcPlHjq8JWOYnH17DMT9bNRHw0NDfB4PEgmk2abWFEGBgaU8hHESvyv1BtSqRSi0Sh6e3uLxvX5fAiHwwAAr9eL7u5uTE1NYWRkBOFwGOFwGLFYDB6PB4IgKPfdu3cPfX19AIBIJIIdO3bopi+nqWbTpk2lFmnNkMty7949jI2NIZFIIJFIgOM4XLx4ETabzXBac3NzaGpqAsdxmJiYqKLVpVFXVwcAYFnWZEuIdY9kAEEQJADKYbVaJVEUdcMFQZAkSZIikYhyLRKJ5KXp9XqVcHVahdJTI4cFg0Ej5kuSJEkLCwuSIAiSIAjSwsKC4ftWy0plicViSlggECgp3UAgIAGQOI6rpLkEsWaULD5WqzXvR6/3gjEMIwGQGIbRTXNhYUG5x+v1FsyvUuITDAbLum+1FCuLWoRlUVxYWJC8Xq/yrAFIbrdb4nlekiRJ4jhO82eQWy6e5yWWZZXrDMNIgUBASV+2Sb6uTkMd5na7NWkEg0HdtNXPU/2cc/NSpyeXKfeZFLNdTt/tdmueA8dx0uzsbF4eLMtKXq93Tf9wCGOULD7qGk0sFssLFwRBEkXR0Isu/3hyBaoa4sPzvCKe8ku8FhQri7r2I9fK5JePZVlJEASNQPE8LwmCkBdHfu7q9CKRiMTzvCJiLMvm2SS/uJFIRIrFYnl/NDzPa9KUvy+e5zVCI9duC4lPrk2y/VarVREGI7ar05drjMFgUBIEQYkri5psY+6fG7E+KFl8JOk/0ZB/OLkvmPqzEfHJbf0ZFR+9Qy++mRQrS66wq8Vd3RxVi40k/ffscptd8guofuFk4VWLl1p4Ctmj/u7UAqguh2yXnM5K4qNuWuo9FyO2F6rBqv/w5D9FYn1TcoczAAwPD4NlWWSzWXz++ec4ePBgOcmsGr0O58bGRkP3xuNxjI6Oaq699tprOHHiRMXsK5XNmzcrNrEsi0ePHuHRo0cAgObmZmQyGWQymYL3p9NpZLNZAIDD4VA8jzU1NUqcu3fv4s0331Q+Hzp0qGB66nj19fXKudPpVM5L6SR/9913ddMoxXY1+/fvV87tdjs4jkMqlUJXVxdu3ryJ3t5eOBwOw/YRa0tZ4mO323Hy5En09fUhkUhg7969mnCjAiDDMEw5ZqC+vj7vR7zRePjwoXK+fft25TyTycDlcpWdruwtLIb65V4vGLU9V/gmJiYQj8dx+vRpxZvKcRyOHj264X8nzyNlDzLs7e0Fx3EAkFeDsNlsiqBcunRJ9/7FxUWkUikAQEtLS7lmlI3H48HExITmMKPWIz87q9WqeUE4joO03CzOO4wgCILuvUeOHKlKOSrJamz3eDy4ffs2BEFQakIul0szpoxYH6xqhHMwGAQARUTUHD9+HMDyP3g0Gs0LP3bsmHL+9ddfr8aMDUs0GlWeXX9/PwCgo6MDwPIznZubK5rG4uKicu50OmG1WgEA586dq7S5VaXStjudTly8eFH5LDdfifVDWc0uGYfDgWAwCL/fnxfm8Xhw8+ZNhMNh9PX1YW5uDt3d3coAO/mli8VisNvtZeU/Pz+fN6J606ZNuu38aDSqGbhoZJBkpbl37x4AYGpqCpcuXVL6b7xer/Kv3tnZifPnzyOTyWDXrl24cOECampqMDU1hZmZGezduxcejwcdHR1IpVLIZDKIx+OoqalBTU0NhoeH0dXVhUQigdraWnR3d+Phw4e4c+cOpqen19WAxFxWY3s6ncbx48exe/dupa9KLWLbtm2ruv1EiRjplc71duWiHpehN5Aud1yKPPYid3ChXn6lersKDborNuixWuS6mnOfgV759Mb5yGWT4y8sLOSNaZG9PLljZfCve1z2Iq30fAuF5XqxZHK9bit5u3Lz0rtezPZCdoiiKLndbs0zs1qtumOJiPWBRZJenB1L5VoSdT4ShPm8UOJDEMT6gZbUIAjCFEh8CIIwBRIfgiBMgcSHIAhTIPEhCMIUSHwIgjAFEh+CIEyBxIcgCFNYd+Ij73Sx3nahIAiispS8dY7eEQqFqm0nQRDPGSXPatfbyoZmDBMEUSoli8+OHTtoYiZBEKumon0+0Wg0b3fS1tbWvF054/E4mpub83YxVa82d+vWLTQ0NGjCQ6GQZvGsSjI6OorZ2dmqpE0QRD6rWkwsF3nlPblpdvz4caRSKaRSKYiiCLvdrlnUKxgMYufOnbh79y5mZmawefNmJa1sNguGYSAIAqampuD3+5XFtyq5FOjo6CgGBwcxPz+PGzduVCxdgiCKYGTRn0ILYkFnUSc16u1M5AW81Hsr6aFeeEy90VuhrWLK5aeffpLq6+s15bhx40ZF0iYIojgV6XAuhHp51CdPnmi2R/nkk09WvJfjOM3uBLt379ZdK7pU1DUdgiDMo6IdztFoFGNjY7h165YiMoVY6y1bjIjOl19+iS1btqyhVVr++eefFfflIojniYr1+QwMDGBoaAhWqxXDw8NobGyEw+GAxWLRjf/06dNKZV0xmpqa8Morr5iW/+DgoGl5E8RaUzHxGRoaArC8E4PH4wGAvJ0lGhsbYbVakc1mcfXqVbS1tVUq+6L09PSgp6dnxRrQp59+infeeWfNbMqFxId4kShZfOTtX9Rs27YNLMsik8kgHA7jrbfewtOnT3H06FFNPJvNhv7+fvj9foTDYTgcDuzYsQNTU1OYn59fk+1sjIgQQRDVp2Tx0dvKNhgM4vz58/D7/UilUmhvbwcAuN1uAIAoikrcI0eOoK6uDqdPn9akxXEcNm3aVHIByoVEiCDMhXav+JfR0VE0NTWhqanJNBssFovh7ZAJYqND4rOOIPEhXiTW3ZIaBEG8GJD4EGsOLcNCACQ+zwWhUEgzUbehoQE+n0+ZhJtMJmGxWJS5dy8C8gTn3OEe6vDnccG6ZDKpmdxdW1sLj8ej+90vLi7CYrFgYGCgYHoNDQ1Ve04kPhucgYEB+P1+NDc3g+d5xGIxuN1u3L59W5meUlNTA4Zh1tSbuF7o6emp2koI641kMql4mmOxGHieR39/v8bbrMZms8HtdiORSOiGz83NQRRF9PT0VMdgMyeWEVrK+TqsVqvk9XqrYE31ACAFg8Gq5sFxnDIZORAIFAxf74iiKM3OzhqK63a7JYZhSko/FotJAHTzCAQCeRO8KwnVfDY4xebQAf8tg6tuglgsFiSTSQwMDKC2tlZprkWj0bz7k8mk0qyrra3FwMCAkqZMKBTSnUqjl3cui4uLGBgY0DQdW1tbNU0FOR05rhxvJXbv3o1AIIChoaEV81fb4fP5NM8jdw2plcqT25fV2tqKUCiEaDSqrE0lPz+jtbHLly/D7/cbivv3338biqfG4/HAarXqfu+JRAJut1szwbuSkPhscLxeL8LhsO6PpxiHDh2CKIq4cuUKBEEAy7Lo6+vTvFjpdBrt7e3K2koXLlyoeFXcZrNhenoahw8fhiAI4Hke9+/fxwcffJAX99ixY5ienlaaFcX46quvwDBMUXsXFxfxxhtvYHJyEsPDwxAEAd988w1OnTqFjz76qOyyjYyM4Pz58zh79iwEQUB/fz+Ghobw448/lp1mIXp6eiCKoqa/zwgejwfxeFxzLZlMQhTFoqtPrIqq1KeIsijn61hYWJDcbrcEQGIYRgoEApIoipo48npMgiBo8mJZVtcGdZOI4zjdqjzLshp7g8Ggrv2F8i7W7MptDsjpGG0qcRyn5CHfm1sudVqRSEQCkPfseJ6XAEg8zxcsT6Fyyc2+3GZLKU2+YDBYUvNQ/h7k5rienbnkllGSJMnr9UpWq9VwvuVANZ8Njs1mQzwex+zsLNxuN8LhMBiGMeTK/vDDD/OucRyn+ZxKpZRpMsXurSTbt28HsLzMiJpDhw6VnJbT6UQgEIDf7y/o8RsbGwPLspo1qAAok5/v3r1bcr5A/rpUwHJzcCXU3ip5ypJ6yeGVOHLkCERRxMmTJzE5OQmXywWPx7NiTaitrQ0Mw+Dq1avKtXg8rkwQrxa0dc5zgsPhwIkTJ/DHH3/A6/XC7/cb6ucwgnp522og9+OoXzqXy6Ubt9x1oOTm14EDBwAgT2QArNi3cf369bLyLYdgMAhBECAIArxeL1iWVT4LglD0frvdjt7eXty/fx+RSASJRKJoM8/tdiMej2NxcRHxeBzZbLbqE71LrvlEIhHNgxAEAZ2dndWwjSgDm82G7777DgAwNTVlsjXGaG1txeTkpNIHJUmSoZesFGw2G0ZHR5HJZBAKhVBfX58XZ6XaQbHaSiVxOBxwOp1wOp2or6+HzWZTPpe6c0xvby9Yli0qnvv27UM2m8W1a9cwPj4OhmHgcDhWU4yilCw+8kqG6kPvX4QwjydPngCoTI2FZVmMjIzkXc/9MdfV1QHIX8Pp119/XTH9dDqNTCaDwcFBtLW1Kb+lagin0+mE2+2G3+/HzMyMJqyjowOZTEazgwoApSN2586dAP7boy7XvtwdWtYT2Wy26AqdDocDLMvi5s2bmJyc1G1qV5qK9PmoXZ+5/x6yi1FuP6rdtrI7U+16lJt48nW9Zl6hPJ7HEasrkU6nlS2Fkskk0uk0otEoWlpaYLVaK1IjHRwchCiK8Hg8SKfTSKfT8Hg8uHXrlibe66+/DmB5KVrZllAohHA4vGL6jY2NAIBvv/1WST8UCukKXiX44YcfYLVa8wbWdXZ2gmVZtLS0IB6PI51OIx6Pw+fzgeM4pe/HbreDYRicOnVKE+/jjz+G1WqtuL2dnZ0IBoOG4srvjNqu1tZWiKKIgwcPAlgWU4vFousdPXDggNLk2r9/f164z+er6Ej5iojPvn37lPNr164p57K7DlheMD4ej6O9vR2ZTAaRSAQ8z+Px48cYGhrKEw5RFDE0NASO4xCJRDRfwOXLl5VzeRQmgOqNxFynbNu2DQzDYGRkBO3t7XC5XPj+++/R0tKCTCZTkfEZbW1t4HkemUwGLpcL77//PhiGgdfr1cSz2+2K61u2ZWZmpuia1DabDTzPI5vNwuVyweVyYX5+Hr///vuqbS+U34ULF3SvT0xMoKWlBT6fDy6XC0ePHkV/fz8uXryoifvLL7+gpaUFXV1dcLlcOH36NK5cuaIIcCWx2+2Gmz8tLS2YnJxU7PL5fNiyZQsEQVCaa3KtWI89e/Ygm83qdrwDwOPHj8srRCGMuMSMbJ0ju17VbkGv16u4gCXpv21z1CNyZTcf/nX1qfPKdTGqXcq5eVTCLfjs2bNVp7EaDH4d64JCrnVi/WPE/a7HwsKC4dHWRqhIhzMAHD58GMCya/bBgwdKrzmw3JOu3jbH4XAoVWy19yLXnZnrVpUHPImiqFT95DxW4xYcHx/Hq6++it9++63sNF40rl+/DpZlzTaDKINytzu32WwV7YSu2NY5e/bsUc4vX76Muro6RWz279+PR48eKeF6S7HqketWlccjiKKIaDSK9957T8mjHLfg+Pg4BgcHaZvkFZibm0M0GsXbb7+tjL05d+4cUqkUYrGYydYRG5mKDTK02WxKP8DIyAjGx8cBLA+yym0/CoIASZLyDiPbIH/22WcAlms8P//8M4Blj0wpiizXdDo6Okh4irBp0yY8fvxY6QdxuVwQRRGxWKzqg9CI5xwjbTN1P8xK7UW9vqFYLKaEF9sq2Uhe6i2Y5UPeirkYY2NjUlNTU8G+K7O3Szb4dRDEc0HFts6x2+1wOp1KswgArFarpjk2PDyMrq4uJBIJ1NbWoru7Gw8fPsSdO3cwPT2NiYmJovnb7XZlMqVMMZfy0tISOjo6iqa/a9euovlXk5dfftnU/AliTTGiUMW8XerJdLIXBDleLRme5xXPmHwwDKPENVLLUscxupbNs2fPpDNnzkhbt25dtzUfgniR2JC7V6TTaWXuD8/zJe18urS0pIwb+uuvvzRhN27cMHXHUoJ4kdiQs9rPnTsHAGAYpuQtl1966SV88cUX+PPPP3HmzBls3bq1GiYSBFGEDSM+Dx48UIbey0Pjz549W3Z6JEIEYS4bptkVCoWU5SRZlsWBAwcqOuV/aWkJS0tLRSfgEQRRGTaM+BAE8XyxYZpdBEE8X5D4EARhCiQ+BEGYAokPQRCmQOJDEIQpkPgQBGEKJD4EQZgCiQ9BEKZA4kMQhCmQ+BAEYQokPgRBmAKJD0EQpkDiQxCEKfw/LV6+hnDlF3oAAAAASUVORK5CYII=" /><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Five boys are standing here. <strong>Each</strong> boy is wearing white shirt.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Every</span></strong><span style="color:black"> book is important.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">NOTE:- Pronoun</span></strong><br />
+<strong><span style="color:black">Each of&nbsp;&rarr;&nbsp;</span></strong><span style="color:black">Plural Noun + S.V.</span><br />
+<strong><span style="color:black">Everyone of</span></strong> &nbsp;<strong><span style="color:black">&rarr;</span></strong>&nbsp;<span style="color:black">Plural Pronoun + S.V.</span><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Each of</span></strong><span style="color:black"> the books is important.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Each of</span></strong><span style="color:black"> the boys was intelligent.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Each</span></strong><span style="color:black"> <strong>of</strong> the two girls gets a prize.&nbsp;</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Everyone of</span></strong><span style="color:black"> the students of this class has been assigned a homework.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Note: </span></strong><span style="color:black">Each एक Pronoun भी है एवं एक Adjective भी है। अत: Each के बाद &#39;of&#39; का use किया जा सकता है। लेकिन&nbsp;Every केवल Adjective है। अत: Every के बाद &#39;of &#39; का use करना गलत होता है। </span><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Each of the teachers is doing his work.&nbsp;<strong>(Correct)</strong></span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Every of the teachers is doing his work.&nbsp; <strong>(Incorrect)</strong></span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Each of the boxes was empty.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">7.</span></strong><span style="color:black"> <strong>Either/Neither/Both</strong></span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">We can use &lsquo;<strong>Either&rsquo;</strong> and <strong>&lsquo;Neither&rsquo;,</strong> when we have only two things in mind. They can&rsquo;t be used when we talk about more than two things/places /persons.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Both &lsquo;<strong>Either&rsquo;</strong> and &lsquo;<strong>Neither&rsquo;</strong> are used with singular countable nouns (when used as determiners).</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Either - दोनों में से एक या दोनों। </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Neither &ndash; दोनों</span> <span style="color:black">में</span> <span style="color:black">से</span> <span style="color:black">कोई</span> <span style="color:black">भी</span> <span style="color:black">नहीं।</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Both - दोनों।</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(Either का अर्थ &lsquo;या तो&#39; उस स्थिति में होता है जब एक भाग, दूसरे भाग का ही Complement होता है। Both का use plural noun के</span> <span style="color:black">साथ</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।)</span><br />
+<img src="data:image/png;base64,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" /><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">There was water <strong>on</strong> <strong>either</strong> side of the highway. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">His <strong>either</strong> son went to America.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Either</span></strong><span style="color:black"> box can be used.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Either</span></strong><span style="color:black"> <strong>of</strong> the boxes contained sweets.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Neither</span></strong><span style="color:black"> box is empty.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Neither</span></strong><span style="color:black"> <strong>of</strong> the boxes was empty.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">There were houses on <strong>both</strong> sides of the road.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">In Japan, children are taught to write with <strong>both</strong> hands.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">8. Neither/None</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Neither&rsquo;</span></strong><span style="color:black"> is used to talk about two things/places /persons.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;None&rsquo;</span></strong><span style="color:black"> is used to talk about more than two things /places/persons.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Neither </span></strong><span style="color:black">of the two students has applied for admission.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">None</span></strong><span style="color:black"> of the students got a chance to speak.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">9. Certain/A Certain</span></strong><br />
+<strong><span style="color:black">(A) Certain</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Certain&rsquo; </span></strong><span style="color:black">is used with plural noun and uncountable noun.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(Certain का use बहुवचन</span> <span style="color:black">की</span> <span style="color:black">संज्ञा</span> <span style="color:black">तथा</span> <span style="color:black">अगणनीय</span> <span style="color:black">संज्ञा</span> <span style="color:black">के</span> <span style="color:black">साथ</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।)</span><br />
+<strong><span style="color:black">(B) A Certain</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;A Certain&rsquo;</span></strong><span style="color:black"> is used with singular countable noun.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(A Certain का use एकवचन</span> <span style="color:black">गणनीय</span> <span style="color:black">संज्ञा</span> <span style="color:black">के</span> <span style="color:black">साथ</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।)</span><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Certain</span></strong><span style="color:black"> boys of this class will come up with surprising results.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">She always goes for <strong>a certain</strong> shop, if she wishes to buy something.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">There was <strong>a certain</strong> man whose name I do not remember.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">10. Such/Such a/an</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Such&rsquo;</span></strong><span style="color:black"> is used with plural noun and uncountable noun.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(Such का use बहुवचन</span> <span style="color:black">की</span> <span style="color:black">संज्ञा</span> <span style="color:black">तथा</span> <span style="color:black">अगणनीय</span> <span style="color:black">संज्ञा</span> <span style="color:black">के</span> <span style="color:black">साथ</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।)</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Such a/an&rsquo;</span></strong><span style="color:black"> is used with singular countable noun.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">(Such a/an का use एकवचन</span> <span style="color:black">गणनीय</span> <span style="color:black">संज्ञा</span> <span style="color:black">के</span> <span style="color:black">साथ</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है।)</span><br />
+<strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Such</span></strong><span style="color:black"> books are very useful.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">How can I take <strong>such</strong> lemonade?</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Will you like to read <strong>such</strong> <strong>a</strong> novel?</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">11. Whole/All /Several</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Whole/All /several&rsquo;</span></strong><span style="color:black"> indicate towards plural.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Whole का use जब एक Adjective की तरह किया जाता है, तो इससे पहले &lsquo;The&rsquo; का use होता है। Whole का use जब Proper Noun के पहले किया जाता है, तो इससे पहले &lsquo;The&rsquo; तथा बाद में&nbsp; &lsquo;of&rsquo; का use होता है।</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;All&rsquo;</span></strong> <span style="color:black">का use जब Plural Noun के</span> <span style="color:black">साथ</span> <span style="color:black">किया</span> <span style="color:black">जाता</span> <span style="color:black">है, तो All के</span> <span style="color:black">बाद &lsquo;The&rsquo; का use करना</span> <span style="color:black">होता</span> <span style="color:black">है। Possessive Noun या Pronoun के</span> <span style="color:black">साथ All हमेशा</span> <span style="color:black">उससे</span> <span style="color:black">पहले use होता</span> <span style="color:black">है।</span> </span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Several&rsquo; </span></strong><span style="color:black">अलग-अलग</span> <span style="color:black">अनेक</span> <span style="color:black">वस्तुओं</span> <span style="color:black">के</span> <span style="color:black">लिए &lsquo;use&rsquo; किया</span> <span style="color:black">जाता</span> <span style="color:black">हैं।</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He wasted the <strong>whole</strong> day.&nbsp;</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I worked the <strong>whole</strong> day.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">The whole of</span></strong><span style="color:black"> India mourned the death of Rajeev Gandhi.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">The whole of</span></strong><span style="color:black"> Rajasthan was in the grip of drought.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">All</span></strong><span style="color:black"> of the boys of this college have passed with very good marks.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">All </span></strong><span style="color:black">the students were happy. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">All </span></strong><span style="color:black">the girls were present.&nbsp; </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">All</span></strong><span style="color:black"> my friends went to the party.&nbsp;</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He spent <strong>all</strong> his money.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Several</span></strong><span style="color:black"> books are scattered on the table.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">City officials have lost <strong>several</strong> hundred dollors in bad investments.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">12. Later/Latest/Latter<em>/</em>Last&nbsp;</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Later&rsquo;</span></strong><em> </em><em><span style="color:black">एवं</span></em><strong><em> </em></strong><strong><em><span style="color:black">&lsquo;</span></em></strong><strong><span style="color:black">Latest&rsquo;</span></strong><em> </em><span style="color:black">का use सामान्य रूप से time के सन्दर्भ में किया जाता है। </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Latter&rsquo;</span></strong><span style="color:black"> एवं</span><strong> </strong><strong><span style="color:black">&lsquo;Last&rsquo;</span></strong><span style="color:black"> का use स्थिति (क्रम) में किया जाता है। </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">जब दो के लिए स्थिति/क्रम के सन्दर्भ में use किया जाना हो, तो Latter का, एवं दो से अधिक के सन्दर्भ योग (बाद वाले को बताने के लिए) किया जाता है। Latest का अर्थ होता है: Last up to now only, अर्थात् अब</span>&nbsp;<span style="color:black">तक जो अन्तिम है जबकि Last का अर्थ होता है अन्तिम, उसके बाद कोई नहीं (Finally last). </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I will come <strong>later</strong>. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He came <strong>later</strong> than I.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">This is the <strong>latest</strong> fashion.&nbsp; </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">This is the <strong>latest</strong> technology.&nbsp; </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Between Ram and Shyam, the <strong>latter</strong> is more intelligent. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">&nbsp;At <strong>last</strong> the chairman distributed the prizes.&nbsp; </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Lord Mountbatten was the <strong>last</strong> Governor General of India.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">13. Fewer<em>/</em>Less/Lesser&nbsp;</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Fewer&rsquo;</span></strong><span style="color:black"> का use countables में &lsquo;कम संख्या&#39; दर्शाने हेतु किया जाता है। </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Less&rsquo;</span></strong><span style="color:black"> का use uncountables में &#39;थोड़ी मात्रा&rsquo; दर्शाने हेतु किया जाता है। Price एवं Number के साथ Less का use नहीं होता है। </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Lesser&rsquo;</span></strong><span style="color:black"> का अर्थ होता है कम महत्त्वपूर्ण।</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Fewer</span></strong><span style="color:black"> persons were present in the meeting. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">No <strong>fewer</strong> than ten persons were killed in the accident.&nbsp;</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">She had <strong>fewer</strong> chores, but she also had <strong>less</strong> energy.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">I have <strong>less</strong> time for my preparations. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">He has <strong>less</strong> money to buy a T.V. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">We spent <strong>less</strong> than forty dollars on our trip.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Many <strong>lesser</strong> speakers also came to speak. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Many <strong>lesser</strong> leaders were present in the function. </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Note: </span></strong><span style="color:black">Generally, when we&#39;re talking about countable things, we use the word <strong>fewer</strong>, when we&#39;re talking about measurable quantities that we cannot count, we use the word <strong>less</strong>.</span><br />
+<strong><span style="color:black">14.</span></strong><span style="color:black"> <strong>Farther/Further/Farthest</strong></span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Farther&rsquo;</span></strong> <span style="color:black">का अर्थ होता है तुलनात्मक रूप से अधिक दूर (Far-Farther-Farthest) यह Far की Comparative degree है। </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Farthest&rsquo;,</span></strong><span style="color:black"> Far की Superlative degree है, जिसका अर्थ है सबसे अधिक दूर। </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Further&rsquo;</span></strong><span style="color:black"> का अर्थ होता है Additional (अतिरिक्त) Farther एवं Farthest का use दूरी के सन्दर्भ में तथा Further का use Action या सूचना आदि के सन्दर्भ में usually किया जाता है। </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Mumbai is <strong>farther</strong> from Alwar than from Jaipur. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">No <strong>further</strong> action is required. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Please don&#39;t make <strong>further</strong> delay. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">It is the <strong>farthest</strong> place from the railway station.</span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">15. Elder<em>/</em>Eldest/Older/Oldest</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Elder/Eldest&rsquo;</span></strong><span style="color:black"> का use एक ही परिवार के सदस्यों हेतु किया जाता है। </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">&lsquo;Older/Oldest&rsquo;</span></strong><span style="color:black"> का use व्यक्तियों एवं वस्तुओं दोनों के लिए किया जाता है। Elder के साथ हमेशा </span><strong><span style="color:black">&lsquo;to&#39;</span></strong><span style="color:black"> जबकि Older के साथ </span><strong><span style="color:black">&#39;than&#39;</span></strong><span style="color:black"> Preposition का use होता है। </span></span></span></p>
+
+<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="color:black">Examples:</span></strong></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Bhavesh is my <strong>elder</strong> brother.&nbsp;</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Abhishek and Manveer are real brothers. Abhishek is <strong>elder</strong> to Manveer.</span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">My mother is the <strong>eldest</strong> member of our family. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">Ram is <strong>older</strong> than Shyam. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">The <strong>older</strong> people should be respected. </span></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:black">This is the <strong>oldest</strong> college in our city.</span></span></span></p>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.controls').classList.toggle('active');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function increaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            document.body.style.fontSize = (currentSize + 2) + 'px';
+        }
+
+        function decreaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            if (currentSize > 10) {
+                document.body.style.fontSize = (currentSize - 2) + 'px';
+            }
+        }
+
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
