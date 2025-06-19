@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Tenses</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dots Grid Animation Buttons</title>
+    <style>
+        body {
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .menu-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .menu-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0);
+            top: 0;
+            right: 0;
+        }
+        .controls.active .round-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .round-button:nth-child(2) {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53); /* Dark Mode */
+            transition-delay: 0.1s;
+            top: 56px;
+            right: 0;
+        }
+        .round-button:nth-child(3) {
+            background: linear-gradient(135deg, #1e90ff, #00b4d8); /* Font + */
+            transition-delay: 0.2s;
+            top: 112px;
+            right: 0;
+        }
+        .round-button:nth-child(4) {
+            background: linear-gradient(135deg, #2ecc71, #27ae60); /* Font - */
+            transition-delay: 0.3s;
+            top: 168px;
+            right: 0;
+        }
+        .round-button:nth-child(5) {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Print */
+            transition-delay: 0.4s;
+            top: 224px;
+            right: 0;
+        }
+        .round-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+        .round-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .round-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .round-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .menu-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .menu-button:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+        .round-button span, .menu-button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="menu-button" onclick="toggleMenu()" title="Toggle Menu"><span>☢️</span></button>
+        <button class="round-button" onclick="toggleDarkMode()" title="Toggle Dark Mode"><span>🌙</span></button>
+        <button class="round-button" onclick="increaseFontSize()" title="Increase Font Size"><span>+</span></button>
+        <button class="round-button" onclick="decreaseFontSize()" title="Decrease Font Size"><span>-</span></button>
+        <button class="round-button" onclick="printPage()" title="Print Page"><span>🖨️</span></button>
+    </div>
+   <h3 style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#ff0000"><span style="font-size:18px"><strong>Tense</strong></span></span></span></h3>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><img alt="" src="https://ut-production-app.s3.ap-south-1.amazonaws.com/admin_v1/test_management/question_bank/39866550_Screenshot_10.png" style="height:30%; width:30%" /></span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b"><strong>Simple Present Tense :</strong></span><br />
+<strong>(A)</strong> <strong>Affirmative</strong>: Sub. + V<sub>1</sub>/V<sub>5</sub>(s/es) + Obj.<br />
+<strong>Negative</strong>: Sub. + do/does + not + V<sub>1</sub> + Obj.<br />
+<strong>Interrogative:</strong> Do/Does + Sub. + V<sub>1</sub> + Obj. ?<br />
+<strong>Int. Negative</strong>: Do/Does + Sub. + not + V<sub>1</sub> + Obj.?<br />
+<strong>(B)</strong> Sub. + is/am/are + Noun Phrase/Adjective<br />
+<strong>Do (Plural) &ndash;</strong> I, We, You, They<br />
+<strong>Does (Singular) &ndash;</strong> He, She, It<br />
+<strong>Examples:-</strong><br />
+&bull; I play tennis.<br />
+&bull; I do not play tennis.<br />
+&bull; Do I play tennis?&nbsp;<br />
+&bull; Do I not play tennis?<br />
+&bull; She studies in this college.<br />
+&bull; She does not study in this college.<br />
+&bull; Does she study in this college?<br />
+&bull; Does she not study in this college?&nbsp;<br />
+<strong>Adverbials:&nbsp;</strong><br />
+To show those actions which have following words: always, never, seldom generally, hardly, scarcely, rarely, occasionally, often, usually, frequently, every day/week/year, daily, once /twice a day / a week/year, sometimes etc.<br />
+<strong>USE 1 :&nbsp;</strong><br />
+To express Habitual/Regular actions:<br />
+&lsquo;Simple Present Tense&rsquo; is used to express the idea that an action is repeated or usual. The action can be a habit, a hobby, a daily event, a scheduled event or something that often happens.<br />
+&nbsp;(किसी भी आदतन क्रिया, रोज़ाना के कार्य व रीति रिवाज आदि के कार्यों को व्यक्त करने के लिए)<br />
+<strong>Examples:</strong><br />
+&bull; The train leaves every morning at 8 AM.<br />
+&bull; When does the train usually leave?&nbsp;<br />
+&bull; He rarely speaks Hindi.<br />
+&bull; Generally, the shops open at 9.<br />
+&bull; She always forgets her purse.<br />
+&bull; He goes for a walk daily.<br />
+&bull; I take exercise in the morning regularly.<br />
+<strong>USE 2 :</strong><br />
+-<strong> </strong>To express general, permanent, scientific and universal truth:<br />
+(सामान्य/स्थायी/वैज्ञानिक सत्य को व्यक्त करने के लिए)<br />
+<strong>Examples:</strong><br />
+&bull; Cats <strong>like</strong> milk.<br />
+&bull; Jatin&rsquo;s brother <strong>lives</strong> in Mumbai.<br />
+&bull; Water <strong>freezes</strong> at zero degrees.<br />
+&bull; Oil <strong>floats</strong> on water.<br />
+&bull; The sun <strong>rises</strong> in the east.<br />
+&bull; The earth <strong>revolves</strong> around the sun.<br />
+&bull; The Muslims <strong>bury</strong> their dead.<br />
+&bull; Light <strong>travels</strong> faster than sound.<br />
+<strong>USE 3 : </strong><br />
+-&lsquo;Simple Present Tense&rsquo; is used to talk about scheduled events in the near future. This is most commonly done when talking about public transportation, but it can be used with other scheduled events as well.<br />
+(निकट भविष्य में घटित होने वाले पूर्व निर्धारित कार्यों को व्यक्त करने के लिए)<br />
+<strong><span style="color:black">Examples:</span></strong><br />
+&bull; The party <strong>starts</strong> at 8 o&rsquo;clock.<br />
+&bull; The Prime Minister <strong>arrives </strong>in Jodhpur tomorrow.<br />
+&bull; <span style="color:black">The match <strong>starts</strong> at 9 o&rsquo;clock tomorrow.</span><br />
+<strong>USE 4 :</strong><br />
+- To express proverbial sayings and quotations:<br />
+(कहावतों और उद्धरणों को व्यक्त करने के लिए)<br />
+<strong>Examples:</strong><br />
+&bull; Actions <strong>speak</strong> louder than words.<br />
+&bull; All that <strong>glitters</strong> is not gold.<br />
+&bull; A new broom <strong>sweeps</strong> clean.<br />
+&bull; Barking dogs seldom <strong>bite</strong>.<br />
+&bull; A bad workman always <strong>blames</strong> his tools.<br />
+&bull; Make hay while the sun <strong>shines</strong>.<br />
+<strong>USE 5 : </strong><br />
+- To express emotions and mental states:<br />
+(भावनाओं व मानसिक स्थिति को व्यक्त करने के लिए)<br />
+<strong>Examples:</strong><br />
+&bull; <span style="color:black">I hate beggars.</span><br />
+&bull; <span style="color:black">I understand your problem.</span><br />
+<strong><span style="color:black">USE 6 : </span></strong><br />
+-<span style="color:black"> To express live broadcast of sports or events:<br />
+(खेल</span> <span style="color:black">और</span> <span style="color:black">घटनाओं</span> <span style="color:black">के</span> <span style="color:black">लाइव</span> <span style="color:black">प्रसारण</span> <span style="color:black">को</span> <span style="color:black">व्यक्त</span> <span style="color:black">करने</span> <span style="color:black">के</span> <span style="color:black">लिए)</span><br />
+<strong><span style="color:black">Examples:-</span></strong><br />
+&bull; <span style="color:black">Rohit <strong>hits</strong> the ball nicely but fielder <strong>catches </strong>it.</span><br />
+&bull; <span style="color:black">The Prime Minister <strong>hoists </strong>the tricolour.</span><br />
+<strong><span style="color:black">USE 7 :</span></strong><br />
+-<span style="color:black"> In conditional sentence (Possible condition):<br />
+(सम्भावित</span> <span style="color:black">शर्त</span> <span style="color:black">वाले</span> <span style="color:black">वाक्यों</span> <span style="color:black">में)</span><br />
+<strong><span style="color:black">Structure &ndash;</span></strong><span style="color:black"> If + Simple Present + Simple Future</span><br />
+<strong><span style="color:black">Examples:</span></strong><br />
+&bull; <span style="color:black">If you work hard, you will get good marks.</span><br />
+&bull; <span style="color:black">If he don&rsquo;t invite me, I will not go there.</span><br />
+<strong>Note :</strong><br />
+- If the verb ends in <strong>-ss, -sh, -ch, -x</strong> or <strong>-o</strong>, add <strong>-es</strong> to the base form:<br />
+eg. ki<strong>ss</strong> - kiss<strong>es</strong>,fini<strong>sh</strong> - finish<strong>es</strong>,wat<strong>ch</strong> - watch<strong>es</strong>,mi<strong>x</strong> - mix<strong>es</strong>, g<strong>o</strong> - go<strong>es</strong><br />
+- If the verb ends with <strong>consonant</strong> + <strong>y</strong> changes into <strong>&lsquo;I&rsquo;</strong> and add <strong>&lsquo;-es&rsquo;</strong>:<br />
+eg. stud<strong>y</strong> - stud<strong>ies</strong>,cop<strong>y</strong> - cop<strong>ies</strong>, tr<strong>y</strong> - tr<strong>ies</strong>,carr<strong>y</strong> &ndash; carr<strong>ies</strong><br />
+<strong>USE 8 : </strong><br />
+<strong>- </strong>In clauses of time :<br />
+- Main clause + Time clause<br />
+- Simple Future + when/after/before + Simple Present<br />
+<strong>Examples:</strong><br />
+&bull; <strong> </strong>I will call you when dinner gets ready.<br />
+&bull; I will go abroad after I finish my studies.<br />
+&bull; <strong> </strong>She will see you before she leaves.</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b"><strong>Present Continuous Tense:</strong></span><br />
+<strong>Affirmative</strong>:Sub. + is/am/are + V<sub>1</sub> + ing + Obj.<br />
+<strong>Negative: </strong>Sub. + is/am/are + not + V<sub>1</sub> + ing + Obj.<br />
+<strong>Interrogative:</strong> Is/Am/Are + Sub. + V<sub>1</sub> + ing + Obj.?<br />
+<strong>Int. Negative</strong>: Is/Am/Are + Sub. + not + V<sub>1</sub> + ing + Obj.?<br />
+<strong>Is (Singular) &ndash;</strong> He, She, It&nbsp;<br />
+<strong>Am &ndash;</strong> I<br />
+<strong>Are (Plural) &ndash;</strong> We, You, They<br />
+<strong>Adverbials: </strong><br />
+- To show those actions which have following words: at present, at this time, at this moment, now, now a days, right now, currently, presently these days etc.<br />
+<strong>USE 1 : </strong><br />
+- To express an action going on at the time of speaking:<br />
+(बात करते समय हो रहे कार्य को व्यक्त करने के लिए)<br />
+- Used with normal verbs to express the idea that something is happening now, at this very moment. It can also be used to show that something is not happening now.<br />
+<strong>Examples:</strong><br />
+&bull; We are<strong> learning</strong> English now.<br />
+&bull; They <strong>are not watching</strong> television.<br />
+&bull; <strong>Are</strong> you <strong>sleeping</strong>?<br />
+&bull; What <strong>are</strong> you <strong>doing</strong>?<br />
+&bull; Right now, I <strong>am waiting</strong> for you at the bus stop.<br />
+&bull; He <strong>is not attending</strong> his classes these days.<br />
+&bull; Why <strong>aren&rsquo;t</strong> you <strong>doing</strong> your homework?<br />
+&bull; These days I <strong>am reading</strong> a novel of an eminent writer.<br />
+&bull; At present I <strong>am teaching</strong> English.<br />
+<strong>USE 2 : </strong><br />
+- To express planned action of the future :<br />
+- This week, this evening, the weekend, this month, this Sunday/Monday etc.<br />
+(निकट भविष्य में होने वाले निर्धारित कार्यों को व्यक्त करने के लिए)<br />
+<strong>Examples:</strong><br />
+&bull; My uncle <strong>is coming</strong> here next week.<br />
+&bull; <strong>Is</strong> he <strong>visiting</strong> his parents next weekend?<br />
+&bull; The movie <strong>is releasing</strong> this month.<br />
+<strong>USE 3 : </strong><br />
+- To express unfavourable habits:<br />
+<span style="color:black">(नापसंद आदतों को व्यक्त करने के लिए जो बार-बार की जाती है।)</span><br />
+<strong>Examples:</strong><br />
+&bull; She <strong>is always coming</strong> to class late.<br />
+&bull; He <strong>is constantly talking</strong>.<br />
+&bull; I don&rsquo;t like them because they <strong>are always complaining</strong>.<br />
+&bull; He <strong>is always getting up</strong> late in the morning.<br />
+<strong>USE 4 : </strong><br />
+- Gradually changing or developing situations:<br />
+(धीरे-धीरे लगातार होने वाले परिवर्तनों को दर्शाने के लिए)<br />
+<strong>Examples:</strong><br />
+&bull; Your English <strong>is getting</strong> better.<br />
+&bull; It <strong>is getting</strong> darker.<br />
+&bull; The weather <strong>is</strong> <strong>getting</strong> warmer.<br />
+&bull; The Universe <strong>is</strong> <strong>expanding</strong>.<br />
+<strong>(A) Non-Continuous Verbs :</strong><br />
+- Non-continuous verbs or state verbs are verbs that we can&rsquo;t use in continuous form. Instead of using &lsquo;Present Continuous&rsquo; with these verbs, we must use &lsquo;Simple Present&rsquo;.<br />
+- believe, dislike, doubt, imagine, know, like, love, hate, prefer, realize, recognize, remember, suppose, understand, want, wish etc.<br />
+- appear, hear, see, seem, smell, sound, taste etc.<br />
+<strong>Examples:</strong><br />
+&bull; She is disliking that boy. <strong><em>(Incorrect)</em></strong><br />
+&bull; She dislikes that boy. <strong><em>(Correct)</em></strong><br />
+&bull; Jack is preferring going out for dinner tonight. <strong>(<em>Incorrect)</em></strong><br />
+&bull; Jack prefers going out for dinner tonight. <strong>(<em>Correct)</em></strong><br />
+&bull; I&rsquo;m recognizing you. <strong><em>(Incorrect)</em></strong><br />
+&bull; I recognize you. <strong>(<em>Correct)</em></strong><br />
+&bull; It is smelling bad.<strong> (Incorrect)</strong><br />
+&bull; It smells bad.<strong> (correct)</strong><br />
+&bull; She is appearing a nice enough person. <strong>(Incorrect)</strong><br />
+&bull; She appears a nice enough person. <strong>(Correct)</strong><br />
+<strong>(B) Other Verbs :</strong><br />
+- agree, astonish, deny, disagree, impress, mean, please, promise, satisfy, surprise, be, belong, concern, consist, contain, cost, depend, deserve, fit, include, involve, matter, need, owe, own, possess etc.<br />
+<strong>Examples: </strong><br />
+&bull; It is involving a lot of work. <strong>(<em>Incorrect)</em></strong><br />
+&bull; It involves a lot of work.<strong>(<em>Correct)</em></strong><br />
+&bull; It isn&rsquo;t mattering. <strong>(<em>Incorrect)</em></strong><br />
+&bull; It doesn&rsquo;t matter. <strong>(<em>Correct)</em></strong><br />
+&bull; I am disagreeing with you. <strong>(<em>Incorrect)</em></strong><br />
+&bull; I disagree with you. <strong>(<em>Correct)</em></strong><br />
+<strong>Note:</strong> There are also a number of verbs that don&rsquo;t take the continuous forms in one meaning but take the continuous forms in other meanings. Here are some of the most important.<br />
+<strong>(C) Non-Continuous Meanings :</strong><br />
+- <strong>feel</strong> = &lsquo;have an opinion&rsquo;<br />
+&bull; He feels he should get a second chance.<br />
+- <strong>see</strong> = &lsquo;understand&rsquo;<br />
+&bull; I see what you mean.<br />
+- <strong>think</strong> = &lsquo;have an opinion&rsquo;<br />
+&bull; I think we should leave immediately.<br />
+- <strong>appear</strong> = &lsquo;look like&rsquo;<br />
+&bull; That appears to be strange.<br />
+- <strong>look</strong> = &lsquo;seem&rsquo;<br />
+&bull; It looks impossible!<br />
+- <strong>taste</strong> = &lsquo;have a taste&rsquo;<br />
+&bull; That tastes yummy!<br />
+<strong>(D) Continuous Meanings :</strong><br />
+- <strong>feel</strong> = &lsquo;feel physically&rsquo;<br />
+&bull; I&rsquo;m feeling awful this afternoon.<br />
+- <strong>see</strong> = &lsquo;visit&rsquo;<br />
+&bull; She&rsquo;s seeing a doctor this morning.<br />
+- <strong>think</strong> = &lsquo;use the brain&rsquo;<br />
+&bull; He is thinking hard about the problem.<br />
+- <strong>appear</strong> = &lsquo;be on stage / perform&rsquo;<br />
+&bull; Asha Bhosle is appearing at the concert tonight.<br />
+- <strong>look</strong> = &lsquo;stare at&rsquo;<br />
+&bull; I&rsquo;m looking at that strange man.<br />
+- <strong>taste</strong> = &lsquo;use the mouth&rsquo;<br />
+&bull; The cook is tasting the sauce! </span></span></p>
+
+<h1 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b"><strong>Present Perfect Tense: </strong></span><br />
+<strong>Affirmative: </strong>Sub. + has/have + V<sub>3</sub> + Obj.<br />
+<strong>Negative: </strong>Sub. + has/have + not +V<sub>3</sub> + Obj.<br />
+<strong>Interrogative: </strong>Has/Have + Sub. + V<sub>3</sub> + Obj.?<br />
+<strong>Int. Negative: </strong>Has/Have + Sub. + not + V<sub>3</sub> + Obj.?<br />
+<strong>Has (Singular) &ndash;</strong> He, She, It<br />
+<strong>Have (Plural) &ndash; </strong>I, We, You, They<br />
+<strong><span style="color:black">Adverbials:</span></strong><br />
+- To show those actions which have following words: already Yet, as yet, Just, Just now, recently, lately, so far, ever, several times, upto now etc.<br />
+<strong>USE 1 : </strong><br />
+- To express completed actions in the immediate past :<br />
+(ऐसे कार्यों को व्यक्त करने के लिए जो अभी समाप्त हुआ है)<br />
+<strong>Examples:</strong><br />
+&bull; Ram <strong>has recently shifted</strong> to a new house.<br />
+&bull; Sheela <strong>has just finished</strong> her work.<br />
+&bull; He <strong>has visited</strong> Agra several times.<br />
+&bull; <strong>Have </strong>you ever <strong>seen</strong> such a horrified movie?<br />
+&bull; She <strong>has</strong> not <strong>returned</strong> my book yet.<br />
+&bull; I <strong>have</strong> still not <strong>received</strong> her letter.<br />
+<strong>USE 2 : </strong><br />
+- To express completed actions which time is not given:<br />
+(ऐसे पूर्ण कार्यों को व्यक्त करने के लिए जिसका समय नहीं दिया गया हो)<br />
+<strong>Examples:</strong><br />
+&bull; People <strong>have travelled</strong> to the Moon.<br />
+&bull; I <strong>have read</strong> all these books.<br />
+&bull; He <strong>has resigned</strong> from this post.<br />
+&bull; <span style="color:black">They <strong>have</strong> <strong>left</strong> for Mumbai.</span><br />
+<strong>USE 3 : </strong><br />
+- To express actions beginning at some time in the past and continuing up to the present moment. (mainly non-continuous verbs):<br />
+(ऐसे कार्यों का वर्णन करने के लिए जो पहले से चल रहा था और अब तक चल रहा है)<br />
+<strong>Examples:</strong><br />
+&bull; I <strong>have known</strong> him for a long time.<br />
+&bull; I <strong>have lived</strong> here for ten years.<br />
+&bull; <span style="color:black">I <strong>have</strong> <strong>known</strong> Mr. Sharma for five years.</span><br />
+<strong>Note:</strong><br />
+- &ldquo;Last year&rdquo; and &ldquo;in the last year&rdquo; are very different in meaning. &ldquo;Last year&rdquo; means the year before now, and it is considered a specific time which requires &lsquo;Simple Past&rsquo;. &ldquo;In the last year&rdquo; means from 365 days ago until now. It is not considered a specific time, so it requires &lsquo;Present Perfect&rsquo;.<br />
+<strong>Examples:</strong><br />
+&bull; I <strong>went</strong> to Dubai <strong>last year</strong>. <em> </em><br />
+&bull; I <strong>have been</strong> to Dubai <strong>in the last year.</strong> </span></span></h1>
+
+<h1 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>USE 4 :<br />
+- To express an action that happened in past but its effect is continuous in present:</strong><br />
+(निकट भूतकाल में घटित हुई घटनाओं अथवा कार्यों के लिए जिनका प्रभाव अभी भी जारी है)</span></span></h1>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>Examples: <u>effect</u> </strong><br />
+&bull; I have cut my finger. (now it is bleeding)<br />
+&bull; I have finished my task. (now I am free)<br />
+<strong>USE 5 :</strong><br />
+- In sentences which consist the following: &ldquo;This/That/It is the first/second/third/best/ worst&rdquo;.<br />
+<strong>Examples:</strong><br />
+&bull; This is the worst story, I have ever listened.<br />
+&bull; It is the best novel, I have ever read.</span></span></p>
+
+<h1 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b"><strong>Present Perfect Continuous Tense:</strong></span></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>Affirmative : </strong>Sub. + has/have + been + V<sub>1</sub> + ing + Obj. + since/for + time.<br />
+<strong>Negative : </strong>Sub. + has/have + not + been + V<sub>1</sub> + ing + Obj. + since/for + time.<br />
+<strong>Interrogative :</strong> Has/Have + Sub. + been + V<sub>1</sub> + ing + Obj. + since /for + time?<br />
+<strong>Int. Negative : </strong>Has/Have + Sub. + not + been + V<sub>1</sub> + ing + Obj. + since /for + time?<br />
+<strong>Note:</strong><br />
+<span style="color:black">-</span> <strong>Since</strong> is used for point of time &ndash; Day, Date, Month, Year, Yesterday, That day, Last night, Last week, Last year, Morning, Evening, Childhood, Birth etc. (निश्चित समय के लिए)<br />
+<span style="color:black">-</span> <strong>For</strong> is used for period of time &ndash; Half an hour, Two hours, Two weeks, Six months, Ten years, Many years, &nbsp;A long time etc. (अनिश्चित समय के लिए)<br />
+<strong>USE 1 : </strong><br />
+<span style="color:black">-</span> To express actions started in the past and still continuing:<br />
+(ऐसे कार्यों को व्यक्त करने के लिए जो भूतकाल में शुरू हुआ था, अभी भी चल रहा है और सम्भवतः भविष्य में भी चलता रहेगा)<br />
+<strong>Examples:</strong><br />
+&bull; They <strong>have been talking</strong> in the class for the last two hours.<br />
+&bull; She <strong>has been working</strong> at that company for three years.<br />
+&bull; James <strong>has been teaching</strong> at the university since June.<br />
+&bull; They <strong>have been playing</strong> since four o&rsquo;clock.<br />
+&bull; Why <strong>has</strong> Sheela <strong>not been taking</strong> her medicine for the last three days?<br />
+&bull; <span style="color:black"> He has been playing football since afternoon.</span><br />
+<span style="color:blue"><u><strong><span style="color:black">Note: </span></strong></u></span><br />
+<span style="color:black">-</span> Non-Continuous Verbs cannot be used in any continuous tenses. Instead of using &lsquo;Present Perfect Continuous&rsquo; with these verbs, we must use &lsquo;Present Perfect&rsquo;.<br />
+<strong>Examples:</strong><br />
+&bull; Sam <strong>has been having</strong> his car for two years. <strong>(<em>Incorrect)</em></strong><br />
+&bull; Sam <strong>has had</strong> his car for two years. <strong>(<em>Correct)</em></strong><br />
+&bull; I<em> </em><strong>have been knowing</strong> Shyam for ten years.<strong> (<em>Incorrect)</em></strong><br />
+&bull; I<em> </em><strong>have known</strong> Shyam for ten years. <strong>(<em>Correct)</em></strong></span></span></h1>
+
+<h1 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b"><strong>Simple Past Tense :</strong></span></span></span></h1>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>(A)&nbsp;<span style="color:black">Affirmative: </span></strong><span style="color:black">Sub. + V<sub>2 </sub>+ Obj.</span><br />
+<strong><span style="color:black">Negative: </span></strong><span style="color:black">Sub. + did + not + V<sub>1</sub> + Obj.</span><br />
+<strong><span style="color:black">Interrogative:</span></strong><span style="color:black"> Did + Sub. + V<sub>1</sub> + Obj.?</span><br />
+<strong><span style="color:black">Int. Negative:</span></strong><span style="color:black"> Did + Sub. + not + V<sub>1</sub> + Obj.?</span><br />
+<strong>(B) </strong>Sub. + was/were + Noun Phrase/Adjective<br />
+<strong>Adverbials: </strong><br />
+<span style="color:black">-</span><strong> </strong>To show those actions which have following words: ago, before, last day / night / week/ year, yesterday, in 2010, in June, previous day, in past time, the other day, the day before etc.<br />
+<strong>Examples:</strong><br />
+&bull; I <strong>saw</strong> a movie yesterday.<br />
+&bull; My friend <strong>left</strong> school last year.<br />
+&bull; Last year, I <strong>travelled</strong> to Japan.<br />
+&bull; <strong>Did</strong> you <strong>have</strong> dinner last night?<br />
+&bull; In 2001, they <strong>purchased</strong> the house for ten lakh rupees.<br />
+&bull; I <strong>didn&rsquo;t sleep</strong> well last night.<br />
+&bull; India <strong>got</strong> freedom in 1947.<br />
+&bull; She <strong>came</strong> into my room and <strong>sat</strong> beside me.<br />
+&bull; <span style="color:black">I <strong>received</strong> your letter a week ago.</span><br />
+<strong>USE 1 : </strong><br />
+<span style="color:black">-</span> To express habitual and regular actions of past:<br />
+- &lsquo;Simple Past&rsquo; can also be used to describe a habit which stopped in the past. It can have the same meaning as &ldquo;used to.&rdquo; To make it clear that we are talking about a habit, we often add expressions such as: always, often, usually, never, when I was a child, when I was younger, etc.<br />
+<span style="color:blue"><strong>Examples:</strong></span><br />
+&bull; They never <strong>went</strong> to school, they always <strong>skipped</strong> the class.<br />
+&bull; He always <strong>carried</strong> an umbrella.<br />
+&bull; He <strong>studied</strong> many hours every day.<br />
+&bull; He <strong>smoked </strong>daily when he was in London.<br />
+&bull; Mahatma Gandhi always <strong>carried</strong> a stick with him.<br />
+<strong>USE 2 : </strong><br />
+<span style="color:black">-</span> To express past facts or generalizations/ Historical facts:<br />
+(भूतकाल के सामान्य तथ्यों को बताने हेतु)<br />
+<strong>Examples:</strong><br />
+&bull; <strong> </strong><strong>Did</strong> you <strong>live</strong> in Jaipur when you <strong>were</strong> a kid?<br />
+&bull; Ram&rsquo;s father <strong>was</strong> a school teacher.<br />
+&bull; <span style="color:black"> Kalidas <strong>wrote</strong> many poems.</span><br />
+&bull; <span style="color:black"> He <strong>watched</strong> many movies during his school days.</span><br />
+&bull; Rabindranath Tagor <strong>wrote</strong> Gitanjali.<br />
+&bull; Thomas Edison <strong>invented</strong> the electric bulb.<br />
+<strong><span style="color:black">USE 3 : </span></strong><br />
+<span style="color:black">- To express an unreal or a hypothetical condition:<br />
+(अवास्तविक शर्त का बोध कराने के लिए)<br />
+- With the phrase: if, as if, as though, I wish, if only, it is time इत्यादि के बाद Simple Past Tense का use किया जाता है।) </span><br />
+<strong><span style="color:black">Examples:</span></strong><br />
+&bull; <span style="color:black"> <strong>I wish</strong> I were a king!</span><br />
+&bull; <strong>I wish</strong> you knew the truth.<br />
+&bull; <strong>I wish</strong> I had enough knowledge to answer these questions.<br />
+&bull; <strong>It is time</strong> you started working on the project.<br />
+&bull; <strong>It is time</strong> she informed her parents about it.</span></span></p>
+
+<h1 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#365f91"><strong><span style="color:black">USE 4 :<br />
+- </span></strong><span style="color:black">To denote an action which happened later out of the two past actions:<br />
+(भूतकाल में एक साथ घटित हुए दो कार्यों में से बाद में घटित होने वाले कार्य को व्यक्त करने के लिए)</span></span></span></span></h1>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>Examples:</strong><br />
+&bull; When I <strong>reached </strong>home, she was cooking food.<br />
+&bull; The light <strong>went out</strong> while I was studying.</span></span></p>
+
+<h1 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b"><strong>Past Continuous Tense :</strong></span></span></span></h1>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">Affirmative: </span></strong><span style="color:black">Sub. + was/were + V<sub>1</sub> + ing + Obj.</span><br />
+<strong><span style="color:black">Negative: </span></strong><span style="color:black">Sub. + was/were + not + V<sub>1</sub> + ing + Obj.</span><br />
+<strong><span style="color:black">Interrogative:</span></strong><span style="color:black"> Was/Were + Sub. + V<sub>1</sub> + ing + Obj.?</span><br />
+<strong><span style="color:black">Int. Negative:</span></strong><span style="color:black"> Was/Were + Sub. + not + V<sub>1</sub> + ing + Obj.?</span><br />
+&nbsp;<strong>Was (Singular) &ndash; </strong>He, She, It, I<br />
+<strong>Were (Plural) &ndash; </strong>We, You, They<br />
+<strong>USE 1 :</strong><br />
+<span style="color:black">-</span> &lsquo;Past Continuous&rsquo; is used to denote an action going on at some time in the past. The time of action may or may not be indicated.<br />
+(ऐसे कार्य़ों को व्यक्त करने के लिए जो भूतकाल में किसी समय पर चल रहा था। कार्य का समय दिया हो भी सकता है और नहीं भी।)<br />
+<strong>Adverbials :</strong><br />
+<span style="color:black">- </span>To show those actions which have following words: a<span style="color:black">t this time yesterday, at that time, at 2 pm yesterday etc.</span><br />
+<strong>Examples:</strong><br />
+&bull; Last night at 6 PM, I <strong>was eating</strong> dinner.<br />
+&bull; At this time yesterday we <strong>were having</strong> lunch at the restaurant.<br />
+&bull; At 4 pm last Tuesday, Trisha <strong>was watching</strong> her favourite movie.<br />
+&bull; At midnight, we <strong>were</strong> <strong>driving</strong> through the desert.<br />
+&bull; <span style="color:black">They <strong>were playing</strong> football in the evening.</span><br />
+&bull; <span style="color:black"> He <strong>was listening</strong> to music at that time.</span></span></span></p>
+
+<h3 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#243f60"><strong>USE 2 : </strong></span><br />
+<span style="color:#243f60"><span style="color:black">-</span> To express interrupted actions in the past :</span><br />
+(साथ-साथ होने वाले दो कार्य़ों में से यदि एक कार्य Past Continuous में हो, तो दूसरा कार्य जो पहले सम्पन्न हुआ है Simple Past Tense में आता है।)<br />
+<span style="color:black">-</span> We use the &lsquo;Past Continuous&rsquo; to indicate that a longer action in the past was interrupted. The interruption is usually a shorter action in the &lsquo;Simple Past&rsquo;. Remember this can be a real interruption or just an interruption in time.<br />
+<span style="color:black">- Interrupted action = Past Continuous Tense </span><br />
+<span style="color:black">Interrupting action = Simple Past Tense</span><br />
+<span style="color:black">- Past Continuous + when + Simple Past Tense</span><br />
+<span style="color:black">Simple Past + while + Past Continuous Tense</span></span></span></h3>
+
+<h3 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>Examples:</strong><br />
+&bull; I <strong>was watching</strong> TV when she called.<br />
+&bull; When the phone rang, she <strong>was writing</strong> a letter.<br />
+&bull; While we <strong>were having</strong> the picnic, it started to rain.<br />
+&bull; You <strong>were not listening</strong> to me when I told you to turn the lights off.<br />
+&bull; While John <strong>was sleeping</strong> last night, someone stole his car.<br />
+&bull;&nbsp;While I was writing the email, the computer went off.<br />
+&bull; <span style="color:black"> My father <strong>was waiting</strong> for me when I returned home.</span><br />
+&bull; Someone entered the room while we <strong>were discussing</strong> the topic.</span></span></h3>
+
+<h3 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>USE 3 :</strong><br />
+<span style="color:black">-</span> To express parallel actions :<br />
+(भूतकाल में किसी समय में जारी समानान्तर कार्यों को व्यक्त करने के लिए)<br />
+<span style="color:black">-</span> When you use the &lsquo;Past Continuous&rsquo; with two actions in the same sentence, it expresses the idea that both actions were happening at the same time. The actions are parallel.<br />
+<strong>Examples:</strong><br />
+&bull; I <strong>was studying</strong> while he <strong>was making</strong> dinner.<br />
+&bull; While Sheela <strong>was reading </strong>a book, Mona <strong>was watching</strong> television.<br />
+&bull; <strong>Were</strong> you <strong>listening</strong> while he <strong>was talking</strong>?<br />
+&bull; We were having fun while It <strong>was raining</strong>.</span></span></h3>
+
+<h3 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>USE 4 : </strong><br />
+<span style="color:black">-</span> To express obstinate habits in the past:<br />
+<span style="color:black">(भूतकाल की नापसंद आदतों को व्यक्त करने के लिए जो बार-बार की जाती है।)</span><br />
+<span style="color:black">-</span> &lsquo;Past Continuous&rsquo; is used with words such as &lsquo;always&rsquo; or &lsquo;constantly&rsquo; for persistent habits in the past.<br />
+<strong>Examples:</strong><br />
+&bull; She <strong>was always coming</strong> to class late.<br />
+&bull; He <strong>was constantly talking</strong>. He annoyed everyone.<br />
+&bull; I didn&rsquo;t like them because they <strong>were always complaining</strong>.</span></span></h3>
+
+<h3 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#243f60"><strong>Note</strong> : Non-Continuous Verbs / Mixed Verbs</span><br />
+- &lsquo;Non-Continuous Verbs&rsquo; cannot be used in any continuous tenses. Also, certain non-continuous meanings for &lsquo;Mixed Verbs&rsquo; cannot be used in continuous tenses. Instead of using &lsquo;Past Continuous&rsquo; with these verbs, you must use &lsquo;Simple Past&rsquo;.<br />
+<strong>Examples:</strong><br />
+&bull; Jatin was<strong> </strong>being at my house when you arrived. <em> <strong>(Incorrect)</strong></em><br />
+&bull; Jatin was at my house when you arrived.<strong> (<em>Correct)</em></strong></span></span></h3>
+
+<h1 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b"><strong>Past Perfect Tense:</strong></span></span></span><br />
+<span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong><span style="color:black">Affirmative: </span></strong><span style="color:black">Sub. + had + V<sub>3</sub> + Obj.</span><br />
+<strong><span style="color:black">Negative:</span></strong><span style="color:black"> Sub.+ had + not + V<sub>3</sub> + Obj.</span><br />
+<strong><span style="color:black">Interrogative:</span></strong><span style="color:black"> Had + Sub. + V<sub>3</sub> + Obj.?</span><br />
+<strong><span style="color:black">Int. Negative:</span></strong><span style="color:black"> Had + Sub. + not + V<sub>3</sub> + Obj.?</span><br />
+<strong>USE 1 :</strong><br />
+<span style="color:black">-</span> When two actions occur in the past, one after the other, then, the first action is expressed in Past Perfect Tense and the second action is expressed in Simple Past Tense.<br />
+<strong>Examples:</strong><br />
+&bull; I <strong>had finished</strong> my work before the phone rang.<br />
+&bull; When I reached home Shyam <strong>had</strong> already <strong>gone</strong>.<br />
+&bull; When I reached the station the train <strong>had gone</strong>.<br />
+&bull; After I <strong>had eaten</strong> breakfast, I went to school.<br />
+&bull; I <strong>had</strong> never <strong>seen</strong> such a beautiful place before I went to Kashmir.<br />
+&bull; I did not have any money because I <strong>had lost</strong> my wallet.<br />
+&bull; Tony knew Mumbai so well because he <strong>had visited</strong> the city several times.<br />
+<strong>USE 2 :</strong><br />
+<span style="color:black">-</span> To express duration before something in the past: (Non-Continuous Verbs)<br />
+<span style="color:black">-</span> With &lsquo;Non-Continuous Verbs&rsquo; and some non-continuous uses of &lsquo;Mixed Verbs&rsquo;, we use the &lsquo;Past Perfect&rsquo; to show that something started in the past and continued up until another action in the past.<br />
+<strong>Examples:</strong><br />
+&bull; We <strong>had had</strong> that car for ten years before it broke down.<br />
+&bull; By the time Sheela finished his studies, she <strong>had been</strong> in London for eight years.<br />
+&bull; By the time he retired from that school he <strong>had taught</strong> there for thirty years.<br />
+<strong>Note :</strong><br />
+<span style="color:black">-</span> Although the above use of &lsquo;Past Perfect&rsquo; is normally limited to &lsquo;Non-Continuous Verbs&rsquo;, the words &lsquo;live, work, teach and study&rsquo; are sometimes used in this way even though they are not &lsquo;Non-Continuous Verbs&rsquo;.<br />
+<strong>USE 3 :</strong><br />
+<span style="color:black">-</span> To express an imaginary or impossible condition of past:<br />
+(भूतकाल की किसी अपूर्ण शर्त को व्यक्त करने के लिए)<br />
+<span style="color:black">- If + Past Perfect + would have + Past Participle</span><br />
+<strong><span style="color:black">Examples: </span></strong><br />
+&bull; If you <strong>had worked</strong> hard, you would have passed.<br />
+&bull; If he<span style="color:black"> <strong>had reached</strong> the station on time, he would have caught the train.</span><br />
+<strong><span style="color:black">USE 4 :</span></strong><br />
+<span style="color:black">- To talk about cause and effect : </span><br />
+<span style="color:black">Cause/Reason : Past Perfect Tense</span><br />
+<span style="color:black">Effect : Simple Past Tense</span><br />
+<span style="color:black">- Reason Clause : because, as, since (क्योंकि)</span><br />
+<strong>Examples:</strong><br />
+&bull; He had no money because he <strong>had not received</strong> his salary.<br />
+&bull; As all the students <strong>had gone </strong>home, the classroom was empty.<br />
+&bull; Since I <strong>had already seen</strong> the movie, I didn&rsquo;t go with them.<br />
+&bull; Bhavesh was upset as his father <strong>had scolded</strong> him.</span></span></h1>
+
+<h1 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b"><strong>Past Perfect Continuous Tense: </strong></span></span></span></h1>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>Affirmative: </strong>Sub. + had + been + <span style="color:black">V<sub>1</sub></span> + ing + Obj. + since/for + time.<br />
+<strong>Negative: </strong>Sub. + had + not + been + <span style="color:black">V<sub>1</sub></span> + ing + Obj. + since/for + time.<br />
+<strong>Interrogative: </strong>Had + Sub. + been + <span style="color:black">V<sub>1</sub></span> + ing + Obj. + since/for + time?<br />
+<strong>Int. Negative: </strong>Had + Sub. + not + been + <span style="color:black">V<sub>1</sub></span> + ing + Obj. + since/for + time?<br />
+<strong>USE 1 :</strong><br />
+<span style="color:black">-</span> To express actions began before a certain point in the past and continued up to that time:<br />
+(उस कार्यों को व्यक्त करने के लिए जो भूतकाल में शुरू हुआ था व भूतकाल के ही किसी समय चल रहा था।)<br />
+<span style="color:black">-</span> We use the &lsquo;Past Perfect Continuous&rsquo; to show that something started in the past and continued until another time in the past. &lsquo;for five minutes&rsquo; and &lsquo;for two weeks&rsquo; etc. are durations which can be used with the &lsquo;Past Perfect Continuous&rsquo;.<br />
+<strong>Examples:</strong><br />
+&bull; At that time he <strong>had been working</strong> there for two years.<br />
+&bull; When Mr. Mehta came to the college in 2005, Mr. Sharma <strong>had</strong> already <strong>been teaching</strong> there for five years.<br />
+&bull; They <strong>had been talking</strong> for over an hour when Tony arrived.<br />
+<strong>USE 2 : </strong><br />
+<span style="color:black">-</span> It is used to express an action that had happened in the past and its effects were still visible in the past.<br />
+<strong>Examples:</strong><br />
+&bull; Abhishek was tired because he <strong>had been jogging</strong>.<br />
+&bull; Shyam gained weight because he <strong>had been overeating</strong>.<br />
+&bull; Suman failed the final test because she <strong>had not been attending</strong> class.<br />
+&bull; <span style="color:black"> He <strong>had been working</strong> hard, so he felt that he deserved a holiday.</span></span></span></p>
+
+<h3 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#243f60"><strong>Note : </strong></span><br />
+<span style="color:#243f60"><span style="color:black">-</span> Non-Continuous Verbs / Mixed Verbs </span><br />
+<span style="color:#243f60"><span style="color:black">-</span> Instead of using &lsquo;Past Perfect Continuous&rsquo; with non-continuous verbs, you must use &lsquo;Past Perfect&rsquo;.</span></span></span></h3>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>Examples:</strong><br />
+&bull; The motorcycle <strong>had been belonging</strong> to Shyam for years before Ram bought it. <strong>(<em>Incorrect)</em></strong><br />
+&bull; The motorcycle <strong>had belonged</strong> to Shyam for years before Ram bought it. <em> <strong>(Correct)</strong></em></span></span></p>
+
+<h1 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b"><strong>Simple Future Tense:</strong></span></span></span></h1>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>Affirmative: </strong>Sub. + will/shall + <span style="color:black">V<sub>1</sub></span> + Obj.<br />
+<strong>Negative: </strong>Sub. + will/shall + not +<span style="color:black"> V<sub>1</sub></span> +Obj.<br />
+<strong>Interrogative:</strong> Will/Shall + Sub. +<span style="color:black"> V<sub>1</sub></span> + Obj.?<br />
+<strong>Int. Negative: </strong>Will/Shall + Sub.+ not + <span style="color:black">V<sub>1</sub></span> + Obj.?<br />
+<strong>Shall (First &amp; Second Person) &ndash; </strong>I, We, You<br />
+<strong>Will (Third Person) &ndash; </strong>He, She, It, They<br />
+<strong><span style="color:black">Note:</span></strong><br />
+- &lsquo;Simple Future&rsquo; has two different forms in English: &lsquo;will/shall&rsquo; and &lsquo;be going to&rsquo;.<br />
+- Now a days, only &lsquo;will&rsquo; is used as helping verb in Future Tense because the usage of &lsquo;Shall&rsquo; has gone out of style in modern English. Though &lsquo;Shall&rsquo; is still used sometimes.<br />
+<strong>USE 1 : </strong><br />
+<span style="color:black">-</span> To express future events which we cannot control:<br />
+(भविष्य में घटित होने वाले अवश्यभावी घटनाओं को व्यक्त करने के लिए)<br />
+<strong>Examples:</strong><br />
+&bull; <strong>I&rsquo;ll</strong> <strong>be</strong> 25 next Monday.<br />
+&bull; It <strong>will be</strong> Diwali in a week.<br />
+&bull; The train <strong>will arrive</strong> at 6 p.m.<br />
+<strong>USE 2 :</strong><br />
+<span style="color:black">-</span> To express future events which are not decided (with I think, I believe, I expect, I&rsquo;m sure etc.)<br />
+(भविष्य में होने वाली संभावित घटनाओं के लिए)<br />
+<strong>Examples:</strong><br />
+&bull; I think India <strong>will win</strong> the series.<br />
+&bull; I think it <strong>will rain</strong> this afternoon.<br />
+&bull; I&rsquo;m sure you <strong>will pass</strong> the test.</span></span></p>
+
+<h3 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#243f60"><strong>USE 3 :</strong></span><br />
+<span style="color:#243f60"><span style="color:black">-</span> Use &lsquo;will&rsquo; to express Voluntary Actions or Promises:</span></span></span></h3>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>Examples:</strong><br />
+<span style="color:#243f60">&bull; I <strong>will send</strong> you the information when I get it.</span><br />
+&bull; I <strong>will not do</strong> your homework for you.<br />
+&bull; I <strong>won&rsquo;t do</strong> all the housework myself.<br />
+&bull; I&rsquo;m really hungry. I<strong>&rsquo;ll make</strong> some sandwiches.<br />
+&bull; I <strong>will call</strong> you when I arrive.<br />
+&bull; I <strong>won&rsquo;t tell</strong> anyone your secret.</span></span></p>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>USE 4 :</strong><br />
+<span style="color:black">-</span> &ldquo;be going to&rdquo; form is used to express <strong>Planned Events:<br />
+(पूर्व<strong> </strong>निर्धारित<strong> </strong>कार्यों<strong> </strong>के<strong> </strong>लिए)</strong><br />
+<strong>Examples:</strong><br />
+&bull; He <strong>is going to spend</strong> his vacation in Switzerland.<br />
+&bull; We <strong>are going to meet</strong> at 6 PM.<br />
+&bull; Whom <strong>are</strong> you <strong>going to invite</strong> to the party?<br />
+<strong>(i) To express intentions :</strong><br />
+<strong>(इरादे<strong> </strong>व्यक्त<strong> </strong>करने<strong> </strong>के<strong> </strong>लिए)</strong><br />
+<strong>Examples:</strong><br />
+&bull; I<strong>&rsquo;m going to be</strong> an actor when I grow up.<br />
+&bull; I <strong>am going to be</strong> a rich person someday.<br />
+<strong>(ii)</strong><strong> </strong> To make a future prediction based on facts:<br />
+(तथ्यों पर आधारित भविष्यवाणी को व्यक्त करने के लिए)<br />
+<strong>Examples:</strong><br />
+&bull; The test next week <strong>is going to be</strong> really hard.<br />
+&bull; The year 2011 <strong>is going to be</strong> a very interesting year.<br />
+&bull; John Smith <strong>is going to be</strong> the next President.<br />
+&bull; It&rsquo;s going to rain; look at those clouds.<br />
+<strong>(iii) &lsquo;Be about to</strong> <strong>+</strong> <strong>base form</strong>&rsquo; is used for the immediate future:<br />
+<strong>Examples:</strong><br />
+&bull; Hurry up. The train <strong>is</strong> <strong>about to leave.</strong><br />
+&bull; They <strong>are</strong> <strong>about to close</strong> the shop.<br />
+&bull; He <strong>is</strong> <strong>about to leave</strong> for office.</span></span></p>
+
+<h3 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#243f60"><strong>Note: &lsquo;Future Tense&rsquo; is not used in Time Clauses:</strong></span></span></span></h3>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px">- Like all future forms, the &lsquo;Simple Future&rsquo; cannot be used in clauses beginning with time expressions such as: when, while, before, after, by the time, as soon as, if, unless, etc. Instead of &lsquo;Simple Future&rsquo;, &lsquo;Simple Present&rsquo; is used.<br />
+- Main Clause : Simple Future Tense<br />
+<span style="color:black">Time Clause : Simple Present Tense</span><br />
+<strong>Examples:</strong><br />
+&bull; When you <strong>will arrive</strong> tonight, we will go out for dinner. <strong>(Incorrect)<em> </em></strong><br />
+&bull; When you <strong>arrive</strong> tonight, we will go out for dinner<strong>. (<em>Correct)</em></strong><br />
+&bull; She will cry when she <strong>hears</strong> the news.<br />
+&bull; He will reach there before the programme <strong>starts</strong>.<br />
+&bull; All the students will stand up when the teacher <strong>comes</strong>.<br />
+&bull; As soon as I <strong>get</strong> the parcel, I&rsquo;ll sent it to you.</span></span></p>
+
+<h1 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b"><strong>Future Continuous Tense: </strong></span></span></span></h1>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>Affirmative:</strong> Sub. + will/shall + be + V<sub>1</sub> + ing + Obj.<br />
+<strong>Negative:</strong> Sub. + will/shall + not + be + V<sub>1</sub> + ing + Obj.<br />
+<strong>Interrogative:</strong> Will/Shall + Sub. + be + V<sub>1</sub> + ing + Obj.?<br />
+<strong>Int. Negative:</strong> Will/Shall + Sub. + not + be + V<sub>1</sub> + ing + Obj.?<br />
+<strong>USE 1 :</strong><br />
+<span style="color:black">-</span> To express actions going on at some time in the future:<br />
+(भविष्य में किसी समय जारी रहने वाले कार्यों को व्यक्त करने के लिए)<br />
+<strong>Examples:</strong><br />
+&bull; Tonight at 7 PM, I <strong>will be eating</strong> dinner.<br />
+&bull; This time tomorrow, I <strong>will be watching</strong> TV.<br />
+&bull; <span style="color:black"> He <strong>will be taking</strong> his examination next month.</span><br />
+&bull; <span style="color:black"> I <strong>shall be meeting</strong> your Principal tomorrow.</span><br />
+&bull; <span style="color:black"> I <strong>shall be writing</strong> an essay at this time tomorrow.</span><br />
+<strong>USE 2 :</strong><br />
+<span style="color:black">-</span> To express interrupted actions in the future:<br />
+(भविष्य में एक साथ होने वाले दो कार्यों में से पहले से चल रहे कार्य को दर्शाने के लिए Future Continuous जबकि दूसरे कार्य के लिए Simple Present Tense use किया जाता है)<br />
+<span style="color:black">-</span> We use the &lsquo;Future Continuous&rsquo; to indicate that a longer action in the future will be interrupted by a shorter action in the future. Remember this can be a real interruption or just an interruption in time.<br />
+<strong>Examples:</strong><br />
+&bull; I <strong>will be watching</strong> TV when she <em>arrives</em> tonight.<br />
+&bull; I <strong>will be waiting</strong> for you when your bus <em>arrives</em>.</span></span></p>
+
+<h1 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b"><strong>Future Perfect Tense: </strong></span></span></span></h1>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>Affirmative:</strong> Sub. + will/shall + have + V<sub>3</sub> + Obj.<br />
+<strong>Negative: </strong>Sub. + will/shall + have + not + V<sub>3</sub> + Obj.<br />
+<strong>Interrogative: </strong>Will/Shall + Sub.+ have + V<sub>3</sub> + Obj.?<br />
+<strong>Int. Negative: </strong>Will/Shall + Sub. + not + have + V<sub>3</sub> + Obj.?<br />
+<strong>Use 1 : </strong><br />
+- In this tense, when an action is expected to be completed in near future, &lsquo;till/by&rsquo; are used before the adverb of future.<br />
+<span style="color:black">(भविष्य में किसी निश्चित समय तक पूरा होने की संभावना दर्शाने वाले कार्यों को व्यक्त करने के लिए)</span><br />
+- By + Future time (by tomorrow, by next month, by next Monday, till next week etc.)<br />
+<strong>Examples:</strong><br />
+&bull; By next November, I <strong>will have got</strong> promotion.<br />
+&bull; I <strong>will have received</strong> the letter by next Monday.<br />
+&bull; The guests <strong>will have arrived</strong> by 4 p.m. today.<br />
+&bull; Amit <strong>will have got</strong> a job by then.<br />
+&bull; By the time I finish this course, I <strong>will have taken</strong> ten tests.<br />
+&bull; I <strong>shall have returned</strong> your money by next Sunday.<br />
+&bull; He <strong>will<span style="color:black"> have revised</span></strong><span style="color:black"> his syllabus till March.</span><br />
+<strong><span style="color:black">USE 2 : </span></strong><br />
+<span style="color:black">-</span> <span style="color:black">To show an action in which &lsquo;when&rsquo; or &lsquo;before&rsquo; is followed by Present Tense.</span><br />
+<strong><span style="color:black">Examples:</span></strong><br />
+&bull; I <strong>shall have taken</strong> a bath before the school bus arrives.<br />
+&bull; You <strong>will have got</strong> ready when we visit your home.</span></span></p>
+
+<h1 style="text-align:justify"><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><span style="color:#c0392b"><strong>Future Perfect Continuous Tense :</strong></span></span></span></h1>
+
+<p><span style="font-family:Arial,Helvetica,sans-serif"><span style="font-size:16px"><strong>Affirmative:</strong> Sub. + will/shall + have + been + V<sub>1</sub> + ing + Obj. + since/ for + time.<br />
+<strong>Negative: </strong> Sub. + will/shall + have + not + been + V<sub>1</sub> + ing + Obj. + since/for + time.<br />
+<strong>Interrogative:</strong> Will/Shall + Sub. + have + been + V<sub>1</sub> + ing + Obj. + since/for + time?<br />
+<strong>Int. Negative:</strong> Will/Shall + Sub. + not + have + been + V<sub>1</sub> + ing + Obj. + since/for + time?<br />
+<strong>Use 1 : </strong><br />
+- To express future actions in progress over a period of time:<br />
+(भविष्य में किसी समय की अवधि के समय जो कार्य चल रहा होगा, उसे व्यक्त करने के लिए)<br />
+<strong>Examples:</strong><br />
+&bull; In 2015 I<strong> will</strong> <strong>have been working</strong> here for five years.<br />
+&bull; <strong>I&rsquo;ll have been teaching</strong> for ten years next October.<br />
+&bull; At 7 pm the boys <strong>will have been studying</strong> for four hours.<br />
+&bull; He <strong>will have been playing</strong> football for two hours.<br />
+<strong>Note -</strong> This tense is not very common in regular use.<br />
+<strong><u>IMPORTANT FACTS ABOUT TENSES:</u></strong><br />
+- <span style="color:black">Seldom, Rarely, Scarcely, Hardly, Usually, Sometimes, Often, Every Day/Week/Month /</span><br />
+<span style="color:black">Year / Sunday, Never व Always का</span> <span style="color:black">use, &lsquo;Simple Present&rsquo; व</span> <span style="color:black">&lsquo;Present Perfect Tense&rsquo; दोनो</span> <span style="color:black">में</span> <span style="color:black">संभव</span> <span style="color:black">है।</span><br />
+- <span style="color:black">Presently, At Present, At the moment, Now, Still, These days etc. are used in &lsquo;Present Continuous Tense&rsquo;.</span><br />
+- <span style="color:black">So far, Until Now, Ever etc. are used in &lsquo;Present Perfect Tense&rsquo; </span><br />
+<span style="color:black">&lsquo;Yet&rsquo; is used in &lsquo;Present Perfect Negative Tense&rsquo;</span><br />
+<span style="color:black">Since/For का</span> <span style="color:black">use, &lsquo;Present Perfect Continuous Tense&rsquo; के</span> <span style="color:black">अतिरिक्त</span> <span style="color:black">&lsquo;Present Perfect Tense&rsquo; में</span> <span style="color:black">भी</span> <span style="color:black">संभव</span> <span style="color:black">है। Since/For का</span> <span style="color:black">use Present Perfect Tense में</span> <span style="color:black">उन</span> <span style="color:black">कार्यों</span> <span style="color:black">को</span> <span style="color:black">दर्शाने</span> <span style="color:black">के</span> <span style="color:black">लिए</span> <span style="color:black">होता</span> <span style="color:black">है</span> <span style="color:black">जो</span> <span style="color:black">भूतकाल</span> <span style="color:black">में</span> <span style="color:black">कभी</span> <span style="color:black">घटित</span> <span style="color:black">हुए</span> <span style="color:black">थे</span> <span style="color:black">किंतु</span> <span style="color:black">वर्तमान</span> <span style="color:black">में</span> <span style="color:black">नहीं</span> <span style="color:black">चल</span> <span style="color:black">रहे।</span><br />
+- <span style="color:black">Ago, Yesterday, The other day, The previous day, Last Night/Week/Month/Year/Sunday etc. are used in &lsquo;Simple Past&rsquo;. </span><br />
+- <span style="color:black">यदि</span> <span style="color:black">past में</span> <span style="color:black">कोई</span> <span style="color:black">कार्य</span> <span style="color:black">चल</span> <span style="color:black">रहा</span> <span style="color:black">था</span> <span style="color:black">व</span> <span style="color:black">उसी</span> <span style="color:black">दौरान</span> <span style="color:black">कोई</span> <span style="color:black">दूसरी</span> <span style="color:black">घटना</span> <u><span style="color:black">बीच</span></u><u> </u><u><span style="color:black">में</span></u> <span style="color:black">घटित</span> <span style="color:black">हुई, तो</span> <span style="color:black">जो</span> <span style="color:black">कार्य</span> <span style="color:black">चल</span> <span style="color:black">रहा</span> <span style="color:black">था</span> <span style="color:black">&lsquo;Past Continuous Tense&rsquo; में</span> <span style="color:black">होगा</span> <span style="color:black">व</span> <span style="color:black">जो</span> <span style="color:black">घटना</span> <span style="color:black">बीच</span> <span style="color:black">में</span> <span style="color:black">घटित</span> <span style="color:black">हुई</span> <span style="color:black">वह</span> <span style="color:black">&lsquo;Simple Past Tense&rsquo; में</span> <span style="color:black">होगी।</span><br />
+- <span style="color:black">यदि Past में</span> <span style="color:black">दो</span> <span style="color:black">घटनाएं</span> <span style="color:black">घटित</span> <span style="color:black">हुई</span> <span style="color:black">हों</span> <span style="color:black">व</span> <span style="color:black">दोनो</span> <span style="color:black">एक</span> <span style="color:black">के</span> <span style="color:black">बाद</span> <span style="color:black">एक</span> <span style="color:black">हुई</span> <span style="color:black">हों</span> <span style="color:black">अर्थात्</span> <span style="color:black">दोनों</span> <span style="color:black">घटनाओं</span> <span style="color:black">में</span> <span style="color:black">समय</span> <span style="color:black">का</span> <span style="color:black">अंतराल</span> <span style="color:black">रहा</span> <span style="color:black">हो, तो</span> <span style="color:black">पहली</span> <span style="color:black">घटना</span> <span style="color:black">&lsquo;Past Perfect&rsquo; व</span> <span style="color:black">दूसरी</span> <span style="color:black">घटना</span> <span style="color:black">&lsquo;Simple Past&rsquo; में</span> <span style="color:black">होगी।</span><br />
+<span style="color:black"><u><strong>Type 0 - Zero Conditional:</strong></u><br />
+● Condition &ndash; If + Simple Present Tense&nbsp;<br />
+&nbsp;Main Clause &ndash; Simple Present Tense<br />
+<strong>Examples:</strong><br />
+&bull; Babies cry if they are hungry.<br />
+&bull; If you divide 10 by 2, you get 5.</span><br />
+<u><strong><span style="color:black">Type 1 - &nbsp;First &nbsp;Conditional / Open, Real Condition:&nbsp;</span></strong></u><br />
+<span style="color:black">● Condition &ndash; If + Simple Present Tense<br />
+&nbsp;Main Clause &ndash; &nbsp;Simple Future Tense&nbsp;<br />
+&nbsp;or&nbsp;<br />
+Can, may, must, should + V<sub>1</sub><br />
+<strong>Examples:</strong><br />
+&bull; If you don&rsquo;t help him, he will not succeed.<br />
+&bull; &nbsp;If you have enough money, you can buy a camera.<br />
+&bull; He may win if he gets another chance.<br />
+&bull; If he calls you, you should go.</span><br />
+<u><span style="color:black"><strong>Type 2 &ndash; Second Conditional/ Imaginary, Unreal Condition:</strong></span></u><br />
+<span style="color:black">● Condition &ndash; If + Simple Past Tense<br />
+● Main Clause &ndash; Sub. + would/ could + V<sub>1</sub><br />
+<strong>Examples:</strong><br />
+&bull; If I were a millionaire, I would have a personal yacht.<br />
+&bull; If I had an umbrella, I would lend it to you.&nbsp;<br />
+&bull; If it didn&rsquo;t rain, we would go on a picnic.&nbsp;</span><br />
+<span style="color:black"><u><strong>Type 3 &ndash; Third Conditional/Unfulfilled Condition:</strong></u><br />
+● Condition &ndash; If + Past Perfect Tense<br />
+● Main Clause &ndash; Sub. + would / could + have + V3<br />
+<strong>Examples:</strong><br />
+&bull; If you had studied, you would have passed.<br />
+&bull; If he had talked to me, I would have listned to him.<br />
+<strong>Note:-</strong> Conditional clause में कई बार If + not के स्थान पर Unless का use किया जाता है।<br />
+<strong>Examples:</strong><br />
+&bull; Unless you help him, he will not succeed.<br />
+&bull; Unless she was very ill, she would be at work.</span></span></span></p>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.controls').classList.toggle('active');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function increaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            document.body.style.fontSize = (currentSize + 2) + 'px';
+        }
+
+        function decreaseFontSize() {
+            let currentSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+            if (currentSize > 10) {
+                document.body.style.fontSize = (currentSize - 2) + 'px';
+            }
+        }
+
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
